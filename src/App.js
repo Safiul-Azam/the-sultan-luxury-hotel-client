@@ -1,12 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { Routes, Route } from "react-router-dom";
+import Home from './pages/Home/Home';
+import NoFound from './pages/Shared/NoFound';
+import Navbar from './pages/Shared/Navbar';
 function App() {
   return (
     <div className="App">
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Navbar></Navbar>
+       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path='*' element={<NoFound/>}/>
+      </Routes>
     </div>
   );
 }
