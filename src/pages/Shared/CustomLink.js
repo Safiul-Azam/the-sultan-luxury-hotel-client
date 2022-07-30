@@ -11,7 +11,7 @@ function CustomLink({ children, to, ...props }) {
     return (
       <div className='hover:text-primary'>
         <Link
-          style={{ color: match ? "#aa8453" : "#444444", hover:'#aa8453' }}
+          style={{ color: match ? "#aa8453" : "#444444" }}
           to={to}
           {...props}
         >

@@ -15,8 +15,8 @@ const Navbar = () => {
     </>
     
     return (
-        <div className='container mx-auto mt-5'>
-            <div class="navbar bg-base-100">
+        <div className='container mx-auto'>
+            <div class="navbar">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <label tabIndex="0" class="btn btn-ghost lg:hidden">
@@ -26,7 +26,7 @@ const Navbar = () => {
                            {menu}
                         </ul>
                     </div>
-                    <Link to='/' class="normal-case text-center"><span className='text-2xl block text-primary font-medium'>THE SULTAN</span><span className='text-xs font-bold tracking-widest'>LUXURY HOTEL</span></Link>
+                    <Link to='/' class="normal-case text-center"><span className='text-2xl block text-primary font-medium h-5'>THE SULTAN</span><span className='text-xs font-bold tracking-widest'>LUXURY HOTEL</span></Link>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal p-0 text-sm tracking-widest font-semibold ">
