@@ -15,7 +15,7 @@ const Navbar = () => {
     </>
     
     return (
-        <div className='container mx-auto'>
+        <div className=' w-[1200px] mx-auto'>
             <div class="navbar">
                 <div class="navbar-start">
                     <div class="dropdown">
@@ -26,10 +26,10 @@ const Navbar = () => {
                            {menu}
                         </ul>
                     </div>
-                    <Link to='/' class="normal-case text-center"><span className='text-2xl block text-primary font-medium h-5'>THE SULTAN</span><span className='text-xs font-bold tracking-widest'>LUXURY HOTEL</span></Link>
+                    <Link to='/' class="normal-case text-center"><span className='text-3xl block text-primary font-medium h-8'>THE SULTAN</span><p style={{letterSpacing:'8px',fontSize:'10px'}} className='text-white'>LUXURY HOTEL</p></Link>
                 </div>
                 <div class="navbar-center hidden lg:flex">
-                    <ul class="menu menu-horizontal p-0 text-sm tracking-widest font-semibold ">
+                    <ul class="menu menu-horizontal p-0 text-base tracking-widest ">
                         {menu}
                     </ul>
                 </div>

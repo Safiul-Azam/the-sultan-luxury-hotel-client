@@ -9,9 +9,9 @@ function CustomLink({ children, to, ...props }) {
     let match = useMatch({ path: resolved.pathname, end: true });
   
     return (
-      <div className='hover:text-primary'>
+      <div className='hover:text-primary text-white hover:bg-transparent'>
         <Link
-          style={{ color: match ? "#aa8453" : "#444444" }}
+          style={{ color: match ? "#aa8453" : "" }}
           to={to}
           {...props}
         >
