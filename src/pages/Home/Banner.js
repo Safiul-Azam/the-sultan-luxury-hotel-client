@@ -15,13 +15,13 @@ const Banner = () => {
     }>
       <Navbar></Navbar>
       <div className='text-white text-center mt-12'>
-        <article className='flex justify-center text-xl mb-6 text-secondary'>
+        <div className='flex justify-center text-xl mb-6 text-secondary'>
           <GrStar />
           <GrStar />
           <GrStar />
           <GrStar />
           <GrStar />
-        </article>
+        </div>
         <p style={{letterSpacing:'6px'}} className='text-lg uppercase mb-6'>The Ultimate Luxury Experience</p>
         <h2 style={{letterSpacing:'12px', lineHeight:'70px'}} className='text-6xl uppercase w-3/4 mx-auto mb-7'>Enjoy The Best Moments of Life</h2>
         <button class=" bg-transparent tracking-widest border px-5 py-3 uppercase">Rooms & Suites</button>
