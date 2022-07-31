@@ -8,7 +8,7 @@ import { GiTowel } from "react-icons/gi";
 const HomeSuite = ({ rome }) => {
     const { roomName, perDay, shift, img } = rome
     return (
-        <div class="relative group overflow-hidden bg">
+        <div class="relative group overflow-hidden">
             <div className=''>
                 <img className='group-hover:scale-110 group-hover:duration-500 group-hover:ease-in-out' src={img} alt="" />
             </div>

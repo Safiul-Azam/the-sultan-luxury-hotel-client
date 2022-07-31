@@ -23,7 +23,7 @@ const HomesSuites = () => {
                     }
 
                 </div>
-                <div className='grid grid-cols-2 gap-8 mt-8'>
+                <div className='grid grid-cols-2 gap-8 mt-8 w-full'>
                     {
                         romes.slice(3, 5).map(rome => <HomeSuiteTwo
                         key={rome.id}
