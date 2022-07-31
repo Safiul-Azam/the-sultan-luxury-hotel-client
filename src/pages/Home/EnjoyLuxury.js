@@ -6,7 +6,7 @@ import { FiPhoneCall } from "react-icons/fi";
 
 const EnjoyLuxury = () => {
     return (
-        <div class="hero min-h-screen w-[1150px] mx-auto bg-white">
+        <div class=" mb-24 mt-10 hero min-h-screen w-[1150px] mx-auto bg-white">
             <div class="hero-content flex-col lg:flex-row-reverse relative justify-center">
                 <img src={Image1} class="w-1/4 shadow-2xl" alt='' />
                 <img src={Image2} class="w-1/4 shadow-2xl relative top-24" alt='' />

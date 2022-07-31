@@ -1,0 +1,46 @@
+[
+    {
+        "id":1,
+        "roomName": "Junior Suite",
+        "perDay": "85",
+        "shift": "night",
+        "description": "Handle length: 13, Type of steel: Yasuki white steel #2 laminated with soft steel.Light weight, one hand axe designed for splitting firewood and clearing bushes. ",
+        "img": "https://i.ibb.co/X20GxXk/book-1.jpg"
+    },
+    {
+        "id":2,
+        "roomName": "Family Room",
+        "perDay": "125",
+        "shift": "night",
+        "description": "Gotoku Kanna means plane with 5 uses. As smoothing (not final), both sides of rabbet, and both side rabbets. ",
+        "img": "https://i.ibb.co/d0F2k8c/book-2.jpg"
+    },
+    {
+        "id":3,
+        "roomName": "Double Room",
+        "perDay": "150",
+        "shift": "night",
+        "description": "The vFunahiro Genmyo Smoothing plane is typically the first bench plane to touch rough lumber. This is the No. 5-1/2 version, which is slightly larger and heavier than the No.  ",
+        "img": "https://i.ibb.co/PtZxWzG/book-3.jpg"
+    },
+    {
+        "id":4,
+        "roomName": "Deluxe Room",
+        "perDay": "70",
+        "shift": "night",
+        "description": "This blade is a direct replacement for the one included with your Bench Tools No. Having a spare iron on hand ensures you'll always have a sharp edge to deal with challenging grain.",
+        "img": "https://i.ibb.co/XXZXhLC/book-4.jpg"
+    },
+    {
+        "id":5,
+        "roomName": "Deluxe Room",
+        "perDay": "35",
+        "shift": "night",
+        "description": "Let us start the list with one of the basic tools in the world of woodworking: the Chisel. It is a sharp angled piece of steel with a handle for carving or cutting wood. ",
+        "img": "https://i.ibb.co/Fhfrkhc/book-7.jpg"
+    }
+]
+
+
+
+
