@@ -7,6 +7,9 @@
 p,li,ul,button,small{
   font-family: 'Barlow Condensed', sans-serif;
 }
+li{
+  list-style: none;
+}
 
 .App-logo {
   height: 40vmin;
