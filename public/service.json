@@ -1,0 +1,36 @@
+[
+    {
+        "id":1,
+        "roomName": "Pick Up & Drop",
+        "description": "We’ll pick up from airport while you comfy on your ride, mus nellentesque habitant. "
+    },
+    {
+        "id":2,
+        "roomName": "Parking Space",
+        "description": "Fusce tincidunt nis ace park norttito sit amet space, mus nellentesque habitant. "
+    },
+    {
+        "id":3,
+        "roomName": "Room Service",
+        "description": "Room tincidunt nis ace park norttito sit amet space, mus nellentesque habitant. "
+    },
+    {
+        "id":4,
+        "roomName": "Swimming Pool",
+        "description": "Swimming pool tincidunt nise ace park norttito sit space, mus nellentesque habitant."
+    },
+    {
+        "id":5,
+        "roomName": "Fibre Internet",
+        "description": "Wifi tincidunt nis ace park norttito sit amet space, mus nellentesque habitant."
+    },
+    {
+        "id":6,
+        "roomName": "Breakfast",
+        "description": "Eat tincidunt nisa ace park norttito sit amet space, mus nellentesque habitant"
+    }
+]
+
+
+
+
