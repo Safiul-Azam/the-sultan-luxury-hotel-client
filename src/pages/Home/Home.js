@@ -5,6 +5,7 @@ import ExtraServices from './ExtraServices';
 import OurFacilities from './OurFacilities';
 import PromotionalVideo from './PromotionalVideo';
 import HomesSuites from './RoomsSuites';
+import Services from './Services';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
           <ExtraServices></ExtraServices>
           <PromotionalVideo></PromotionalVideo>
           <OurFacilities></OurFacilities>
+          <Services></Services>
         </div>
     );
 };

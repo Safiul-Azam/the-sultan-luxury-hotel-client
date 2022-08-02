@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OurService = ({service}) => {
+const OurFacility = ({service}) => {
     const {serviceName, description, img} = service
     return (
         <div className='border p-10'>
@@ -11,4 +11,4 @@ const OurService = ({service}) => {
     );
 };
 
-export default OurService;
+export default OurFacility;

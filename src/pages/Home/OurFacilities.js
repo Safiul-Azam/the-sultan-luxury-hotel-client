@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import OurService from './OurFacilitie';
+import OurFacility from './OurFacility';
 
 const OurFacilities = () => {
     const [services, setServices] = useState([])
@@ -14,10 +14,10 @@ const OurFacilities = () => {
             <h2 className='text-5xl mb-7 text-black'>Hotel Facilities</h2>
             <div className='grid grid-cols-3 gap-8'>
                 {
-                    services.map(service => <OurService
+                    services.map(service => <OurFacility
                     key={service.id}
                     service={service}
-                    ></OurService>)
+                    ></OurFacility>)
                 }
             </div>
         </div>
