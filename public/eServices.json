@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "roomName": "Room cleaning",
+        "perDay": "50",
+        "shift": "Daily",
+        "firstDes":" Hotel ut nisan the duru",
+        "secondDes":"Orci miss natoque vasa ince",
+        "thirdDes":"Clean sorem ipsum morbin",
+        "img": "https://i.ibb.co/QNffsnF/Extra-Services-1.jpg"
+    },
+    {
+        "id": 2,
+        "roomName": "Drinks included",
+        "perDay": "30",
+        "shift": "Daily",
+        "firstDes":" Hotel ut nisan the duru",
+        "secondDes":"Orci miss natoque vasa ince",
+        "thirdDes":"Clean sorem ipsum morbin",
+        "img": "https://i.ibb.co/4MGvp96/Extra-Services-2.jpg"
+    },
+    {
+        "id": 3,
+        "roomName": "Safe & Secure",
+        "perDay": "30",
+        "shift": "Daily",
+        "firstDes":" Hotel ut nisan the duru",
+        "secondDes":"Orci miss natoque vasa ince",
+        "thirdDes":"Clean sorem ipsum morbin",
+        "img": "https://i.ibb.co/j8syzdc/Extra-Services-3.jpg"
+    },
+    {
+        "id": 4,
+        "roomName": "Room Breakfast",
+        "perDay": "15",
+        "shift": "Daily",
+        "firstDes":" Hotel ut nisan the duru",
+        "secondDes":"Orci miss natoque vasa ince",
+        "thirdDes":"Clean sorem ipsum morbin",
+        "img":"https://i.ibb.co/g4MWY3G/Extra-Services-4.jpg"
+    }
+]

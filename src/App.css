@@ -4,7 +4,7 @@
   
   font-family: 'Gilda Display', serif;
 }
-p,li,ul,button{
+p,li,ul,button,small{
   font-family: 'Barlow Condensed', sans-serif;
 }
 
@@ -12,7 +12,10 @@ p,li,ul,button{
   height: 40vmin;
   pointer-events: none;
 }
-
+.swiper-pagination-bullet{
+  margin-top:20px;
+  font-size: 12px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
