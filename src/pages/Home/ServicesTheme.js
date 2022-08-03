@@ -12,22 +12,22 @@ const Services = () => {
                     <div className=' overflow-hidden'>
                         <img className=' hover:scale-110 hover:duration-1000 hover:ease-in-out ease-in-out duration-1000' src={theme1} alt="" />
                     </div>
-                    <div className='p-10'>
-                        <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>DISCOVER</p>
-                        <h2 className='text-5xl mb-7 text-black'>The Restaurant</h2>
-                        <p>Restaurant inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.</p>
-                        <button className='btn btn-primary rounded-none text-white tracking-widest '>LEARN MORE</button>
+                    <div className='p-10 text-[#666]'>
+                        <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4 text-[#666]'>DISCOVER</p>
+                        <h2 className='text-4xl mb-7 text-black'>The Restaurant</h2>
+                        <p className='text-lg mb-4'>Restaurant inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.</p>
+                        <button className='py-3 px-8 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500'>LEARN MORE</button>
                     </div>
                 </div>
                 <div className='grid grid-cols-2 items-center'>
 
-                    <div className='p-10'>
+                    <div className='p-10 text-[#666]'>
                         <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>EXPERIENCES</p>
-                        <h2 className='text-5xl mb-7 text-black'>Spa Center</h2>
-                        <p>Spa center inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.</p>
-                        <button className='btn btn-primary rounded-none text-white tracking-widest'>LEARN MORE</button>
+                        <h2 className='text-4xl mb-7 text-black'>Spa Center</h2>
+                        <p className='text-lg mb-4'>Spa center inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.</p>
+                        <button className='py-3 px-8 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500'>LEARN MORE</button>
                     </div>
-                    <div className=' overflow-hidden'>
+                    <div className='overflow-hidden'>
                         <img className=' hover:scale-110 hover:duration-1000 hover:ease-in-out ease-in-out duration-1000' src={theme2} alt="" />
                     </div>
                 </div>
@@ -35,19 +35,19 @@ const Services = () => {
                     <div className=' overflow-hidden'>
                         <img className=' hover:scale-110 hover:duration-1000 hover:ease-in-out ease-in-out duration-1000' src={theme3} alt="" />
                     </div>
-                    <div className='p-10'>
+                    <div className='p-10 text-[#666]'>
                         <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>MODERN</p>
-                        <h2 className='text-5xl mb-7 text-black'>Fitness Center</h2>
-                        <p>Restaurant inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.</p>
-                        <button className='btn btn-primary rounded-none text-white tracking-widest '>LEARN MORE</button>
+                        <h2 className='text-4xl mb-7 text-black'>Fitness Center</h2>
+                        <p className='text-lg mb-4'>Restaurant inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.</p>
+                        <button className='py-3 px-8 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500'>LEARN MORE</button>
                     </div>
                 </div>
                 <div className='grid grid-cols-2 items-center'>
-                    <div className='p-10'>
+                    <div className='p-10 text-[#666]'>
                         <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>EXPERIENCES</p>
-                        <h2 className='text-5xl mb-7 text-black'>The Health Club & Pool</h2>
-                        <p>The health club & pool at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.</p>
-                        <button className='btn btn-primary rounded-none text-white tracking-widest '>LEARN MORE</button>
+                        <h2 className='text-4xl mb-7 text-black'>The Health Club & Pool</h2>
+                        <p className='text-lg mb-4'>The health club & pool at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.</p>
+                        <button className='py-3 px-8 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500'>LEARN MORE</button>
                     </div>
                     <div className=' overflow-hidden'>
                         <img className=' hover:scale-110 hover:duration-1000 hover:ease-in-out ease-in-out duration-1000' src={theme4} alt="" />

@@ -9,6 +9,7 @@ import OurFacilities from './OurFacilities';
 import PromotionalVideo from './PromotionalVideo';
 import HomesSuites from './RoomsSuites';
 import ServicesTheme from './ServicesTheme';
+import Testimonials from './Testimonials';
 
 const Home = () => {
     return (
@@ -21,6 +22,7 @@ const Home = () => {
           <OurFacilities></OurFacilities>
           <CheckOut></CheckOut>
           <ServicesTheme></ServicesTheme>
+          <Testimonials></Testimonials>
           <Footer></Footer>
           <CopyRight></CopyRight>
         </div>
