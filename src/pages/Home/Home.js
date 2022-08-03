@@ -5,6 +5,7 @@ import CheckOut from './CheckOut';
 import EnjoyLuxury from './EnjoyLuxury';
 import ExtraServices from './ExtraServices';
 import Footer from './Footer';
+import OurBlogs from './OurBlogs';
 import OurFacilities from './OurFacilities';
 import PromotionalVideo from './PromotionalVideo';
 import HomesSuites from './RoomsSuites';
@@ -23,6 +24,7 @@ const Home = () => {
           <CheckOut></CheckOut>
           <ServicesTheme></ServicesTheme>
           <Testimonials></Testimonials>
+          <OurBlogs></OurBlogs>
           <Footer></Footer>
           <CopyRight></CopyRight>
         </div>

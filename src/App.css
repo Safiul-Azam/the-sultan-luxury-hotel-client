@@ -1,33 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600&family=Gilda+Display&display=swap');
 
- h2,h3,h4,span{
-  
+h2,
+h3,
+h4,
+span {
+
   font-family: 'Gilda Display', serif;
 }
-p,li,ul,button,small{
+
+p,
+li,
+ul,
+button,
+small {
   font-family: 'Barlow Condensed', sans-serif;
 }
-li{
+
+li {
   list-style: none;
 }
+
 .swiper-pagination-bullet {
   width: 12px !important;
   height: 12px !important;
   background-color: white !important;
 
 }
-.swiper-pagination-bullet-active{
-  background-color:#aa8453 !important;
 
+.swiper-pagination-bullet-active {
+  background-color: #aa8453 !important;
 }
+.swiper-button-prev,.swiper-button-next{
+  width: 20px !important;
+  height: 20px !important;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  padding: 18px;
+  top: 40% !important;
+}
+.swiper-button-prev::after,.swiper-button-next::after{
+  color:#FFFFFF !important;
+  font-size: 15px !important;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-.swiper-pagination-bullet{
-  margin-top:20px;
+
+.swiper-pagination-bullet {
+  margin-top: 20px;
   font-size: 12px;
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

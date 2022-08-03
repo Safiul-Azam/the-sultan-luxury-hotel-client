@@ -1,0 +1,47 @@
+[
+    {
+        "id":1,
+        "serviceName": "Restaurant",
+        "description": "Historic restaurant renovated",
+        "img":"https://i.ibb.co/y0jNL2t/1.jpg"
+    },
+    {
+        "id":2,
+        "serviceName": "Spa",
+        "description": "Benefits of Spa Treatments",
+        "img":"https://i.ibb.co/gS3J4Rr/2.jpg"
+    },
+    {
+        "id":3,
+        "serviceName": "Bathrooms",
+        "description": "Hotel Bathroom Collections",
+        "img":"https://i.ibb.co/kh1XQqs/3.jpg"
+    },
+    {
+        "id":4,
+        "serviceName": "Health",
+        "description": "Weight Loss with Fitness Health Club",
+        "img":"https://i.ibb.co/VqdCQHK/4.jpg"
+    },
+    {
+        "id":5,
+        "serviceName": "Design",
+        "description": "Retro Lighting Design in The Hotels",
+        "img":"https://i.ibb.co/DMKWBb4/5.jpg"
+    },
+    {
+        "id":6,
+        "serviceName": "Health",
+        "description": "Benefits of Swimming for Your Health",
+        "img":"https://i.ibb.co/mFGy4g2/6.jpg"
+    }
+]
+
+
+
+
+
+
+
+
+
