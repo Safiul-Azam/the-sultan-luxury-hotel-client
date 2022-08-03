@@ -1,5 +1,4 @@
 import React from 'react';
-import CustomLink from '../Shared/CustomLink';
 import { Link } from "react-router-dom";
 import { FiPhoneCall } from 'react-icons/fi';
 
@@ -33,7 +32,6 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            
         </footer>
     );
 };
