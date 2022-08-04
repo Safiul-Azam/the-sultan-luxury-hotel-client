@@ -17,7 +17,7 @@ const Testimonials = () => {
             .then(data => setTestimonials(data))
     }, [])
     return (
-        <div className='static text-white' style={
+        <div className='text-white' style={
             {
                 background: `linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url(${img})`,
                 backgroundPosition: 'center',
@@ -28,7 +28,7 @@ const Testimonials = () => {
             <div className='w-[688px] mx-auto py-20 text-white'>
                 <p style={{ letterSpacing: '5px' }} className='text-sm uppercase mb-3'>TESTIMONIALS</p>
                 <h2 className='text-3xl mb-3'>What Client's Say?</h2>
-                <hr className='w-20' />
+                <hr className='w-16 opacity-25' />
                 <Swiper
                     spaceBetween={30}
                     pagination={{
@@ -43,7 +43,7 @@ const Testimonials = () => {
                             key={testimonial.id}
                             testimonial={testimonial}
                         >
-                            <p className='text-lg mt-3 mb-8'>{testimonial.description}</p>
+                            <p className='text-lg tracking-wide mt-3 mb-8'>{testimonial.description}</p>
                             <div className='mb-16'>
                                 <div className='flex  justify-between items-center'>
                                     <div className='flex gap-4 items-center'>
@@ -53,14 +53,14 @@ const Testimonials = () => {
                                             </div>
                                         </div>
                                         <div>
-                                            <div className='flex text-secondary'>
+                                            <div className='flex text-secondary mb-1'>
                                                 <GrStar />
                                                 <GrStar />
                                                 <GrStar />
                                                 <GrStar />
                                                 <GrStar />
                                             </div>
-                                            <p className=' uppercase' style={{ letterSpacing: '5px' }}>{testimonial.reviewMan}</p>
+                                            <p className=' uppercase my-1' style={{ letterSpacing: '3px' }}>{testimonial.reviewMan}</p>
                                             <p>{testimonial.reviewTitle}</p>
                                         </div>
                                     </div>

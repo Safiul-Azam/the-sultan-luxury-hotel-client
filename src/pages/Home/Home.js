@@ -1,6 +1,7 @@
 import React from 'react';
 import CopyRight from '../Shared/CopyRight';
 import Banner from './Banner';
+import CheckForm from './CheckForm';
 import CheckOut from './CheckOut';
 import EnjoyLuxury from './EnjoyLuxury';
 import ExtraServices from './ExtraServices';
@@ -25,6 +26,7 @@ const Home = () => {
           <ServicesTheme></ServicesTheme>
           <Testimonials></Testimonials>
           <OurBlogs></OurBlogs>
+          <CheckForm></CheckForm>
           <Footer></Footer>
           <CopyRight></CopyRight>
         </div>
