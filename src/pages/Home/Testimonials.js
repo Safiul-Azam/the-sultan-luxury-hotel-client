@@ -12,7 +12,7 @@ import quot from '../../images/icons/quot.png'
 const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([])
     useEffect(() => {
-        fetch('Testimonials.json')
+        fetch('http://localhost:5000/testimonials')
             .then(res => res.json())
             .then(data => setTestimonials(data))
     }, [])

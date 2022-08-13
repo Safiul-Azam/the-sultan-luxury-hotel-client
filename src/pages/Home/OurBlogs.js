@@ -7,12 +7,12 @@ import { Navigation } from "swiper";
 const OurBlogs = () => {
     const [blogs, setBlogs] = useState([])
     useEffect(() => {
-        fetch('blogs.json')
+        fetch('http://localhost:5000/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])
     return (
-        <div className='bg-[#222] py-28 mb-3'>
+        <div className='bg-[#222] py-28'>
             <div className='w-[1150px] mx-auto'>
                 <p style={{ letterSpacing: '5px' }} className='text-sm text-primary uppercase mb-3'>HOTEL BLOG</p>
                 <h2 className='text-5xl mb-5 text-white'>Our News</h2>

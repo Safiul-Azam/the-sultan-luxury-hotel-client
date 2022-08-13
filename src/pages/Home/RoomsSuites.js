@@ -5,7 +5,7 @@ import HomeSuiteTwo from './RoomSuiteTwo';
 const HomesSuites = () => {
     const [romes, setRomes] = useState([])
     useEffect(() => {
-        fetch('Books.json')
+        fetch('http://localhost:5000/roomsSuites')
             .then(res => res.json())
             .then(data => setRomes(data))
     }, [])
