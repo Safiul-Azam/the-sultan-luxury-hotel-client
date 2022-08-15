@@ -1,0 +1,73 @@
+[
+    {
+        "id":1,
+        "teamMember": "Valentina Karla",
+        "position": "General Manager",
+        "email": "valentina@hotel.com",
+        "instagram": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "facebook": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "pinterest": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "twitter": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "img": "https://i.ibb.co/FmFdY9x/1.jpg"
+    },
+    {
+        "id":2,
+        "teamMember": "Micheal White",
+        "position": "Guest Service Department",
+        "email": "micheal@hotel.com",
+        "instagram": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "facebook": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "pinterest": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "twitter": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "img": "https://i.ibb.co/N9tGZkT/2.jpg"
+    },
+    {
+        "id":3,
+        "teamMember": "Olivia Martin",
+        "position": "Reservations Manager",
+        "email": "olivia@hotel.com",
+        "instagram": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "facebook": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "pinterest": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "twitter": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "img": "https://i.ibb.co/gM3z8tf/3.jpg"
+    },
+    {
+        "id":4,
+        "teamMember": "Mariana Dana",
+        "position": "F&B Manager",
+        "email": "mariana@hotel.com",
+        "instagram": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "facebook": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "pinterest": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "twitter": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "img": "https://i.ibb.co/0y9cYT0/4.jpg"
+    },
+    {
+        "id":5,
+        "teamMember": "Enrico Brown",
+        "position": "Head Chef",
+        "email": "enrico@hotel.com",
+        "instagram": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "facebook": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "pinterest": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "twitter": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "img": "https://i.ibb.co/L8xMkGp/5.jpg"
+    },
+    {
+        "id":6,
+        "teamMember": "Victoria Dan",
+        "position": "Meetings and Events Manager",
+        "email": "victoria@hotel.com",
+        "instagram": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "facebook": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "pinterest": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "twitter": "https://www.linkedin.com/in/safiul-azam-b2a44a212/",
+        "img": "https://i.ibb.co/t4KcPcy/6.jpg"
+    }
+]
+
+
+
+
+

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import slider1 from '../../images/banner/1.jpg'
 import Navbar from '../Shared/Navbar';
 import { GrStar } from "react-icons/gr";
