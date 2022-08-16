@@ -43,7 +43,7 @@ const MeetTeam = () => {
 
                                     <div className='group-hover:top-1 py-8 px-16 group-hover:left-12 top-28 group-hover:duration-500 bg-white absolute duration-500 left-12'>
                                         <div className=''>
-                                            <ul class="flex leading-none' justify-center items-center space-x-4 text-lg text-primary">
+                                            <ul class="flex leading-none justify-center items-center space-x-4 text-lg text-primary">
                                                 <a href={meetTeam.instagram} class=" mb-4">
                                                     <FaInstagram className=''/>
                                                 </a>
@@ -62,6 +62,7 @@ const MeetTeam = () => {
                                     </div>
                                 </div>
                             </div>
+                            
                         </SwiperSlide>)
                     }
                 </Swiper>
