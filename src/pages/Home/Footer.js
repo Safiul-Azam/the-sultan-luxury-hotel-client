@@ -11,12 +11,12 @@ const Footer = () => {
             <div class="w-[1100px] mx-auto grid grid-cols-3 gap-24 ">
                 <div>
                     <h2 class="text-white text-2xl">About Hotel</h2>
-                    <p class="text-[#adadad] my-8 text-lg">Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>
-                    <button class="px-6 flex  items-center text-[#adadad] text-left py-3 text-lg rounded-none bg-[#282828]">English <BsGlobe className='ml-8' /></button>
+                    <p class="text-accent my-8 text-lg">Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>
+                    <button class="px-6 flex  items-center text-accent text-left py-3 text-sm rounded-none bg-[#282828]">English <BsGlobe className='ml-8' /></button>
                 </div>
                 <div className='ml-20'>
                     <h2 class="text-white text-2xl mb-5 tracking-wider">Explore</h2>
-                    <ul className='text-[#adadad] tracking-wider text-lg space-y-1'>
+                    <ul className='text-accent tracking-wider text-lg space-y-1'>
                         <li><Link to='/'></Link></li>
                         <li><Link to='/about'>Home</Link></li>
                         <li><Link to='/room'>Room & Suites</Link></li>
@@ -28,7 +28,7 @@ const Footer = () => {
                 </div>
                 <div className='text-white mr-16'>
                     <h2 class="text-white text-2xl mb-5">Contact</h2>
-                    <p class="link link-hover mb-4 text-[#adadad] text-lg">1616 Broadway NY, New York 10001 United States of America</p>
+                    <p class="link link-hover mb-4 text-accent text-lg">1616 Broadway NY, New York 10001 United States of America</p>
                     <div className='flex justify-start items-center mb-4'>
                         <FiPhoneCall className='text-2xl mr-2 text-white' />
                         <h2 className='block text-2xl text-white tracking-widest'>855 100 4444</h2>

@@ -19,11 +19,11 @@ const ExtraServices = () => {
                 <div>
                     <p style={{ letterSpacing: '6px' }} className='text-lg text-primary uppercase mb-4'>BEST PRICES</p>
                     <h2 className='text-5xl mb-7 text-white'>Extra Services</h2>
-                    <p className='text-xl mb-4 text-[#adadad]'>The best prices for your relaxing vacation. The utanislen quam nestibulum ac quame odion elementum sceisue the aucan.</p>
-                    <p className='text-xl mb-6 text-[#adadad]'>Orci varius natoque penatibus et magnis disney parturient monte nascete ridiculus mus nellen etesque habitant morbine.</p>
+                    <p className='text-xl mb-4 text-accent'>The best prices for your relaxing vacation. The utanislen quam nestibulum ac quame odion elementum sceisue the aucan.</p>
+                    <p className='text-xl mb-6 text-accent'>Orci varius natoque penatibus et magnis disney parturient monte nascete ridiculus mus nellen etesque habitant morbine.</p>
                     <div className='flex justify-start items-center'>
                         <FiPhoneCall className='text-4xl mr-8 text-primary' />
-                        <p className='text-lg text-[#adadad]'>For information <p className='block text-2xl text-primary tracking-widest'>855 100 4444</p></p>
+                        <p className='text-lg text-accent'>For information <p className='block text-2xl text-primary tracking-widest'>855 100 4444</p></p>
                     </div>
                 </div>
                 <div className='col-span-2'>
