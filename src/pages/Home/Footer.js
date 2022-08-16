@@ -13,14 +13,14 @@ const Footer = () => {
                 </div>
                 <div className='text-accent'>
                     <h2 class="text-white text-2xl mb-5">Explore</h2>
-                    <ul className='text-accent'>
-                        <li><Link className='text-accent' to='/'></Link></li>
-                        <li><Link className='text-accent' to='/about'>ABOUT</Link></li>
-                        <li><Link className='text-accent' to='/room'>ROOM & SUITES</Link></li>
-                        <li><Link className='text-accent' to='/restaurant'>RESTAURANT</Link></li>
-                        <li><Link className='text-accent' to='/spa'>SPA</Link></li>
-                        <li><Link className='text-accent' to='/gallery'>GALLERY</Link></li>
-                        <li><Link className='text-accent' to='/news'>CONTACT</Link></li>
+                    <ul className='text-[#adadad]'>
+                        <li><Link to='/'></Link></li>
+                        <li><Link to='/about'>ABOUT</Link></li>
+                        <li><Link to='/room'>ROOM & SUITES</Link></li>
+                        <li><Link to='/restaurant'>RESTAURANT</Link></li>
+                        <li><Link to='/spa'>SPA</Link></li>
+                        <li><Link to='/gallery'>GALLERY</Link></li>
+                        <li><Link to='/news'>CONTACT</Link></li>
                     </ul>
                 </div>
                 <div className='text-white'>

@@ -31,10 +31,8 @@ const ExtraServices = () => {
                         spaceBetween={30}
                         pagination={{
                             clickable: true,
-
                         }}
                         modules={[Pagination]}
-                        className=""
                     >
                         <SwiperSlide className='-top-12'>
                             <div className='grid grid-cols-2 gap-8'>

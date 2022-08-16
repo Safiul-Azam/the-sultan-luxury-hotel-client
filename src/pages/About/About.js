@@ -4,6 +4,7 @@ import EnjoyLuxury from '../Home/EnjoyLuxury';
 import ExtraServices from '../Home/ExtraServices';
 import OurFacilities from '../Home/OurFacilities';
 import Navbar from '../Shared/Navbar';
+import MeetTeam from './MeetTeam';
 
 const About = () => {
     return (
@@ -27,6 +28,7 @@ const About = () => {
             <EnjoyLuxury></EnjoyLuxury>
             <ExtraServices></ExtraServices>
             <OurFacilities></OurFacilities>
+            <MeetTeam></MeetTeam>
         </div>
     );
 };

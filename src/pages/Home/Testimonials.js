@@ -6,7 +6,6 @@ import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { GrStar } from 'react-icons/gr';
-import { FaQuoteRight } from 'react-icons/fa';
 import quot from '../../images/icons/quot.png'
 
 const Testimonials = () => {
