@@ -10,7 +10,7 @@ const EnjoyLuxury = () => {
             <div class="hero-content flex-col lg:flex-row-reverse relative justify-center">
                 <img src={Image1} class="w-1/4 shadow-2xl" alt='' />
                 <img src={Image2} class="w-1/4 shadow-2xl relative top-24" alt='' />
-                <div className='mr-'>
+                <div className=''>
                     <div className='flex text-xl mb-4 text-secondary'>
                         <GrStar />
                         <GrStar />

@@ -23,7 +23,7 @@ const HomeSuite = ({ rome }) => {
                         <MdDinnerDining />
                         <GiTowel />
                     </div>
-                    <button class="text-right flex items-center text-lg uppercase tracking-widest font-semibold">Details <BiRightArrowAlt className='mt-1'></BiRightArrowAlt></button>
+                    <button class="text-right flex items-center text-lg uppercase tracking-widest font-semibold">Details <BiRightArrowAlt className='mt-1'/></button>
                 </div>
             </div>
         </div>
