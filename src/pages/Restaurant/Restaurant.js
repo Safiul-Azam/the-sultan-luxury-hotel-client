@@ -1,14 +1,14 @@
 import React from 'react';
 import RestaurantBanner from './RestaurantBanner';
 import RestaurantInfo from './RestaurantInfo';
-import RestaurantMenu from './RestaurantMenu';
+import RestaurantMenus from './RestaurantMenus';
 
 const Restaurant = () => {
     return (
         <div>
             <RestaurantBanner></RestaurantBanner>
             <RestaurantInfo></RestaurantInfo>
-            <RestaurantMenu></RestaurantMenu>
+            <RestaurantMenus></RestaurantMenus>
         </div>
     );
 };
