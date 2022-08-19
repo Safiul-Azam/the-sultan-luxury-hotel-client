@@ -1,17 +1,22 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
+
 import RestaurantSingleMenu from './RestaurantSingleMenu';
 
 const RestaurantMenu = () => {
     const [menus, setMenus] = useState([])
     const [clickBtn, setClickBtn] = useState('Salads')
+    const [cus, setCus] = useState(false)
     useEffect(() => {
         fetch('http://localhost:5000/restaurantMenu')
             .then(res => res.json())
             .then(data => setMenus(data))
     }, [])
-    console.log(menus);
     const selected = menus.filter(menu => menu?.menuName === clickBtn)
     return (
         <div className='bg-[#222222] py-24'>
@@ -20,23 +25,34 @@ const RestaurantMenu = () => {
                 <h2 className='text-4xl mb-7 text-center text-white'>Restaurant Menu</h2>
 
 
-                <div className='grid grid-cols-6 w-3/4 mx-auto '>
-                    {
-                        menus.map(menu => {
-                            return <div key={menu.id}>
-                                <button onClick={() => setClickBtn(menu.menuName)} className='btn btn-outline-primary rounded-none'>{menu.menuName}</button>
-                            </div>
-                        })
-                    }
+                <div className='w-5/6 mx-auto'>
+                    <Swiper
+                        slidesPerView={4}
+                        slidesPerGroup={1}
+                        parallax={true}
+
+                        loop={true}
+                        loopFillGroupWithBlank={true}
+                        navigation={true}
+                        modules={[Navigation]}
+                        className="mySwiper mb-16 menuSlide"
+                    >
+                        {
+                            menus.map(menu => <SwiperSlide onClick={() => setCus(!cus)} className={cus ? "border text-center py-3" : 'border-none text-center py-3'}>
+                                <div>
+                                    <button onClick={() => setClickBtn(menu.menuName)} className='text-white text-3xl'>{menu.menuName}</button>
+                                </div>
+                            </SwiperSlide>
+                            )
+                        }
+                    </Swiper>
                 </div>
-                <div>
-                    {
-                        selected.map(single => <RestaurantSingleMenu
-                            key={single.id}
-                            single={single}
-                        ></RestaurantSingleMenu>)
-                    }
-                </div>
+                {
+                    selected.map(single => <RestaurantSingleMenu
+                        key={single.id}
+                        single={single}
+                    ></RestaurantSingleMenu>)
+                }
             </div>
         </div>
     );
