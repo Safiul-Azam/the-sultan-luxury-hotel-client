@@ -10,6 +10,7 @@ const Navbar = () => {
     <li><CustomLink to='/restaurant'>RESTAURANT</CustomLink></li>
     <li><CustomLink to='/spa'>SPA</CustomLink></li>
     <li><CustomLink to='/contact-us'>CONTACT</CustomLink></li>
+    <li><CustomLink to='/login'>LOGIN</CustomLink></li>
     </>
     
     return (
