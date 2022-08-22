@@ -17,6 +17,7 @@ const spaBanners = [
 const SpaBanner = () => {
     return (
         <div className=''>
+            <Navbar></Navbar>
         <Swiper
             centeredSlides={true}
             slidesPerView={1}
@@ -46,7 +47,6 @@ const SpaBanner = () => {
                         }
                     }
                 >
-                    <Navbar></Navbar>
                 </SwiperSlide>)
             }
         </Swiper>

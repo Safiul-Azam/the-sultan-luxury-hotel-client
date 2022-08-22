@@ -1,15 +1,16 @@
 import React from 'react';
-import slider1 from '../../images/banner/1.jpg'
+import slider1 from '../../images/banner/3.jpg'
 import Navbar from '../Shared/Navbar';
 import { GrStar } from "react-icons/gr";
 
 const Banner = () => {
   return (
-    <div className='h-screen pt-8 mix-blend-multiply bg-black-400' style={
+    <div className='h-screen pt-32 mix-blend-multiply bg-black-400' style={
       {
         background: `linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url(${slider1})`,
         backgroundPosition: 'center',
-        backgroundSize: 'cover'
+        backgroundSize: 'cover',
+        backgroundRepeat:'no-repeat'
       }
     }>
       <Navbar></Navbar>

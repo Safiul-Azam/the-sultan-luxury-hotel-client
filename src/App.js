@@ -8,6 +8,7 @@ import CopyRight from './pages/Shared/CopyRight';
 import About from './pages/About/About';
 import Restaurant from './pages/Restaurant/Restaurant';
 import Spa from './pages/Spa/Spa';
+import ContactUs from './pages/ContactUs/ContactUs';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/spa" element={<Spa />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path='*' element={<NoFound />} />
       </Routes>
       <CheckForm></CheckForm>

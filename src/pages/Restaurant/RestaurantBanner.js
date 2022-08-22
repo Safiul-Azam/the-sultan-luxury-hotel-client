@@ -15,24 +15,26 @@ const banners = [
 
 const RestaurantBanner = () => {
     return (
-        <div className=''>
+        <div>
+            <Navbar></Navbar>
             <Swiper
                 centeredSlides={true}
                 slidesPerView={1}
-                    slidesPerGroup={1}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                      }}
-                    
-                    loop={true}
-                    loopFillGroupWithBlank={true}
+                slidesPerGroup={1}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+
+                loop={true}
+                loopFillGroupWithBlank={true}
                 pagination={{
                     clickable: true,
                 }}
                 modules={[Autoplay, Pagination]}
                 className="mySwiper h-screen"
             >
+
                 {
                     banners.map(banner => <SwiperSlide
                         key={banner.id}
@@ -45,7 +47,6 @@ const RestaurantBanner = () => {
                             }
                         }
                     >
-                        <Navbar></Navbar>
                     </SwiperSlide>)
                 }
             </Swiper>

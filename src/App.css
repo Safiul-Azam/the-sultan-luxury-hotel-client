@@ -36,7 +36,7 @@ li {
   border: 1px solid #ffffff;
   border-radius: 50%;
   padding: 18px;
-  top: 55% !important;
+  top: 40% !important;
 }
 .swiper-button-prev::after,.swiper-button-next::after{
   color:#FFFFFF !important;
