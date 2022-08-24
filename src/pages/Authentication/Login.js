@@ -1,11 +1,14 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../../firebase.init';
+import Spinner from '../Shared/Spinner';
 import Authentication from './Authentication';
 
 const Login = () => {
+    const navigate = useNavigate()
+    const location = useLocation()
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         signInWithEmailAndPassword,
@@ -13,6 +16,17 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+      const from = location?.state?.from?.pathName || '/'
+      let errorMessage;
+    if(error){
+        errorMessage = <p className='text-red-700'>{error.message}</p>
+    }
+      if(user){
+        navigate(from, {replace:true})
+      }
+      if(loading){
+        return <Spinner></Spinner>
+      }
     const onSubmit = data => { 
         signInWithEmailAndPassword(data.email, data.password)
      }
@@ -71,6 +85,7 @@ const Login = () => {
                                 {errors.password?.type === 'minLength' && <span className="label-text-alt text-error">{errors.password.message}</span>}
                             </label>
                         </div>
+                        {errorMessage}
                         <input className='py-3 px-8 text-lg mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-full' type="submit" value='LOGIN' />
                         <p className='text-sm mt-6'>New to Wooden tools? <Link className='text-primary' to='/signup'>Create new account</Link></p>
                     </form>

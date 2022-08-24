@@ -4,9 +4,10 @@ import { BiBed } from "react-icons/bi";
 import { FaBath } from "react-icons/fa";
 import { MdDinnerDining } from "react-icons/md";
 import { GiTowel } from "react-icons/gi";
+import { Link } from 'react-router-dom';
 
 const HomeSuite = ({ rome }) => {
-    const { roomName, perDay, shift, img } = rome
+    const { roomName, perDay, shift, img, _id } = rome
     return (
         <div class="relative group">
             <div className='overflow-hidden'>
@@ -23,7 +24,7 @@ const HomeSuite = ({ rome }) => {
                         <MdDinnerDining />
                         <GiTowel />
                     </div>
-                    <button class="text-right flex items-center text-lg uppercase tracking-widest font-semibold">Details <BiRightArrowAlt className='mt-1'/></button>
+                    <Link to={`/room&suites/:${_id}`} class="text-right flex items-center text-lg uppercase tracking-widest font-semibold">Details <BiRightArrowAlt className='mt-1'/></Link>
                 </div>
             </div>
         </div>

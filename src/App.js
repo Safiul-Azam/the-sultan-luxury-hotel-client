@@ -12,6 +12,7 @@ import ContactUs from './pages/ContactUs/ContactUs';
 import Login from './pages/Authentication/Login';
 import Signup from './pages/Authentication/Signup';
 import { ToastContainer } from 'react-toastify';
+import RoomDetails from './pages/Home/RoomDetails';
 
 
 function App() {
@@ -22,12 +23,13 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/spa" element={<Spa />} />
+        <Route path='/rome&suites/:romeId' element={<RoomDetails/>}/>
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-
         <Route path='*' element={<NoFound />} />
       </Routes>
+      <ToastContainer align='center'/>
       <CheckForm></CheckForm>
       <Footer></Footer>
       <CopyRight></CopyRight>

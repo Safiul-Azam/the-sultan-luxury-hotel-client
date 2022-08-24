@@ -1,22 +1,42 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Authentication from './Authentication';
+import Spinner from '../Shared/Spinner';
+import {  toast } from 'react-toastify';
 
 const Login = () => {
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const navigate = useNavigate()
+    const location = useLocation()
+    const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-    const onSubmit = data => { 
-        createUserWithEmailAndPassword(data.email, data.password)
-        reset()
-     }
+    const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
+    const from = location?.state?.from?.pathName || '/'
+    let errorMessage;
+    if(error || UpdateError){
+        errorMessage = <p className='text-red-700'>{error.message || UpdateError.message}</p>
+    }
+    if (user) {
+        navigate(from,{replace:true})
+    }
+    if (loading || updating) {
+        return <Spinner></Spinner>
+    }
+    const onSubmit = async data => {
+        const displayName = data.displayName
+        await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({displayName});
+        toast.success('Sign up is completed')
+
+    }
     return (
         <div>
             <Authentication></Authentication>
@@ -88,6 +108,7 @@ const Login = () => {
                                 {errors.password?.type === 'minLength' && <span className="label-text-alt text-error">{errors.password.message}</span>}
                             </label>
                         </div>
+                        {errorMessage}
                         <input className='py-3 px-8 text-lg mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-full' type="submit" value='SIGN UP' />
                         <p className='mt-6 text-sm'>Already have an account? <Link className='text-primary' to='/login'>please Login</Link></p>
                     </form>
