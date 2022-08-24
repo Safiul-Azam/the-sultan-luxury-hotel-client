@@ -6,8 +6,9 @@ import { MdDinnerDining } from "react-icons/md";
 import { GiTowel } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 
-const HomeSuite = ({ rome }) => {
-    const { roomName, perDay, shift, img, _id } = rome
+const RoomSuiteThree = ({ room }) => {
+    console.log(room);
+    const { roomName, perDay, shift, img, _id } = room
     return (
         <div class="relative group">
             <div className='overflow-hidden'>
@@ -31,4 +32,4 @@ const HomeSuite = ({ rome }) => {
     );
 };
 
-export default HomeSuite;
+export default RoomSuiteThree;

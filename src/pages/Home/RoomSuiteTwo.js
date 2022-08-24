@@ -4,8 +4,8 @@ import { FaBath } from 'react-icons/fa';
 import { GiTowel } from 'react-icons/gi';
 import { MdDinnerDining } from 'react-icons/md';
 
-const HomeSuiteTwo = ({ rome }) => {
-    const { roomName, perDay, shift, img } = rome
+const RoomSuiteTwo = ({ room }) => {
+    const { roomName, perDay, shift, img } = room
     return (
         <div class="relative group">
             <div className='overflow-hidden'>
@@ -29,4 +29,4 @@ const HomeSuiteTwo = ({ rome }) => {
     );
 };
 
-export default HomeSuiteTwo;
+export default RoomSuiteTwo;

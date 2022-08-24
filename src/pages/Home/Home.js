@@ -6,7 +6,7 @@ import ExtraServices from './ExtraServices';
 import OurBlogs from './OurBlogs';
 import OurFacilities from './OurFacilities';
 import PromotionalVideo from './PromotionalVideo';
-import HomesSuites from './RoomsSuites';
+import RoomsSuites from './RoomsSuites';
 import ServicesTheme from './ServicesTheme';
 import Testimonials from './Testimonials';
 
@@ -15,7 +15,7 @@ const Home = () => {
         <div>
           <Banner></Banner>
           <EnjoyLuxury></EnjoyLuxury>
-          <HomesSuites></HomesSuites>
+          <RoomsSuites></RoomsSuites>
           <ExtraServices></ExtraServices>
           <PromotionalVideo></PromotionalVideo>
           <OurFacilities></OurFacilities>
