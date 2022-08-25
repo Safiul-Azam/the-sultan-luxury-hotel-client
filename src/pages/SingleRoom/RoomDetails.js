@@ -12,12 +12,6 @@ import icon3 from '../../images/icons/icon9.png'
 import icon4 from '../../images/icons/icon10.png'
 import icon5 from '../../images/icons/icon11.png'
 import icon6 from '../../images/icons/icon12.png'
-// https://i.ibb.co/Sc8xSZk/icon7.png
-// https://i.ibb.co/WgQCrwz/icon8.png
-// https://i.ibb.co/ZBshmBC/icon9.png
-// https://i.ibb.co/mTmcvz7/icon10.png
-// https://i.ibb.co/3kxr3c0/icon11.png
-// https://i.ibb.co/WxnSzYX/icon12.png
 
 const amenities = [
     { id: 1, img: icon1, text: '1-2 Persons' },

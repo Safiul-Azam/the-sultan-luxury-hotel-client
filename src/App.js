@@ -12,7 +12,8 @@ import ContactUs from './pages/ContactUs/ContactUs';
 import Login from './pages/Authentication/Login';
 import Signup from './pages/Authentication/Signup';
 import { ToastContainer } from 'react-toastify';
-import RoomDetails from './pages/Home/RoomDetails';
+import RoomDetails from './pages/SingleRoom/RoomDetails';
+import RequireAuth from './pages/Authentication/RequireAuth';
 
 
 function App() {
@@ -23,13 +24,17 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/spa" element={<Spa />} />
-        <Route path='/room&suites/:roomId' element={<RoomDetails/>}/>
+         <Route path='//room&suites/:roomId' element={
+          <RequireAuth>
+            <RoomDetails></RoomDetails>
+          </RequireAuth>
+        }></Route>
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path='*' element={<NoFound />} />
       </Routes>
-      <ToastContainer align='center'/>
+      <ToastContainer align='center' />
       <CheckForm></CheckForm>
       <Footer></Footer>
       <CopyRight></CopyRight>

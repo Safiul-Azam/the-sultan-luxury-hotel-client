@@ -25,7 +25,7 @@ const RoomSuiteThree = ({ room }) => {
                         <MdDinnerDining />
                         <GiTowel />
                     </div>
-                    <Link to={`/room&suites/${_id}`} class="text-right flex items-center text-lg uppercase tracking-widest font-semibold">Details<BiRightArrowAlt className='mt-1'/></Link>
+                    <Link to={`/room&suites/${_id}`} class="text-right flex items-center text-sm uppercase tracking-widest font-semibold">Details<BiRightArrowAlt className='mt-1'/></Link>
                 </div>
             </div>
         </div>
