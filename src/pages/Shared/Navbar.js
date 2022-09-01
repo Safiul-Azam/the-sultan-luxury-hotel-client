@@ -1,12 +1,13 @@
 import React from 'react';
 import CustomLink from './CustomLink';
 import { Link } from "react-router-dom";
-import { useAuthState  } from 'react-firebase-hooks/auth';
 import {  signOut } from 'firebase/auth';
 import auth from '../../firebase.init';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const Navbar = () => {
-    const [user] = useAuthState(auth)
+    const {user} = useContext(AuthContext)
     const menu = <>
     <li><CustomLink to='/'>HOME</CustomLink></li>
     <li><CustomLink to='/about'>ABOUT</CustomLink></li>
