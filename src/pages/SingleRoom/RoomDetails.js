@@ -12,6 +12,7 @@ import icon3 from '../../images/icons/icon9.png'
 import icon4 from '../../images/icons/icon10.png'
 import icon5 from '../../images/icons/icon11.png'
 import icon6 from '../../images/icons/icon12.png'
+import useFetch from '../../hooks/useFetch';
 
 const amenities = [
     { id: 1, img: icon1, text: '1-2 Persons' },
@@ -24,14 +25,9 @@ const amenities = [
 
 const RoomDetails = () => {
     const { roomId } = useParams()
-    const [roomDetails, setRoomDetails] = useState({})
-    useEffect(() => {
-        fetch(`http://localhost:5000/roomsSuites/${roomId}`)
-            .then(res => res.json())
-            .then(data => setRoomDetails(data))
-    }, [roomId])
-    console.log(roomDetails);
-    const { roomName, extraBeds, pets, checkIn, checkOut, instructions, description1, description2 } = roomDetails
+    const { data, loading, error } = useFetch(`http://localhost:5000/api/rooms/${roomId}`)
+    console.log(data);
+    const { title, extraBeds, pets, checkIn, checkOut, instructions, description } = data
     return (
         <div>
             <RoomDetailsBanner />
@@ -44,11 +40,14 @@ const RoomDetails = () => {
                     <GrStar />
                 </div>
                 <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>LUXURY HOTEL</p>
-                <h2 className='text-5xl mb-7 text-black'>{roomName}</h2>
+                <h2 className='text-5xl mb-7 text-black'>{title}</h2>
                 <div className='grid grid-cols-3'>
                     <div className='col-span-2'>
-                        <p className='text-xl text-[#777] tracking-wide'>{description1}</p>
-                        <p className='text-xl text-[#777] my-12 tracking-wide'>{description2}</p>
+                        {description?.map((desc, index) => (
+                            <div key={index} className='mb-6'>
+                                <p className='text-xl text-[#777] tracking-wide'>{desc}</p>
+                            </div>
+                        ))}
                         <div className='flex space-x-32'>
                             <div className='space-y-5'>
                                 <h2 className='text-2xl'>Check-in</h2>

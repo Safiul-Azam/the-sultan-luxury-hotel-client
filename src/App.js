@@ -24,9 +24,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/spa" element={<Spa />} />
-         <Route path='//room&suites/:roomId' element={
+         <Route path='/rooms/:roomId' element={
           <RequireAuth>
-            <RoomDetails></RoomDetails>
+            <RoomDetails />
           </RequireAuth>
         }></Route>
         <Route path="/contact-us" element={<ContactUs />} />

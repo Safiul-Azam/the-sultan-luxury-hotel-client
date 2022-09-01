@@ -1,11 +1,11 @@
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import auth from '../../firebase.init';
+import { AuthContext } from '../../context/AuthContext';
 import Spinner from '../Shared/Spinner';
 
 const RequireAuth = ({children}) => {
-    const [user, loading] = useAuthState(auth)
+    const {user, loading} = useContext(AuthContext)
     const location = useLocation()
     if(loading){
         return <Spinner></Spinner>

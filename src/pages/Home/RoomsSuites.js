@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useFetch from '../../hooks/useFetch';
 import RoomSuiteThree from './RoomSuiteThree';
 import RoomSuiteTwo from './RoomSuiteTwo';
 
 const RoomsSuites = () => {
-    const [rooms, setRooms] = useState([])
-    useEffect(() => {
-        fetch('Books.json')
-            .then(res => res.json())
-            .then(data => setRooms(data))
-    }, [])
+    const {data, loading, error} = useFetch('http://localhost:5000/api/rooms')
+    console.log(data);
     return (
         <div id='room&suites' className='py-24 bg-neutral'>
             <div className='w-[1150px] mx-auto'>
@@ -16,7 +13,7 @@ const RoomsSuites = () => {
                 <h2 className='text-5xl mb-7 text-black'>Rooms & Suites</h2>
                 <div className='grid grid-cols-3 gap-8'>
                     {
-                        rooms?.slice(0, 3)?.map(room => <RoomSuiteThree
+                        data?.slice(0, 3)?.map(room => <RoomSuiteThree
                             key={room.id}
                             room={room}
                         ></RoomSuiteThree>)
@@ -25,7 +22,7 @@ const RoomsSuites = () => {
                 </div>
                 <div className='grid grid-cols-2 gap-8 mt-8 w-full'>
                     {
-                        rooms?.slice(3, 5)?.map(room => <RoomSuiteTwo
+                        data?.slice(3, 5)?.map(room => <RoomSuiteTwo
                         key={room.id}
                         room={room}
                         ></RoomSuiteTwo>)
