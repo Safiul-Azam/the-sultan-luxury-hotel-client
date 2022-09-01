@@ -1,13 +1,16 @@
 import React from 'react';
 import CustomLink from './CustomLink';
 import { Link } from "react-router-dom";
-import {  signOut } from 'firebase/auth';
 import auth from '../../firebase.init';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext)
+    const {user, dispatch} = useContext(AuthContext)
+    const logOut = ()=>{
+        dispatch({type:'LOGOUT'})
+        localStorage.removeItem()
+    }
     const menu = <>
     <li><CustomLink to='/'>HOME</CustomLink></li>
     <li><CustomLink to='/about'>ABOUT</CustomLink></li>
@@ -16,7 +19,7 @@ const Navbar = () => {
     <li><CustomLink to='/spa'>SPA</CustomLink></li>
     <li><CustomLink to='/contact-us'>CONTACT</CustomLink></li>
     { user?
-        <li><CustomLink to='/login'><button onClick={()=>signOut(auth)}>SIGN OUT</button></CustomLink></li>:
+        <li><CustomLink to='/login'><button onClick={logOut}>SIGN OUT</button></CustomLink></li>:
         <li><CustomLink to='/login'>LOGIN</CustomLink></li>}
     </>
     
