@@ -17,12 +17,12 @@ const SpaEtiquette = () => {
                 <div className='space-y-5'>
                     {
                         etiquettes.map(etiquette => <div>
-                            <div tabindex="0" class="collapse peer bg-white px-8 py-3">
-                            <input type="checkbox" class="peer collapse-plus" /> 
-                                <div class="collapse-title text-2xl font-medium">
+                            <div tabindex="0" className="collapse peer bg-white px-8 py-3">
+                            <input type="checkbox" className="peer collapse-plus" /> 
+                                <div className="collapse-title text-2xl font-medium">
                                     <h3>{etiquette.question}</h3>
                                 </div>
-                                <div class="collapse-content">
+                                <div className="collapse-content">
                                     <p className='text-xl text-gray-500'>{etiquette.answer}</p>
                                 </div>
                             </div>

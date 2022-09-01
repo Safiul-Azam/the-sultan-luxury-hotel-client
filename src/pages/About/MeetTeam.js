@@ -37,27 +37,27 @@ const MeetTeam = () => {
                         meetTeams.map(meetTeam => <SwiperSlide
                             key={meetTeam.id}
                         >
-                            <div class="group">
+                            <div className="group">
                                 <div className='group'>
                                     <img src={meetTeam.img} alt="Shoes" />
                                 </div>
-                                <div class="bg-white mx-auto text-center py-8 relative">
+                                <div className="bg-white mx-auto text-center py-8 relative">
                                     <h2 className='uppercase text-lg mb-3'>{meetTeam.teamMember}</h2>
                                     <p className='text-lg text-[#666] leading-none'>{meetTeam.position}</p>
 
                                     <div className='group-hover:top-1 py-8 px-16 group-hover:left-12 top-28 group-hover:duration-500 bg-white absolute duration-500 left-12'>
                                         <div className=''>
-                                            <ul class="flex leading-none justify-center items-center space-x-4 text-lg text-primary">
-                                                <a href={meetTeam.instagram} class=" mb-4">
+                                            <ul className="flex leading-none justify-center items-center space-x-4 text-lg text-primary">
+                                                <a href={meetTeam.instagram} className=" mb-4">
                                                     <FaInstagram className=''/>
                                                 </a>
-                                                <a href={meetTeam.twitter} class="mb-4">
+                                                <a href={meetTeam.twitter} className="mb-4">
                                                     <FaTwitter className=''/>
                                                 </a>
-                                                <a href={meetTeam.facebook} class="mb-4">
+                                                <a href={meetTeam.facebook} className="mb-4">
                                                     <FaFacebookF className=''/>
                                                 </a>
-                                                <a href={meetTeam.pinterest} class="mb-4">
+                                                <a href={meetTeam.pinterest} className="mb-4">
                                                     <FaPinterestP className=''/>
                                                 </a>
                                             </ul>

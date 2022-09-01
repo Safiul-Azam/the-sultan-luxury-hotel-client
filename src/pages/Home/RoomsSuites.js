@@ -5,11 +5,10 @@ import RoomSuiteTwo from './RoomSuiteTwo';
 const RoomsSuites = () => {
     const [rooms, setRooms] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/roomsSuites')
+        fetch('Books.json')
             .then(res => res.json())
             .then(data => setRooms(data))
     }, [])
-    console.log(rooms);
     return (
         <div id='room&suites' className='py-24 bg-neutral'>
             <div className='w-[1150px] mx-auto'>

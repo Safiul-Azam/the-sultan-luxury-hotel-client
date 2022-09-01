@@ -36,10 +36,10 @@ const ExtraServices = () => {
                     >
                         <SwiperSlide className='-top-12'>
                             <div className='grid grid-cols-2 gap-8'>
-                                <div class="bg-base-100 shadow-xl">
+                                <div className="bg-base-100 shadow-xl">
                                     <figure><img src={exPhoto1} alt="" /></figure>
-                                    <div class="card-body">
-                                        <h2 class="text-3xl">Room cleaning</h2>
+                                    <div className="card-body">
+                                        <h2 className="text-3xl">Room cleaning</h2>
                                         <h4 className='text-5xl text-primary my-3'>$50<small className='text-sm text-[#777]'>/ daily</small></h4>
                                         <div className='text-lg text-[#777]'>
                                             <p className='flex items-center gap-2 mb-2'><IoCheckmarkOutline className='text-primary text-xl' />Hotel ut nisan the duru</p>
@@ -48,10 +48,10 @@ const ExtraServices = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bg-base-100 shadow-xl">
+                                <div className="bg-base-100 shadow-xl">
                                     <figure><img src={exPhoto2} alt="" /></figure>
-                                    <div class="card-body">
-                                        <h2 class="text-3xl">Room cleaning</h2>
+                                    <div className="card-body">
+                                        <h2 className="text-3xl">Room cleaning</h2>
                                         <h4 className='text-5xl text-primary my-3'>$40<small className='text-sm text-[#777]'>/ daily</small></h4>
                                         <div className='text-lg text-[#777]'>
                                             <p className='flex items-center gap-2 mb-2'><IoCheckmarkOutline className='text-primary text-xl' />Hotel ut nisan the duru</p>
@@ -64,10 +64,10 @@ const ExtraServices = () => {
                         </SwiperSlide>
                         <SwiperSlide className='-top-12'>
                             <div className='grid grid-cols-2 gap-8'>
-                                <div class="bg-base-100 shadow-xl">
+                                <div className="bg-base-100 shadow-xl">
                                     <figure><img src={exPhoto3} alt="" /></figure>
-                                    <div class="card-body">
-                                        <h2 class="text-3xl">Room cleaning</h2>
+                                    <div className="card-body">
+                                        <h2 className="text-3xl">Room cleaning</h2>
                                         <h4 className='text-5xl text-primary my-3'>$40<small className='text-sm text-[#777]'>/ daily</small></h4>
                                         <div className='text-lg text-[#777]'>
                                             <p className='flex items-center gap-2 mb-2'><IoCheckmarkOutline className='text-primary text-xl' />Hotel ut nisan the duru</p>
@@ -76,10 +76,10 @@ const ExtraServices = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bg-base-100 shadow-xl">
+                                <div className="bg-base-100 shadow-xl">
                                     <figure><img src={exPhoto4} alt="" /></figure>
-                                    <div class="card-body">
-                                        <h2 class="text-3xl">Room cleaning</h2>
+                                    <div className="card-body">
+                                        <h2 className="text-3xl">Room cleaning</h2>
                                         <h4 className='text-5xl text-primary my-3'>$35<small className='text-sm text-[#777]'>/ daily</small></h4>
                                         <div className='text-lg text-[#777]'>
                                             <p className='flex items-center gap-2 mb-2'><IoCheckmarkOutline className='text-primary text-xl' />Hotel ut nisan the duru</p>

@@ -19,10 +19,10 @@ const ExtraService = ({ eService }) => {
         >
             <SwiperSlide>
                 <div>
-                    <div class="bg-base-100 shadow-xl">
+                    <div className="bg-base-100 shadow-xl">
                         <figure><img src={img} alt="" /></figure>
-                        <div class="card-body">
-                            <h2 class="text-3xl">{roomName}</h2>
+                        <div className="card-body">
+                            <h2 className="text-3xl">{roomName}</h2>
                             <h4 className='text-5xl text-primary'>${perDay}<small className='text-sm text-[#777]'>/ {shift}</small></h4>
                             <div className='text-lg text-[#777]'>
                                 <p className='flex items-center gap-2 '><IoCheckmarkOutline className='text-primary text-xl' />{firstDes}</p>

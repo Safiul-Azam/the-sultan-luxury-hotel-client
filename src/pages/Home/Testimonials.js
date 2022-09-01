@@ -11,7 +11,7 @@ import quot from '../../images/icons/quot.png'
 const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/testimonials')
+        fetch('Testimonials.json')
             .then(res => res.json())
             .then(data => setTestimonials(data))
     }, [])
@@ -32,7 +32,6 @@ const Testimonials = () => {
                     spaceBetween={30}
                     pagination={{
                         clickable: true,
-
                     }}
                     modules={[Pagination]}
                     className=""
@@ -46,8 +45,8 @@ const Testimonials = () => {
                             <div className='mb-16'>
                                 <div className='flex  justify-between items-center'>
                                     <div className='flex gap-4 items-center'>
-                                        <div class="avatar">
-                                            <div class="w-16 rounded-full">
+                                        <div className="avatar">
+                                            <div className="w-16 rounded-full">
                                                 <img src={testimonial.img} alt='' />
                                             </div>
                                         </div>

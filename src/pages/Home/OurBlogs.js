@@ -7,7 +7,7 @@ import { Navigation } from "swiper";
 const OurBlogs = () => {
     const [blogs, setBlogs] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/blogs')
+        fetch('/blogs.json')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])
@@ -34,11 +34,11 @@ const OurBlogs = () => {
                             key={blog.id}
 
                         >
-                            <div class=" relative group">
+                            <div className=" relative group">
                                 <div className=' overflow-hidden'>
                                     <img className='group-hover:scale-110 group-hover:duration-1000 group-hover:ease-in-out ease-in-out duration-1000' src={blog.img} alt="Shoes" />
                                 </div>
-                                <div class="bg-white w-5/6 mx-auto p-5 relative bottom-16 group-hover:bottom-40 group-hover:duration-300 group-hover:ease-in-out ease-in-out duration-300">
+                                <div className="bg-white w-5/6 mx-auto p-5 relative bottom-16 group-hover:bottom-40 group-hover:duration-300 group-hover:ease-in-out ease-in-out duration-300">
                                     <p style={{ letterSpacing: '5px' }} className=' uppercase text-sm mb-3'>{blog.serviceName}</p>
                                     <h2 className='text-2xl'>{blog.description}</h2>
                                 </div>
