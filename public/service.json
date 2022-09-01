@@ -1,39 +1,39 @@
 [
     {
         "id":1,
-        "serviceName": "Pick Up & Drop",
+        "title": "Pick Up & Drop",
         "description": "We’ll pick up from airport while you comfy on your ride, mus nellentesque habitant. ",
-        "img":"https://i.ibb.co/0ZV2MmR/icon1.png"
+        "photo":"https://i.ibb.co/0ZV2MmR/icon1.png"
     },
     {
         "id":2,
-        "serviceName": "Parking Space",
+        "title": "Parking Space",
         "description": "Fusce tincidunt nis ace park norttito sit amet space, mus nellentesque habitant. ",
-        "img":"https://i.ibb.co/RH5xHbf/icon2.png"
+        "photo":"https://i.ibb.co/RH5xHbf/icon2.png"
     },
     {
         "id":3,
-        "serviceName": "Room Service",
+        "title": "Room Service",
         "description": "Room tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.",
-        "img":"https://i.ibb.co/xHkS0TP/icon3.png"
+        "photo":"https://i.ibb.co/xHkS0TP/icon3.png"
     },
     {
         "id":4,
-        "serviceName": "Swimming Pool",
+        "title": "Swimming Pool",
         "description": "Swimming pool tincidunt nise ace park norttito sit space, mus nellentesque habitant.",
-        "img":"https://i.ibb.co/bXJwt61/icon4.png"
+        "photo":"https://i.ibb.co/bXJwt61/icon4.png"
     },
     {
         "id":5,
-        "serviceName": "Fibre Internet",
+        "title": "Fibre Internet",
         "description": "Wifi tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.",
-        "img":"https://i.ibb.co/w7hHrFw/icon5.png"
+        "photo":"https://i.ibb.co/w7hHrFw/icon5.png"
     },
     {
         "id":6,
-        "serviceName": "Breakfast",
+        "title": "Breakfast",
         "description": "Eat tincidunt nisa ace park norttito sit amet space, mus nellentesque habitant",
-        "img":"https://i.ibb.co/rd5Bt31/icon6.png"
+        "photo":"https://i.ibb.co/rd5Bt31/icon6.png"
     }
 ]
 
