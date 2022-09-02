@@ -1,7 +1,7 @@
 import React from 'react';
 import { GrStar } from 'react-icons/gr';
-import Image1 from '../../images/photo/2.jpg'
-import Image2 from '../../images/photo/8.jpg'
+import Image1 from '../../images//photo/book-4.jpg'
+import Image2 from '../../images/photo/book-6-2.jpg'
 import { FiPhoneCall } from "react-icons/fi";
 
 const EnjoyLuxury = () => {

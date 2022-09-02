@@ -7,10 +7,10 @@ import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import exPhoto1 from '../../images/photo/Extra-Services-1.jpg'
-import exPhoto2 from '../../images/photo/Extra-Services-2.jpg'
-import exPhoto3 from '../../images/photo/Extra-Services-3.jpg'
-import exPhoto4 from '../../images/photo/Extra-Services-4.jpg'
+import exPhoto1 from '../../images/photo/extra/Extra-Services-1.jpg'
+import exPhoto2 from '../../images/photo/extra/Extra-Services-2.jpg'
+import exPhoto3 from '../../images/photo/extra/Extra-Services-3.jpg'
+import exPhoto4 from '../../images/photo/extra/Extra-Services-4.jpg'
 const ExtraServices = () => {
 
     return (

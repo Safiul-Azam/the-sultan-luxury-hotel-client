@@ -2,33 +2,6 @@
     {
         "id":1,
         "title": "Junior Suite",
-        "price": 85,
-        "shift": "night",
-        "pets":"Pets not allowed",
-        "extraBeds":"Children are welcome Kids stay free! Children stay free when using existing bedding; children may not be eligible for complimentary breakfast Rollaway/extra beds are available for $ 10 per day.",
-        "checkIn":["Check-in from 9:00 AM - anytime","Early check-in subject to availability"],
-        "checkOut":["Check-out before noon","Express check-out"],
-        "instructions":"Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival For more details, please contact the property using the information on the booking confirmation.",
-        "description1": "Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare.",
-        "description2": "Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis.",
-        "img": "https://i.ibb.co/X20GxXk/book-1.jpg"
-    },
-    {
-        "id":2,
-        "title": "Family Room",
-        "price": 125,
-        "shift": "night",
-        "pets":"Pets not allowed",
-        "extraBeds":"Children are welcome Kids stay free! Children stay free when using existing bedding; children may not be eligible for complimentary breakfast Rollaway/extra beds are available for $ 10 per day.",
-        "checkIn":["Check-in from 9:00 AM - anytime","Early check-in subject to availability"],
-        "checkOut":["Check-out before noon","Express check-out"],
-        "instructions":"Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival For more details, please contact the property using the information on the booking confirmation.",
-        "description": ["Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare.","Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis."],
-        "photos": "https://i.ibb.co/d0F2k8c/book-2.jpg"
-    },
-    {
-        "id":3,
-        "title": "Double Room",
         "price": 150,
         "shift": "night",
         "pets":"Pets not allowed",
@@ -36,26 +9,13 @@
         "checkIn":["Check-in from 9:00 AM - anytime","Early check-in subject to availability"],
         "checkOut":["Check-out before noon","Express check-out"],
         "instructions":"Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival For more details, please contact the property using the information on the booking confirmation.",
-        "description1": ["Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare." ,"Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis."],
-        "img": "https://i.ibb.co/PtZxWzG/book-3.jpg"
+        "description": ["Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare.","Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis."],,
+        "photos": ["https://i.ibb.co/NtSB8HK/book-1.jpg"]
     },
     {
-        "id":4,
-        "title": "Deluxe Room",
-        "price": 70,
-        "shift": "night",
-        "pets":"Pets not allowed",
-        "extraBeds":"Children are welcome Kids stay free! Children stay free when using existing bedding; children may not be eligible for complimentary breakfast Rollaway/extra beds are available for $ 10 per day.",
-        "checkIn":["Check-in from 9:00 AM - anytime","Early check-in subject to availability"],
-        "checkOut":["Check-out before noon","Express check-out"],
-        "instructions":"Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival For more details, please contact the property using the information on the booking confirmation.",
-        "description": ["Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare.", "Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis."],
-        "img": "https://i.ibb.co/XXZXhLC/book-4.jpg"
-    },
-    {
-        "id":5,
-        "title": "Deluxe Room",
-        "price": 35,
+        "id":2,
+        "title": "Family Room",
+        "price": 200,
         "shift": "night",
         "pets":"Pets not allowed",
         "extraBeds":"Children are welcome Kids stay free! Children stay free when using existing bedding; children may not be eligible for complimentary breakfast Rollaway/extra beds are available for $ 10 per day.",
@@ -63,6 +23,71 @@
         "checkOut":["Check-out before noon","Express check-out"],
         "instructions":"Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival For more details, please contact the property using the information on the booking confirmation.",
         "description": ["Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare.","Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis."],
-        "img": "https://i.ibb.co/Fhfrkhc/book-7.jpg"
+        "photos": ["https://i.ibb.co/G9LR4Qy/book-2.jpg"]
+    },
+    {
+        "id":3,
+        "title": "Double Room",
+        "price": 250,
+        "shift": "night",
+        "pets":"Pets not allowed",
+        "extraBeds":"Children are welcome Kids stay free! Children stay free when using existing bedding; children may not be eligible for complimentary breakfast Rollaway/extra beds are available for $ 10 per day.",
+        "checkIn":["Check-in from 9:00 AM - anytime","Early check-in subject to availability"],
+        "checkOut":["Check-out before noon","Express check-out"],
+        "instructions":"Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival For more details, please contact the property using the information on the booking confirmation.",
+        "description": ["Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare." ,"Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis."],
+        "photos": ["https://i.ibb.co/TvLGc7d/book-3.jpg"]
+    },
+    {
+        "id":4,
+        "title": "Superior Room",
+        "price": 150,
+        "shift": "night",
+        "pets":"Pets not allowed",
+        "extraBeds":"Children are welcome Kids stay free! Children stay free when using existing bedding; children may not be eligible for complimentary breakfast Rollaway/extra beds are available for $ 10 per day.",
+        "checkIn":["Check-in from 9:00 AM - anytime","Early check-in subject to availability"],
+        "checkOut":["Check-out before noon","Express check-out"],
+        "instructions":"Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival For more details, please contact the property using the information on the booking confirmation.",
+        "description": ["Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare." ,"Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis."],
+        "photos": ["https://i.ibb.co/HCHFwC4/book-4.jpg"]
+    },
+    {
+        "id":5,
+        "title": "Wellness Room",
+        "price": 360,
+        "shift": "night",
+        "pets":"Pets not allowed",
+        "extraBeds":"Children are welcome Kids stay free! Children stay free when using existing bedding; children may not be eligible for complimentary breakfast Rollaway/extra beds are available for $ 10 per day.",
+        "checkIn":["Check-in from 9:00 AM - anytime","Early check-in subject to availability"],
+        "checkOut":["Check-out before noon","Express check-out"],
+        "instructions":"Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival For more details, please contact the property using the information on the booking confirmation.",
+        "description": ["Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare." ,"Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis."],
+        "photos": ["https://i.ibb.co/FnqsxSM/book-5.jpg"]
+    },
+    {
+        "id":6,
+        "title": "Deluxe Room",
+        "price": 300,
+        "shift": "night",
+        "pets":"Pets not allowed",
+        "extraBeds":"Children are welcome Kids stay free! Children stay free when using existing bedding; children may not be eligible for complimentary breakfast Rollaway/extra beds are available for $ 10 per day.",
+        "checkIn":["Check-in from 9:00 AM - anytime","Early check-in subject to availability"],
+        "checkOut":["Check-out before noon","Express check-out"],
+        "instructions":"Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival For more details, please contact the property using the information on the booking confirmation.",
+        "description": ["Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare.", "Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis."],
+        "photos": ["https://i.ibb.co/G9LR4Qy/book-2.jpg","https://i.ibb.co/ByFjsRY/book-6-1.jpg"]
+    },
+    {
+        "id":7,
+        "title": "Deluxe Room",
+        "price": 350,
+        "shift": "night",
+        "pets":"Pets not allowed",
+        "extraBeds":"Children are welcome Kids stay free! Children stay free when using existing bedding; children may not be eligible for complimentary breakfast Rollaway/extra beds are available for $ 10 per day.",
+        "checkIn":["Check-in from 9:00 AM - anytime","Early check-in subject to availability"],
+        "checkOut":["Check-out before noon","Express check-out"],
+        "instructions":"Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival For more details, please contact the property using the information on the booking confirmation.",
+        "description": ["Hotel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien vel conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisteyerion venenatis lacus gravida eros ut turpis interdum ornare.","Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volutpa mollis sapien velet conseyer turpeutionyer masin libero sempe mollis."],
+        "photos": ["https://i.ibb.co/cyvQpM5/room-7-2.jpg","https://i.ibb.co/swM6v5X/book-7-1.jpg"]
     }
 ]
