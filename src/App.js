@@ -15,6 +15,7 @@ import { ToastContainer } from 'react-toastify';
 import RoomDetails from './pages/SingleRoom/RoomDetails';
 import RequireAuth from './pages/Authentication/RequireAuth';
 import FindRoomBanner from './pages/Booking/FindRoomBanner';
+import { useState } from 'react';
 
 
 function App() {

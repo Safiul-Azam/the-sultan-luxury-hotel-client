@@ -28,7 +28,7 @@ const CheckOut = () => {
             <div className='w-[1150px] mx-auto my-28 py-24'>
                 <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>CHECK NOW</p>
                 <h2 className='text-5xl mb-7 text-black'>Search Rooms</h2>
-                <div className='grid grid-cols-5 gap-2 relative'>
+                <div className='grid grid-cols-6 gap-2 relative'>
                         <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center' >{`${format(date[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl'/></button>
                         {openDate && <DateRange
                             editableDateInputs={true}
@@ -39,18 +39,25 @@ const CheckOut = () => {
                         />}
                     <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center'>{`${format(date[0].endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl'/> </button>
                     <select onChange={handleChange} className='py-4 px-8 border-separate-4' name="" id="children">
-                        <option className='text-lg'>Children1</option>
-                        <option className='text-lg'>Children2</option>
-                        <option className='text-lg'>Children3</option>
-                        <option className='text-lg'>Children4</option>
-                        <option className='text-lg'>Children5</option>
+                        <option className='text-lg'>Adult 1</option>
+                        <option className='text-lg'>Adult 2</option>
+                        <option className='text-lg'>Adult 3</option>
+                        <option className='text-lg'>Adult 4</option>
+                        <option className='text-lg'>Adult 5</option>
+                    </select>
+                    <select onChange={handleChange} className='py-4 px-8 border-separate-4' name="" id="children">
+                        <option className='text-lg'>Children 1</option>
+                        <option className='text-lg'>Children 2</option>
+                        <option className='text-lg'>Children 3</option>
+                        <option className='text-lg'>Children 4</option>
+                        <option className='text-lg'>Children 5</option>
                     </select>
                     <select onChange={handleChange} className='py-4 px-8' name="" id="room">
-                        <option className='text-lg'>Room1</option>
-                        <option className='text-lg'>Room2</option>
-                        <option className='text-lg'>Room3</option>
-                        <option className='text-lg'>Room4</option>
-                        <option className='text-lg'>Room5</option>
+                        <option className='text-lg'>Room 1</option>
+                        <option className='text-lg'>Room 2</option>
+                        <option className='text-lg'>Room 3</option>
+                        <option className='text-lg'>Room 4</option>
+                        <option className='text-lg'>Room 5</option>
                     </select>
                     <button onClick={handleClick} style={{ letterSpacing: '2px' }} className='py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300'>CHECK NOW</button>
                 </div>
