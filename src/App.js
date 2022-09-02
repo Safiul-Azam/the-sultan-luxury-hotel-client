@@ -14,7 +14,7 @@ import Signup from './pages/Authentication/Signup';
 import { ToastContainer } from 'react-toastify';
 import RoomDetails from './pages/SingleRoom/RoomDetails';
 import RequireAuth from './pages/Authentication/RequireAuth';
-import FindRoom from './pages/Booking/FindRoom';
+import FindRoomBanner from './pages/Booking/FindRoomBanner';
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
             <RoomDetails />
           </RequireAuth>
         }></Route>
-        <Route path='/findRoom' element={<FindRoom/>}/>
+        <Route path='/findRoom' element={<FindRoomBanner/>}/>
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
