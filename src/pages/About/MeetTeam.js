@@ -35,7 +35,7 @@ const MeetTeam = () => {
                 >
                     {
                         meetTeams.map(meetTeam => <SwiperSlide
-                            key={meetTeam.id}
+                            key={meetTeam._id}
                         >
                             <div className="group">
                                 <div className='group'>

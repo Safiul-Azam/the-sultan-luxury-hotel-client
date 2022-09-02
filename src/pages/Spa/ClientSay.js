@@ -47,7 +47,7 @@ const ClientSay = () => {
                 >
                     {
                         ClientSay.map(singleSay => <SwiperSlide
-                            key={singleSay.id}
+                            key={singleSay._id}
                             testimonial={singleSay}
                         >
                             <p className='text-lg tracking-wide mt-3 mb-8'>{singleSay.description}</p>

@@ -17,7 +17,7 @@ const RestRooms = () => {
                 <div className='grid grid-cols-3 gap-8'>
                     {
                         rooms?.map(room => <RoomSuiteThree
-                            key={room.id}
+                            key={room._id}
                             room={room}
                         ></RoomSuiteThree>)
                     }

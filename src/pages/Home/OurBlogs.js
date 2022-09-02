@@ -31,7 +31,7 @@ const OurBlogs = () => {
                 >
                     {
                         blogs.map(blog => <SwiperSlide
-                            key={blog.id}
+                            key={blog._id}
 
                         >
                             <div className=" relative group">

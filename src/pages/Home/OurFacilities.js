@@ -15,7 +15,7 @@ const OurFacilities = () => {
             <div className='grid grid-cols-3 gap-8'>
                 {
                     data.map(service => <OurFacility
-                    key={service.id}
+                    key={service._id}
                     service={service}
                     ></OurFacility>)
                 }

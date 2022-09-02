@@ -38,7 +38,7 @@ const Testimonials = () => {
                 >
                     {
                         testimonials.map(testimonial => <SwiperSlide
-                            key={testimonial.id}
+                            key={testimonial._id}
                             testimonial={testimonial}
                         >
                             <p className='text-lg tracking-wide mt-3 mb-8'>{testimonial.description}</p>

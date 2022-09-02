@@ -37,7 +37,7 @@ const RoomDetailsBanner = () => {
         >
             {
                 roomBanners.map(banner => <SwiperSlide
-                    key={banner.id}
+                    key={banner._id}
                     className='pt-6'
                     style={
                         {
