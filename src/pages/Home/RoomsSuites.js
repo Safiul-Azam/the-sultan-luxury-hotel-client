@@ -5,7 +5,6 @@ import RoomSuiteTwo from './RoomSuiteTwo';
 
 const RoomsSuites = () => {
     const {data, loading, error} = useFetch('http://localhost:5000/api/rooms')
-    console.log(data);
     return (
         <div id='room&suites' className='py-24 bg-neutral'>
             <div className='w-[1150px] mx-auto'>

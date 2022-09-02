@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home/Home';
 import NoFound from './pages/Shared/NoFound';
-import CheckForm from './pages/Home/CheckForm';
+import CheckForm from './pages/Booking/CheckForm';
 import Footer from './pages/Home/Footer';
 import CopyRight from './pages/Shared/CopyRight';
 import About from './pages/About/About';
@@ -14,6 +14,7 @@ import Signup from './pages/Authentication/Signup';
 import { ToastContainer } from 'react-toastify';
 import RoomDetails from './pages/SingleRoom/RoomDetails';
 import RequireAuth from './pages/Authentication/RequireAuth';
+import FindRoom from './pages/Booking/FindRoom';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <RoomDetails />
           </RequireAuth>
         }></Route>
+        <Route path='/findRoom' element={<FindRoom/>}/>
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

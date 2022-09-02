@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
-import CheckOut from './CheckOut';
+import CheckOut from '../Booking/CheckOut';
 import EnjoyLuxury from './EnjoyLuxury';
 import ExtraServices from './ExtraServices';
 import OurBlogs from './OurBlogs';
