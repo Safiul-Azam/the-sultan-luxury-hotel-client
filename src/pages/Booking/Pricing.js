@@ -27,9 +27,9 @@ const Pricing = ({ date, price, shift, option, roomNumbers, photo, title }) => {
                 <hr />
             </div>
             <div className="text-xl w-3/4 space-y-2">
-                <p>{option.adult}</p>
+                <p>{option?.adult}</p>
                 <hr />
-                <p>{option.children}</p>
+                <p>{option?.children}</p>
                 <hr />
             </div>
             <div className=" w-full">

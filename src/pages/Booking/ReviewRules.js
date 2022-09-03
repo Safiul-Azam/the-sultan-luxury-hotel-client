@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import Navbar from '../Shared/Navbar';
 import img1 from '../../images/banner/6.jpg'
@@ -13,10 +13,10 @@ import { ImManWoman } from 'react-icons/im'
 
 const ReviewRules = () => {
     const location = useLocation()
-    const [date, setDate] = useState(location.state.date)
-    const [option, setOption] = useState(location.state.option)
+    const [date, setDate] = useState(location?.state?.date)
+    const [option, setOption] = useState(location?.state?.option)
     const id = location?.pathname.split('/')[2]
-    console.log(location);
+    const navigate = useNavigate()
     const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
     const {
         _id,
@@ -25,11 +25,12 @@ const ReviewRules = () => {
         photos,
         title,
         roomNumbers } = data
-
     if (loading) {
         <Spinner></Spinner>
     }
-    console.log(date[0].endDate.getDate().toDate);
+    const handleClick = (id)=>{
+        navigate(`/payment/${id}`, { state: { date } })
+    }
     return (
         <div>
             <div className=' pt-8 mix-blend-normal bg-black-400' style={
@@ -60,7 +61,7 @@ const ReviewRules = () => {
                                     <p>{`${format(date[0].startDate, 'd')}`}</p>
                                 </div>
                                 <div>
-                                    <p className='text-lg'>{`${format(date[0].startDate, 'iiii')}`} Check in</p>
+                                    <p className='text-lg'>{`${format(date[0]?.startDate, 'iiii')}`} Check in</p>
                                     <p className='text-lg'>After 12:00 pm</p>
                                 </div>
                             </div>
@@ -88,7 +89,7 @@ const ReviewRules = () => {
                                 <p className='flex items-center'><ImManWoman className='text-gray-500 text-2xl mr-2' />Can't stay in hotel any guests without counted</p>
                             </div>
                         </div>
-                        <button style={{ letterSpacing: '2px' }} className='py-4 mt-10 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Agree & continue</button>
+                        <button onClick={()=>handleClick(_id)} style={{ letterSpacing: '2px' }} className='py-4 mt-10 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Agree & continue</button>
                     </div>
 
                     <div className='w-11/12'>
