@@ -17,7 +17,19 @@ const FindSingleRoom = () => {
     console.log(id);
 
     const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
-    const { title, extraBeds, pets, checkIn, checkOut, instructions, description, photos, price, shift } = data
+    const {
+        pets,
+        shift,
+        title,
+        price,
+        photos,
+        checkIn,
+        checkOut,
+        extraBeds,
+        description,
+        instructions,
+        roomNumbers } = data
+
     if (loading) {
         <Spinner></Spinner>
     }
@@ -108,11 +120,30 @@ const FindSingleRoom = () => {
                                 <span className="label-text text-lg">date</span>
                                 <span className="input input-bordered w-full rounded-none text-lg flex items-center justify-between">{option.children}</span>
                             </div>
+                            <div className="w-full mt-3">
+                                <span className="label-text text-lg">Room Number</span>
+                                <div className="w-full rounded-none text-lg flex items-center space-x-5">
+                                    {roomNumbers?.map(roomNumber => (
+                                    <div key={roomNumber._id}>
+                                        <label>{roomNumber.number}</label>
+                                        <input type="checkbox" value={roomNumber._id} />
+                                    </div>
+                                ))}
+                                </div>
+                            </div>
+                            <div className='flex space-x-10'>
+                                
+                            </div>
                             <div className='border p-3 w-full mt-3 space-y-2 text-lg'>
                                 <p className='text-lg font-semibold text-secondary'>Thank You for Reserved 7 Night to stay</p>
                                 <div className='flex justify-between'>
                                     <p className='flex justify-between'>${`${price} X 7`}</p>
                                     <p>{'1050'}</p>
+                                </div>
+                                <hr />
+                                <div className='flex justify-between'>
+                                    <p>Children 4</p>
+                                    <p>10 X 4 = $40</p>
                                 </div>
                                 <hr />
                                 <div className='flex justify-between'>
@@ -127,7 +158,7 @@ const FindSingleRoom = () => {
                                 <hr />
                                 <div className='flex justify-between font-bold'>
                                     <p>total</p>
-                                    <p>{'1085'}</p>
+                                    <p>{'1125'}</p>
                                 </div>
                             </div>
                             <button className='btn w-full mt-6 btn-primary rounded-none text-white items-center'>Book Now or Reserve</button>
