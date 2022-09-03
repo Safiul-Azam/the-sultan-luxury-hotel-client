@@ -11,8 +11,8 @@ import exPhoto1 from '../../images/photo/extra/Extra-Services-1.jpg'
 import exPhoto2 from '../../images/photo/extra/Extra-Services-2.jpg'
 import exPhoto3 from '../../images/photo/extra/Extra-Services-3.jpg'
 import exPhoto4 from '../../images/photo/extra/Extra-Services-4.jpg'
-const ExtraServices = () => {
 
+const ExtraServices = () => {
     return (
         <div className='bg-[#222222] py-24'>
             <div className='w-[1150px] mx-auto grid grid-cols-3 gap-10'>
