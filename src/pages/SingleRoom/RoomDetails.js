@@ -25,7 +25,7 @@ const amenities = [
 
 const RoomDetails = () => {
     const { roomId } = useParams()
-    const { data, loading, error } = useFetch(`http://localhost:5000/api/rooms/${roomId}`)
+    const { data, loading, error } = useFetch(`http://localhost:5000/api/rooms/find/${roomId}`)
     console.log(data);
     const { title, extraBeds, pets, checkIn, checkOut, instructions, description } = data
     return (

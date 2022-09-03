@@ -2,7 +2,7 @@ import Navbar from '../Shared/Navbar';
 import photo from '../../images/banner/6.jpg'
 import FindingRoom from './FindingRoom';
 
-const FindRoom = () => {
+const FindRoomBanner = () => {
     return (
         <>
             <div className=' pt-8 mix-blend-normal bg-black-400' style={
@@ -26,4 +26,4 @@ const FindRoom = () => {
     );
 };
 
-export default FindRoom;
+export default FindRoomBanner;

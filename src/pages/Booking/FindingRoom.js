@@ -7,9 +7,11 @@ import { FaMinus, FaPlus } from 'react-icons/fa';
 import useFetch from '../../hooks/useFetch';
 import { GrStar } from 'react-icons/gr';
 import { FiSearch } from 'react-icons/fi';
+import Spinner from '../Shared/Spinner';
 
 const FindingRoom = () => {
     const location = useLocation()
+    console.log(location);
     const [date, setDate] = useState(location.state.date)
     const [option, setOption] = useState(location.state.option)
     const [openDate, setOpenDate] = useState(false)
@@ -31,6 +33,9 @@ const FindingRoom = () => {
     const handleChange = () => { }
     const { data, loading, error } = useFetch('http://localhost:5000/api/rooms')
     console.log(data);
+    if(loading){
+        <Spinner></Spinner>
+    }
     return (
         <div className='bg-neutral'>
             <div className='w-[1150px] mx-auto py-24 flex justify-between space-x-10'>
@@ -156,7 +161,7 @@ const FindingRoom = () => {
                                         <GrStar />
                                         <GrStar />
                                     </div>
-                                    <Link to='/' className='border p-1 border-primary'>See Available</Link>
+                                    <Link to={`/findRoom/${room?._id}`} className='border p-1 border-primary'>See Available</Link>
                                 </div>
                             </div>
                         </div>)}

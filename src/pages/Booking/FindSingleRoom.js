@@ -1,0 +1,95 @@
+import React from 'react';
+import { AiOutlineCheck } from 'react-icons/ai';
+import { GrStar } from 'react-icons/gr';
+import { useLocation } from 'react-router-dom';
+import useFetch from '../../hooks/useFetch';
+import Navbar from '../Shared/Navbar';
+import img1 from '../../images/banner/6.jpg'
+import Spinner from '../Shared/Spinner';
+
+const FindSingleRoom = () => {
+    const location = useLocation()
+    const id = location?.pathname.split('/')[2]
+    console.log(id);
+
+    const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
+    const { title, extraBeds, pets, checkIn, checkOut, instructions, description, photos } = data
+    if(loading){
+        <Spinner></Spinner>
+    }
+    return (
+        <div>
+            <div className=' pt-8 mix-blend-normal bg-black-400' style={
+                {
+                    background: `linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url(${img1})`,
+                    backgroundPosition: 'top',
+                    backgroundSize: 'cover'
+                }
+            }>
+                <Navbar></Navbar>
+
+
+                <div className='text-left text-white w-[1150px] py-32 mx-auto'>
+                    <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>LUXURY HOTEL</p>
+                    <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Booking Info</h2>
+                </div>
+
+            </div>
+            <div className='w-[1200px] mx-auto pt-28 pb-20'>
+                <div className='flex justify-between items-center'>
+                <h2 className='text-3xl mb-3 text-black'>{title}</h2>
+                <button className='btn btn-primary rounded-none text-white items-center'>Book Now or Reserve</button>
+                </div>
+                <div className='flex justify-center w-1/4 mb-10'>
+                    <img src={photos} alt="" />
+                </div>
+                
+                <div className='flex text-xl mb-4 text-secondary'>
+                    <GrStar />
+                    <GrStar />
+                    <GrStar />
+                    <GrStar />
+                    <GrStar />
+                </div>
+                <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-3'>LUXURY HOTEL</p>
+                <div className='grid grid-cols-2 gap-10'>
+                    <div className=''>
+                        {description?.map((desc, index) => (
+                            <div key={index} className='mb-3'>
+                                <p className='text-lg text-[#777] tracking-wide'>{desc}</p>
+                            </div>
+                        ))}
+                        <div className='flex space-x-24'>
+                            <div className='space-y-3'>
+                                <h2 className='text-xl'>Check-in</h2>
+                                {
+                                    checkIn?.map((i, index) => <p className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
+                                }
+                            </div>
+                            <div className='mb-4 space-y-3'>
+                                <h2 className='text-xl'>Check Out</h2>
+                                {
+                                    checkOut?.map((i, index) => <p className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
+                                }
+                            </div>
+                        </div>
+                        <div className=''>
+                            <h2 className='text-2xl'>Special check-in instructions</h2>
+                            <p className='text-lg text-[#777] my-4 tracking-wide'>{instructions}</p>
+                            <h2 className='text-2xl'>Pets</h2>
+                            <p className='text-lg text-[#777] my-3 tracking-wide'>{pets}</p>
+                            <h2 className='text-2xl'>Children and extra beds</h2>
+                            <p className='text-lg text-[#777] my-4 tracking-wide'>{extraBeds}</p>
+                        </div>
+                    </div>
+                    <div>
+                   
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default FindSingleRoom;
