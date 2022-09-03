@@ -21,6 +21,7 @@ const CheckOut = () => {
     }   
     const handleClick = e =>{
         navigate('/findRoom', {state:{date, option}})
+        
     }
     console.log(option);
     return (
@@ -38,7 +39,7 @@ const CheckOut = () => {
                             className='absolute top-12 left-0 z-40'
                         />}
                     <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center'>{`${format(date[0].endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl'/> </button>
-                    <select onChange={handleChange} className='py-4 px-8 border-separate-4' name="" id="children">
+                    <select onChange={handleChange} className='py-4 px-8 border-separate-4' name="" id="adult">
                         <option className='text-lg'>Adult 1</option>
                         <option className='text-lg'>Adult 2</option>
                         <option className='text-lg'>Adult 3</option>

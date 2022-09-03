@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { format } from 'date-fns';
 import { AiOutlineCalendar } from 'react-icons/ai';
 import { DateRange } from 'react-date-range';
@@ -11,7 +11,6 @@ import Spinner from '../Shared/Spinner';
 
 const FindingRoom = () => {
     const location = useLocation()
-    console.log(location);
     const [date, setDate] = useState(location.state.date)
     const [option, setOption] = useState(location.state.option)
     const [openDate, setOpenDate] = useState(false)
@@ -30,9 +29,12 @@ const FindingRoom = () => {
             };
         });
     };
+    const navigate = useNavigate()
     const handleChange = () => { }
     const { data, loading, error } = useFetch('http://localhost:5000/api/rooms')
-    console.log(data);
+    const handleClick = (id)=>{
+        navigate(`/findRoom/${id}`, {state:{date, option}})
+    }
     if(loading){
         <Spinner></Spinner>
     }
@@ -161,7 +163,7 @@ const FindingRoom = () => {
                                         <GrStar />
                                         <GrStar />
                                     </div>
-                                    <Link to={`/findRoom/${room?._id}`} className='border p-1 border-primary'>See Available</Link>
+                                    <button onClick={()=>handleClick(room._id)} className='border p-1 border-primary'>See Available</button>
                                 </div>
                             </div>
                         </div>)}

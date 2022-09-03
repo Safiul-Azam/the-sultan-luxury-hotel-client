@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineCheck } from 'react-icons/ai';
 import { GrStar } from 'react-icons/gr';
 import { useLocation } from 'react-router-dom';
@@ -6,15 +6,19 @@ import useFetch from '../../hooks/useFetch';
 import Navbar from '../Shared/Navbar';
 import img1 from '../../images/banner/6.jpg'
 import Spinner from '../Shared/Spinner';
+import { format } from 'date-fns';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const FindSingleRoom = () => {
     const location = useLocation()
+    const [date, setDate] = useState(location.state.date)
+    const [option, setOption] = useState(location.state.option)
     const id = location?.pathname.split('/')[2]
     console.log(id);
 
     const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
-    const { title, extraBeds, pets, checkIn, checkOut, instructions, description, photos } = data
-    if(loading){
+    const { title, extraBeds, pets, checkIn, checkOut, instructions, description, photos, price, shift } = data
+    if (loading) {
         <Spinner></Spinner>
     }
     return (
@@ -35,15 +39,14 @@ const FindSingleRoom = () => {
                 </div>
 
             </div>
-            <div className='w-[1200px] mx-auto pt-28 pb-20'>
+            <div className='w-[1100px] mx-auto pt-28 pb-20'>
                 <div className='flex justify-between items-center'>
-                <h2 className='text-3xl mb-3 text-black'>{title}</h2>
-                <button className='btn btn-primary rounded-none text-white items-center'>Book Now or Reserve</button>
+                    <h2 className='text-3xl mb-3 text-black'>{title}</h2>
                 </div>
                 <div className='flex justify-center w-1/4 mb-10'>
                     <img src={photos} alt="" />
                 </div>
-                
+
                 <div className='flex text-xl mb-4 text-secondary'>
                     <GrStar />
                     <GrStar />
@@ -52,14 +55,14 @@ const FindSingleRoom = () => {
                     <GrStar />
                 </div>
                 <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-3'>LUXURY HOTEL</p>
-                <div className='grid grid-cols-2 gap-10'>
+                <div className='grid grid-cols-2 space-x-20'>
                     <div className=''>
                         {description?.map((desc, index) => (
                             <div key={index} className='mb-3'>
                                 <p className='text-lg text-[#777] tracking-wide'>{desc}</p>
                             </div>
                         ))}
-                        <div className='flex space-x-24'>
+                        <div className='flex space-x-20'>
                             <div className='space-y-3'>
                                 <h2 className='text-xl'>Check-in</h2>
                                 {
@@ -82,9 +85,53 @@ const FindSingleRoom = () => {
                             <p className='text-lg text-[#777] my-4 tracking-wide'>{extraBeds}</p>
                         </div>
                     </div>
-                    <div>
-                   
-
+                    <div className='w-3/4'>
+                        <div className='border shadow-xl p-8'>
+                            <p className='text-lg capitalize'>${price} / {shift}</p>
+                            <div className='flex text-xs mb-4 items-center text-secondary'>
+                                <GrStar />
+                                <GrStar />
+                                <GrStar />
+                                <GrStar />
+                                <GrStar />
+                                <p className='text-sm ml-2 text-black'>(20 reviews)</p>
+                            </div>
+                            <div className="w-full">
+                                <span className="label-text text-lg">date</span>
+                                <span className="input input-bordered w-full rounded-none text-lg flex items-center justify-between">{`${format(date[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineArrowRight />  {`${format(date[0].endDate, 'MM-dd-yyyy')}`}</span>
+                            </div>
+                            <div className="w-full">
+                                <span className="label-text text-lg">adult</span>
+                                <span className="input input-bordered w-full rounded-none text-lg flex items-center justify-between">{option.adult}</span>
+                            </div>
+                            <div className=" w-full">
+                                <span className="label-text text-lg">date</span>
+                                <span className="input input-bordered w-full rounded-none text-lg flex items-center justify-between">{option.children}</span>
+                            </div>
+                            <div className='border p-3 w-full mt-3 space-y-2 text-lg'>
+                                <p className='text-lg font-semibold text-secondary'>Thank You for Reserved 7 Night to stay</p>
+                                <div className='flex justify-between'>
+                                    <p className='flex justify-between'>${`${price} X 7`}</p>
+                                    <p>{'1050'}</p>
+                                </div>
+                                <hr />
+                                <div className='flex justify-between'>
+                                    <p>Cleaning fee</p>
+                                    <p>$10</p>
+                                </div>
+                                <hr />
+                                <div className='flex justify-between'>
+                                    <p>Service fee</p>
+                                    <p>$25</p>
+                                </div>
+                                <hr />
+                                <div className='flex justify-between font-bold'>
+                                    <p>total</p>
+                                    <p>{'1085'}</p>
+                                </div>
+                            </div>
+                            <button className='btn w-full mt-6 btn-primary rounded-none text-white items-center'>Book Now or Reserve</button>
+                        </div>
                     </div>
                 </div>
             </div>
