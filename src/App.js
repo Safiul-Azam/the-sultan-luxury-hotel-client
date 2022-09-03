@@ -16,6 +16,7 @@ import RoomDetails from './pages/SingleRoom/RoomDetails';
 import RequireAuth from './pages/Authentication/RequireAuth';
 import FindRoomBanner from './pages/Booking/FindRoomBanner';
 import FindSingleRoom from './pages/Booking/FindSingleRoom';
+import ReviewRules from './pages/Booking/ReviewRules';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         }></Route>
         <Route path='/findRoom' element={<FindRoomBanner/>}/>
         <Route path='/findRoom/:roomId' element={<FindSingleRoom/>}/>
+        <Route path='/reviewRules/:id' element={<ReviewRules/>}/>
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

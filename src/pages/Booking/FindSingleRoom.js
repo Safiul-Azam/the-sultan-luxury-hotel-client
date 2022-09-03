@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import { AiOutlineCheck } from 'react-icons/ai';
 import { GrStar } from 'react-icons/gr';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import Navbar from '../Shared/Navbar';
 import img1 from '../../images/banner/6.jpg'
 import Spinner from '../Shared/Spinner';
-import { format } from 'date-fns';
-import { AiOutlineArrowRight } from 'react-icons/ai';
+import Pricing from './Pricing';
 
 const FindSingleRoom = () => {
     const location = useLocation()
     const [date, setDate] = useState(location.state.date)
     const [option, setOption] = useState(location.state.option)
     const id = location?.pathname.split('/')[2]
-    console.log(id);
+    const navigate = useNavigate()
+    const handleClick = (id) => {
+        navigate(`/reviewRules/${id}`, { state: { date, option } })
+    }
 
     const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
     const {
+        _id,
         pets,
         shift,
         title,
@@ -97,71 +100,17 @@ const FindSingleRoom = () => {
                             <p className='text-lg text-[#777] my-4 tracking-wide'>{extraBeds}</p>
                         </div>
                     </div>
-                    <div className='w-3/4'>
-                        <div className='border shadow-xl p-8'>
-                            <p className='text-lg capitalize'>${price} / {shift}</p>
-                            <div className='flex text-xs mb-4 items-center text-secondary'>
-                                <GrStar />
-                                <GrStar />
-                                <GrStar />
-                                <GrStar />
-                                <GrStar />
-                                <p className='text-sm ml-2 text-black'>(20 reviews)</p>
-                            </div>
-                            <div className="w-full">
-                                <span className="label-text text-lg">date</span>
-                                <span className="input input-bordered w-full rounded-none text-lg flex items-center justify-between">{`${format(date[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineArrowRight />  {`${format(date[0].endDate, 'MM-dd-yyyy')}`}</span>
-                            </div>
-                            <div className="w-full">
-                                <span className="label-text text-lg">adult</span>
-                                <span className="input input-bordered w-full rounded-none text-lg flex items-center justify-between">{option.adult}</span>
-                            </div>
-                            <div className=" w-full">
-                                <span className="label-text text-lg">date</span>
-                                <span className="input input-bordered w-full rounded-none text-lg flex items-center justify-between">{option.children}</span>
-                            </div>
-                            <div className="w-full mt-3">
-                                <span className="label-text text-lg">Room Number</span>
-                                <div className="w-full rounded-none text-lg flex items-center space-x-5">
-                                    {roomNumbers?.map(roomNumber => (
-                                    <div key={roomNumber._id}>
-                                        <label>{roomNumber.number}</label>
-                                        <input type="checkbox" value={roomNumber._id} />
-                                    </div>
-                                ))}
-                                </div>
-                            </div>
-                            <div className='flex space-x-10'>
-                                
-                            </div>
-                            <div className='border p-3 w-full mt-3 space-y-2 text-lg'>
-                                <p className='text-lg font-semibold text-secondary'>Thank You for Reserved 7 Night to stay</p>
-                                <div className='flex justify-between'>
-                                    <p className='flex justify-between'>${`${price} X 7`}</p>
-                                    <p>{'1050'}</p>
-                                </div>
-                                <hr />
-                                <div className='flex justify-between'>
-                                    <p>Children 4</p>
-                                    <p>10 X 4 = $40</p>
-                                </div>
-                                <hr />
-                                <div className='flex justify-between'>
-                                    <p>Cleaning fee</p>
-                                    <p>$10</p>
-                                </div>
-                                <hr />
-                                <div className='flex justify-between'>
-                                    <p>Service fee</p>
-                                    <p>$25</p>
-                                </div>
-                                <hr />
-                                <div className='flex justify-between font-bold'>
-                                    <p>total</p>
-                                    <p>{'1125'}</p>
-                                </div>
-                            </div>
-                            <button className='btn w-full mt-6 btn-primary rounded-none text-white items-center'>Book Now or Reserve</button>
+
+                    <div className='w-11/12'>
+                        <div className='shadow-xl p-8'>
+                            <Pricing
+                                date={date}
+                                price={price}
+                                shift={shift}
+                                option={option}
+                                roomNumbers={roomNumbers}
+                            />
+                            <button onClick={() => handleClick(_id)} className='btn w-full mt-6 btn-primary rounded-none text-white items-center'>Book Now or Reserve</button>
                         </div>
                     </div>
                 </div>
