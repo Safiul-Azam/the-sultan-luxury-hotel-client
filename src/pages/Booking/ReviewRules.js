@@ -6,10 +6,10 @@ import img1 from '../../images/banner/6.jpg'
 import Spinner from '../Shared/Spinner';
 import Pricing from './Pricing';
 import { format } from 'date-fns';
-import {IoLogoNoSmoking} from 'react-icons/io'
-import {GiPartyFlags} from 'react-icons/gi'
-import {MdPets,MdNoDrinks} from 'react-icons/md'
-import {ImManWoman} from 'react-icons/im'
+import { IoLogoNoSmoking } from 'react-icons/io'
+import { GiPartyFlags } from 'react-icons/gi'
+import { MdPets, MdNoDrinks, MdOutlineChildFriendly } from 'react-icons/md'
+import { ImManWoman } from 'react-icons/im'
 
 const ReviewRules = () => {
     const location = useLocation()
@@ -22,6 +22,8 @@ const ReviewRules = () => {
         _id,
         shift,
         price,
+        photos,
+        title,
         roomNumbers } = data
 
     if (loading) {
@@ -46,12 +48,12 @@ const ReviewRules = () => {
                 </div>
 
             </div>
-            <div className='w-[1100px] mx-auto pt-28 pb-20'>
+            <div className='w-[1100px] mx-auto pt-12 pb-20'>
                 <div className='grid grid-cols-2 space-x-20'>
                     <div className=''>
                         <h2 style={{ lineHeight: '30px' }} className='text-4xl my-4'>Review Hotel Rules</h2>
                         <h2 className='text-xl font-bold'>Thank You for Reserved 7 Night to stay</h2>
-                        <div className='flex space-x-24 my-5'>
+                        <div className='flex space-x-20 my-6'>
                             <div className='flex items-center space-x-5'>
                                 <div className='bg-primary text-center text-white px-2 py-1'>
                                     <p className='text-sm leading-none uppercase'>{`${format(date[0].startDate, 'MMM')}`}</p>
@@ -74,29 +76,31 @@ const ReviewRules = () => {
                             </div>
                         </div>
                         <span className='text-lg'>Self Check in with building staff</span>
-                        <hr className='my-2 border-1 border-primary' />
+                        <hr className='mt-5 border-1 border-primary' />
                         <div className=''>
                             <h2 className='my-4 text-lg font-semibold'>Things to keep in mind</h2>
-                            <div className='space-y-3 text-lg'>
-                                <p>Suitable for children and infants</p>
-                                <p><MdPets/>pets not allowed</p>
-                                <p><GiPartyFlags/>No parties and events without permission</p>
-                                <p className='flex items-center'><IoLogoNoSmoking className='text-red-300 text-3xl mr-2'/>Smoking not allowed</p>
-                                <p><MdNoDrinks/>Alcohol not allowed</p>
-                                <p><ImManWoman/>Can't stay in hotel any guests without counted</p>
+                            <div className='space-y-5 text-lg'>
+                                <p className='flex items-center'><MdOutlineChildFriendly className='text-gray-500 text-2xl mr-2' />Suitable for children and infants</p>
+                                <p className='flex items-center'><MdPets className='text-gray-500 text-2xl mr-2' />pets not allowed</p>
+                                <p className='flex items-center'><MdNoDrinks className='text-red-300 text-2xl mr-2' />Alcohol not allowed</p>
+                                <p className='flex items-center'><GiPartyFlags className='text-gray-500 text-2xl mr-2' />No parties and events without permission</p>
+                                <p className='flex items-center'><IoLogoNoSmoking className='text-red-300 text-2xl mr-2' />Smoking not allowed</p>
+                                <p className='flex items-center'><ImManWoman className='text-gray-500 text-2xl mr-2' />Can't stay in hotel any guests without counted</p>
                             </div>
                         </div>
-                        <button className='btn w-1/3 mt-6 btn-primary rounded-none text-white items-center'>Agree & continue</button>
+                        <button style={{ letterSpacing: '2px' }} className='py-4 mt-10 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Agree & continue</button>
                     </div>
 
                     <div className='w-11/12'>
-                        <div className='shadow-xl p-8'>
+                        <div className='shadow-lg p-8'>
                             <Pricing
+                            title={title}
                                 date={date}
                                 price={price}
                                 shift={shift}
                                 option={option}
                                 roomNumbers={roomNumbers}
+                                photo={photos}
                             />
                         </div>
                     </div>

@@ -102,15 +102,17 @@ const FindSingleRoom = () => {
                     </div>
 
                     <div className='w-11/12'>
-                        <div className='shadow-xl p-8'>
+                        <div className='shadow-sm p-8'>
                             <Pricing
+                            title={title}
                                 date={date}
                                 price={price}
                                 shift={shift}
                                 option={option}
                                 roomNumbers={roomNumbers}
+                                photo={photos}
                             />
-                            <button onClick={() => handleClick(_id)} className='btn w-full mt-6 btn-primary rounded-none text-white items-center'>Book Now or Reserve</button>
+                            <button onClick={handleClick} style={{ letterSpacing: '2px' }} className='py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Book Now or Reserve</button>
                         </div>
                     </div>
                 </div>
