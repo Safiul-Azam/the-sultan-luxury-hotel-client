@@ -9,11 +9,13 @@ import PromotionalVideo from './PromotionalVideo';
 import RoomsSuites from './RoomsSuites';
 import ServicesTheme from './ServicesTheme';
 import Testimonials from './Testimonials';
+import Banners from './Banners';
 
 const Home = () => {
     return (
         <div>
           <Banner></Banner>
+          <Banners></Banners>
           <EnjoyLuxury></EnjoyLuxury>
           <RoomsSuites></RoomsSuites>
           <ExtraServices></ExtraServices>
