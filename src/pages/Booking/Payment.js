@@ -6,8 +6,9 @@ import Pricing from './Pricing';
 import img1 from '../../images/banner/3.jpg'
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import CheckoutForm from './CheckoutForm';
 
-const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+const stripePromise = loadStripe('pk_test_51L1lwNK8cblwyB4icoDXqCV5LRsqz0BUpH0hPggBa0b10LucJ4r91UIcNBp0DBWqe94yOFFslBJmqMDKdZNesRZ400Ewz7t6jX');
 
 const Payment = () => {
     const location = useLocation()
@@ -37,24 +38,27 @@ const Payment = () => {
                 </div>
 
             </div>
-            <div className='w-[1100px] mx-auto flex'>
-                <div className='border'>
-
-                    <Elements stripe={stripePromise}>
-                        <CheckoutForm />
-                    </Elements>
-                </div>
-                <div>
-                    <div className='shadow-lg p-8'>
-                        <Pricing
-                            title={title}
-                            date={date}
-                            price={price}
-                            shift={shift}
-                            option={option}
-                            roomNumbers={roomNumbers}
-                            photo={photos}
-                        />
+            <div className='w-[1100px] mx-auto my-20'>
+                <div className='grid grid-cols-2 space-x-10'>
+                    <div className=''>
+                        <div className='border'>
+                            <Elements stripe={stripePromise}>
+                                <CheckoutForm />
+                            </Elements>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='shadow-lg p-8'>
+                            <Pricing
+                                title={title}
+                                date={date}
+                                price={price}
+                                shift={shift}
+                                option={option}
+                                roomNumbers={roomNumbers}
+                                photo={photos}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
