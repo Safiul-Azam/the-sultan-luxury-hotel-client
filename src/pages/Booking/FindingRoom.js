@@ -17,15 +17,15 @@ const FindingRoom = () => {
     const [min, setMin] = useState(undefined);
     const [max, setMax] = useState(undefined);
     const [options, setOptions] = useState({
-        adult: 1,
-        children: 0,
-        room: 1,
+        adult: parseInt(option.adult),
+        children: parseInt(option.children),
+        room: parseInt(option.room),
     });
     const handleOption = (name, operation) => {
         setOptions((prev) => {
             return {
                 ...prev,
-                [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+                [name]: operation === "i" ? options[name]+ 1 : options[name] - 1,
             };
         });
     };
