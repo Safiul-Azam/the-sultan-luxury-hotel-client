@@ -36,7 +36,6 @@ const Payment = () => {
                     <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>LUXURY HOTEL</p>
                     <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Payment Selection</h2>
                 </div>
-
             </div>
             <div className='w-[1100px] mx-auto my-20'>
                 <div className='grid grid-cols-2 space-x-10'>

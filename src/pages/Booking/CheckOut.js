@@ -40,6 +40,7 @@ const CheckOut = () => {
                         />}
                     <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center'>{`${format(date[0].endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl'/> </button>
                     <select onChange={handleChange} className='py-4 px-8 border-separate-4' name="" id="adult">
+                        <option className='text-lg'>Adult</option>
                         <option className='text-lg'>Adult 1</option>
                         <option className='text-lg'>Adult 2</option>
                         <option className='text-lg'>Adult 3</option>
@@ -47,6 +48,7 @@ const CheckOut = () => {
                         <option className='text-lg'>Adult 5</option>
                     </select>
                     <select onChange={handleChange} className='py-4 px-8 border-separate-4' name="" id="children">
+                        <option className='text-lg'>Children</option>
                         <option className='text-lg'>Children 1</option>
                         <option className='text-lg'>Children 2</option>
                         <option className='text-lg'>Children 3</option>
@@ -54,6 +56,7 @@ const CheckOut = () => {
                         <option className='text-lg'>Children 5</option>
                     </select>
                     <select onChange={handleChange} className='py-4 px-8' name="" id="room">
+                        <option className='text-lg'>Room</option>
                         <option className='text-lg'>Room 1</option>
                         <option className='text-lg'>Room 2</option>
                         <option className='text-lg'>Room 3</option>
