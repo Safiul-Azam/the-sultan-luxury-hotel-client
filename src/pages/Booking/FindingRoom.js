@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { format } from 'date-fns';
 import { AiOutlineCalendar } from 'react-icons/ai';
@@ -8,10 +8,11 @@ import useFetch from '../../hooks/useFetch';
 import { GrStar } from 'react-icons/gr';
 import { FiSearch } from 'react-icons/fi';
 import Spinner from '../Shared/Spinner';
+import { SearchContext } from '../../context/SearchContext';
 
 const FindingRoom = () => {
     const location = useLocation()
-    const [date, setDate] = useState(location.state.date)
+    const [dates, setDates] = useState(location.state.dates)
     const [option, setOption] = useState(location.state.option)
     const [openDate, setOpenDate] = useState(false)
     const [min, setMin] = useState(undefined);
@@ -29,15 +30,22 @@ const FindingRoom = () => {
             };
         });
     };
+
+
     const navigate = useNavigate()
-    const { data, loading, error,reFetch } = useFetch(`http://localhost:5000/api/rooms?min=${min || 0}&max=${max|| 999}`)
-    const handleClick = (id) => {
-        navigate(`/findRoom/${id}`, { state: { date, option } })
+
+    const { data, loading, error, reFetch } = useFetch(`http://localhost:5000/api/rooms?min=${min || 0}&max=${max || 999}`)
+
+    const { dispatch } = useContext(SearchContext)
+    const handleClick = id => {
+        dispatch({ type: 'NEW_SEARCH', payload: { dates, options } })
+        navigate(`/findRoom/${id}`, { state: { dates, options } })
+
     }
     if (loading) {
         <Spinner></Spinner>
     }
-    const handleChange = ()=>{
+    const handleChange = () => {
         reFetch()
     }
     return (
@@ -46,14 +54,14 @@ const FindingRoom = () => {
                 <div className='w-1/3'>
                     <div className='border w-full pt-10 '>
                         <div className='flex p-3 justify-evenly space-x-2 w-full'>
-                            <button onClick={() => setOpenDate(!openDate)} className='w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center' >{`${format(date[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /></button>
-                            <button onClick={() => setOpenDate(!openDate)} className=' w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center'>{`${format(date[0].endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /> </button>
+                            <button onClick={() => setOpenDate(!openDate)} className='w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center' >{`${format(dates[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /></button>
+                            <button onClick={() => setOpenDate(!openDate)} className=' w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center'>{`${format(dates[0].endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /> </button>
                         </div>
                         {openDate && <DateRange
                             editableDateInputs={true}
-                            onChange={item => setDate([item.selection])}
+                            onChange={item => setDates([item.selection])}
                             moveRangeOnFirstSelection={false}
-                            ranges={date}
+                            ranges={dates}
                             className='relative w-full mb-8'
                         />}
                         <div>

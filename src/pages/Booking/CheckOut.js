@@ -9,7 +9,7 @@ const CheckOut = () => {
     const [openDate, setOpenDate] = useState(false)
     const [option, setOption]= useState([])
     const navigate = useNavigate()
-    const [date, setDate] = useState([
+    const [dates, setDates] = useState([
         {
             startDate: new Date(),
             endDate: new Date(),
@@ -19,8 +19,8 @@ const CheckOut = () => {
     const handleChange = e=>{
         setOption(prev => ({...prev , [e.target.id]: e.target.value}))
     }   
-    const handleClick = e =>{
-        navigate('/findRoom', {state:{date, option}})
+    const handleClick = () =>{
+        navigate('/findRoom', {state:{dates, option}})
         
     }
     console.log(option);
@@ -30,15 +30,15 @@ const CheckOut = () => {
                 <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>CHECK NOW</p>
                 <h2 className='text-5xl mb-7 text-black'>Search Rooms</h2>
                 <div className='grid grid-cols-6 gap-2 relative'>
-                        <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center' >{`${format(date[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl'/></button>
+                        <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center' >{`${format(dates[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl'/></button>
                         {openDate && <DateRange
                             editableDateInputs={true}
-                            onChange={item => setDate([item.selection])}
+                            onChange={item => setDates([item.selection])}
                             moveRangeOnFirstSelection={false}
-                            ranges={date}
+                            ranges={dates}
                             className='absolute top-12 left-0 z-40'
                         />}
-                    <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center'>{`${format(date[0].endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl'/> </button>
+                    <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center'>{`${format(dates[0].endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl'/> </button>
                     <select onChange={handleChange} className='py-4 px-8 text-center' id="adult">
                         <option className='text-lg'>Adult</option>
                         <option className='text-lg'>1</option>

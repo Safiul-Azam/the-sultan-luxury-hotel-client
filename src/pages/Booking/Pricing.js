@@ -1,9 +1,21 @@
 import { format } from 'date-fns';
 import React from 'react';
+import { useContext } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import { GrStar } from 'react-icons/gr';
+import { SearchContext } from '../../context/SearchContext';
 
-const Pricing = ({ date, price, shift, option, roomNumbers, photo, title }) => {
+const Pricing = ({ price, shift, roomNumbers, photo, title }) => {
+
+    const { dates, options } = useContext(SearchContext)
+    const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
+    const dayDifference = (date1, date2) => {
+        const timeDiff = Math.abs(date2?.getTime() - date1?.getTime())
+        const dayDiff = Math.ceil(timeDiff / MILLISECOND_PER_DAY)
+        return dayDiff
+    }
+    const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
+    console.log(days);
     return (
         <div>
             <div className='flex justify-between items-center'>
@@ -23,13 +35,13 @@ const Pricing = ({ date, price, shift, option, roomNumbers, photo, title }) => {
             </div>
             <div className="w-3/4 my-4">
                 <span className="label-text text-lg">Selected date for reserve</span>
-                <span className="w-full rounded-none text-lg flex items-center justify-between">{`${format(date[0].startDate, 'MM-dd-yyyy')}`}<BsArrowRight className='text-2xl' />  {`${format(date[0].endDate, 'MM-dd-yyyy')}`}</span>
+                <span className="w-full rounded-none text-lg flex items-center justify-between">{`${format(dates[0]?.startDate, 'MM-dd-yyyy')}`}<BsArrowRight className='text-2xl' />  {`${format(dates[0]?.endDate, 'MM-dd-yyyy')}`}</span>
                 <hr />
             </div>
             <div className="text-xl w-3/4 space-y-2">
-                <p>{option?.adult}</p>
+                <p>Adult : {options?.adult}</p>
                 <hr />
-                <p>{option?.children}</p>
+                <p>Children : {options?.children}</p>
                 <hr />
             </div>
             <div className=" w-full">
@@ -49,7 +61,7 @@ const Pricing = ({ date, price, shift, option, roomNumbers, photo, title }) => {
 
             </div>
             <div className='border p-3 w-full mt-3 space-y-2 text-lg'>
-                <p className='text-lg font-bold text-gray-600'>Thank You for Reserved 7 Night to stay</p>
+                <p className='text-lg font-bold text-gray-600'>Thank You for Reserved {days} Night to stay</p>
                 <div className='flex justify-between'>
                     <p className='flex justify-between'>${`${price} X 7`}</p>
                     <p>{'1050'}</p>

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
 import { AiOutlineCheck } from 'react-icons/ai';
 import { GrStar } from 'react-icons/gr';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import Navbar from '../Shared/Navbar';
 import img1 from '../../images/banner/6.jpg'
@@ -12,25 +11,11 @@ import { SearchContext } from '../../context/SearchContext';
 
 const FindSingleRoom = () => {
     const location = useLocation()
-    const [date, setDate] = useState(location.state.date)
-    const [option, setOption] = useState(location.state.option)
     const id = location?.pathname.split('/')[2]
     const navigate = useNavigate()
-    const handleClick = (id) => {
-        navigate(`/reviewRules/${id}`, { state: { date, option } })
-    }
 
     const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
-    const { dates, options } = useContext(SearchContext)
-    console.log(dates);
-    const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
-    const dayDifference = (date1, date2)=>{
-        const timeDiff = Math.abs(date2?.getTime() - date1?.getTime())
-        const dayDiff = Math.ceil(timeDiff / MILLISECOND_PER_DAY)
-        return dayDiff
-    }
-    const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
-    console.log(days);
+
     const {
         _id,
         pets,
@@ -45,7 +30,10 @@ const FindSingleRoom = () => {
         instructions,
         roomNumbers } = data
 
-
+    const {dates, options} = useContext(SearchContext)
+    const handleClick = (id) => {
+        navigate(`/reviewRules/${id}`, { state: { dates, options } })
+    }
 
     if (loading) {
         <Spinner></Spinner>
@@ -119,10 +107,8 @@ const FindSingleRoom = () => {
                         <div className='shadow-lg p-8'>
                             <Pricing
                                 title={title}
-                                date={date}
                                 price={price}
                                 shift={shift}
-                                option={option}
                                 roomNumbers={roomNumbers}
                                 photo={photos}
                             />
