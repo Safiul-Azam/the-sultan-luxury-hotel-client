@@ -16,6 +16,9 @@ const Pricing = ({ price, shift, roomNumbers, photo, title }) => {
     }
     const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
     console.log(days);
+
+    const totalPrice = price * days
+    const forChildren = 10 * options?.children
     return (
         <div>
             <div className='flex justify-between items-center'>
@@ -34,8 +37,8 @@ const Pricing = ({ price, shift, roomNumbers, photo, title }) => {
                 <img className='w-1/3' src={photo} alt="photos" />
             </div>
             <div className="w-3/4 my-4">
-                <span className="label-text text-lg">Selected date for reserve</span>
-                <span className="w-full rounded-none text-lg flex items-center justify-between">{`${format(dates[0]?.startDate, 'MM-dd-yyyy')}`}<BsArrowRight className='text-2xl' />  {`${format(dates[0]?.endDate, 'MM-dd-yyyy')}`}</span>
+                <h2 className="label-text text-lg my-3 text-primary">Selected date for reserve</h2>
+                <h2 className="w-full rounded-none text-lg flex items-center justify-between my-2">{`${format(dates[0]?.startDate, 'MM-dd-yyyy')}`}<BsArrowRight className='text-2xl' />  {`${format(dates[0]?.endDate, 'MM-dd-yyyy')}`}</h2>
                 <hr />
             </div>
             <div className="text-xl w-3/4 space-y-2">
@@ -63,28 +66,28 @@ const Pricing = ({ price, shift, roomNumbers, photo, title }) => {
             <div className='border p-3 w-full mt-3 space-y-2 text-lg'>
                 <p className='text-lg font-bold text-gray-600'>Thank You for Reserved {days} Night to stay</p>
                 <div className='flex justify-between'>
-                    <p className='flex justify-between'>${`${price} X 7`}</p>
-                    <p>{'1050'}</p>
+                    <p className='flex justify-between'>${`${price} X ${days}`}</p>
+                    <p>${totalPrice}</p>
                 </div>
                 <hr />
                 <div className='flex justify-between'>
-                    <p>Children 4</p>
-                    <p>10 X 4 = $40</p>
+                    <p>Children {options?.children}</p>
+                    <p>10 X {options?.children} = ${forChildren}</p>
                 </div>
                 <hr />
                 <div className='flex justify-between'>
                     <p>Cleaning fee</p>
-                    <p>$10</p>
+                    <p>${10}</p>
                 </div>
                 <hr />
                 <div className='flex justify-between'>
                     <p>Service fee</p>
-                    <p>$25</p>
+                    <p>${25}</p>
                 </div>
                 <hr />
                 <div className='flex justify-between font-bold'>
                     <p>Total</p>
-                    <p>{'1125'}</p>
+                    <p>${totalPrice + forChildren + 10 + 25}</p>
                 </div>
             </div>
         </div>

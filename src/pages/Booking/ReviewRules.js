@@ -10,11 +10,11 @@ import { IoLogoNoSmoking } from 'react-icons/io'
 import { GiPartyFlags } from 'react-icons/gi'
 import { MdPets, MdNoDrinks, MdOutlineChildFriendly } from 'react-icons/md'
 import { ImManWoman } from 'react-icons/im'
+import { useContext } from 'react';
+import { SearchContext } from '../../context/SearchContext';
 
 const ReviewRules = () => {
     const location = useLocation()
-    const [date, setDate] = useState(location?.state?.date)
-    const [option, setOption] = useState(location?.state?.option)
     const id = location?.pathname.split('/')[2]
     const navigate = useNavigate()
     const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
@@ -25,11 +25,13 @@ const ReviewRules = () => {
         photos,
         title,
         roomNumbers } = data
+
+    const { dates, options } = useContext(SearchContext)
     if (loading) {
         <Spinner></Spinner>
     }
-    const handleClick = (id)=>{
-        navigate(`/payment/${id}`, { state: { date } })
+    const handleClick = (id) => {
+        navigate(`/payment/${id}`)
     }
     return (
         <div>
@@ -57,21 +59,21 @@ const ReviewRules = () => {
                         <div className='flex space-x-20 my-6'>
                             <div className='flex items-center space-x-5'>
                                 <div className='bg-primary text-center text-white px-2 py-1'>
-                                    <p className='text-sm leading-none uppercase'>{`${format(date[0].startDate, 'MMM')}`}</p>
-                                    <p>{`${format(date[0].startDate, 'd')}`}</p>
+                                    <p className='text-sm leading-none uppercase'>{`${format(dates[0]?.startDate, 'MMM')}`}</p>
+                                    <p>{`${format(dates[0]?.startDate, 'd')}`}</p>
                                 </div>
                                 <div>
-                                    <p className='text-lg'>{`${format(date[0]?.startDate, 'iiii')}`} Check in</p>
+                                    <p className='text-lg'>{`${format(dates[0]?.startDate, 'iiii')}`} Check in</p>
                                     <p className='text-lg'>After 12:00 pm</p>
                                 </div>
                             </div>
                             <div className='flex items-center space-x-5'>
                                 <div className='bg-primary text-center text-white px-2 py-1'>
-                                    <p className='text-sm leading-none uppercase'>{`${format(date[0].endDate, 'MMM')}`}</p>
-                                    <p>{`${format(date[0].endDate, 'd')}`}</p>
+                                    <p className='text-sm leading-none uppercase'>{`${format(dates[0]?.endDate, 'MMM')}`}</p>
+                                    <p>{`${format(dates[0]?.endDate, 'd')}`}</p>
                                 </div>
                                 <div>
-                                    <p className='text-lg'>{`${format(date[0].endDate, 'iiii')}`} Check Out</p>
+                                    <p className='text-lg'>{`${format(dates[0]?.endDate, 'iiii')}`} Check Out</p>
                                     <p className='text-lg'>11:00 pm</p>
                                 </div>
                             </div>
@@ -89,17 +91,15 @@ const ReviewRules = () => {
                                 <p className='flex items-center'><ImManWoman className='text-gray-500 text-2xl mr-2' />Can't stay in hotel any guests without counted</p>
                             </div>
                         </div>
-                        <button onClick={()=>handleClick(_id)} style={{ letterSpacing: '2px' }} className='py-4 mt-10 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Agree & continue</button>
+                        <button onClick={() => handleClick(_id)} style={{ letterSpacing: '2px' }} className='py-4 mt-10 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Agree & continue</button>
                     </div>
 
                     <div className='w-11/12'>
                         <div className='shadow-lg p-8'>
                             <Pricing
-                            title={title}
-                                date={date}
+                                title={title}
                                 price={price}
                                 shift={shift}
-                                option={option}
                                 roomNumbers={roomNumbers}
                                 photo={photos}
                             />

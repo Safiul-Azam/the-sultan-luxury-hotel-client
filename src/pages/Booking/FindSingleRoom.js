@@ -6,8 +6,6 @@ import Navbar from '../Shared/Navbar';
 import img1 from '../../images/banner/6.jpg'
 import Spinner from '../Shared/Spinner';
 import Pricing from './Pricing';
-import { useContext } from 'react';
-import { SearchContext } from '../../context/SearchContext';
 
 const FindSingleRoom = () => {
     const location = useLocation()
@@ -29,10 +27,8 @@ const FindSingleRoom = () => {
         description,
         instructions,
         roomNumbers } = data
-
-    const {dates, options} = useContext(SearchContext)
     const handleClick = (id) => {
-        navigate(`/reviewRules/${id}`, { state: { dates, options } })
+        navigate(`/reviewRules/${id}`)
     }
 
     if (loading) {
