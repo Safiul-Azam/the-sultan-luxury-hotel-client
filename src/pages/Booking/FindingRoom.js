@@ -25,18 +25,20 @@ const FindingRoom = () => {
         setOptions((prev) => {
             return {
                 ...prev,
-                [name]: operation === "i" ? options[name]+ 1 : options[name] - 1,
+                [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
             };
         });
     };
     const navigate = useNavigate()
-    const handleChange = () => { }
-    const { data, loading, error } = useFetch('http://localhost:5000/api/rooms')
-    const handleClick = (id)=>{
-        navigate(`/findRoom/${id}`, {state:{date, option}})
+    const { data, loading, error,reFetch } = useFetch(`http://localhost:5000/api/rooms?min=${min || 0}&max=${max|| 999}`)
+    const handleClick = (id) => {
+        navigate(`/findRoom/${id}`, { state: { date, option } })
     }
-    if(loading){
+    if (loading) {
         <Spinner></Spinner>
+    }
+    const handleChange = ()=>{
+        reFetch()
     }
     return (
         <div className='bg-neutral'>
@@ -54,15 +56,15 @@ const FindingRoom = () => {
                             ranges={date}
                             className='relative w-full mb-8'
                         />}
-                        <div onChange={handleChange}>
-                            <div className="flex justify-evenly items-center my-6">
+                        <div>
+                            <div onChange={handleChange} className="flex justify-evenly items-center my-6">
                                 <span className="label-text text-lg ">Min price <small>per night</small></span>
                                 <input
                                     onChange={e => setMin(e.target.value)} type="number"
                                     className="input input-bordered w-1/2 rounded-none text-lg"
                                 />
                             </div>
-                            <div className="flex justify-evenly items-center">
+                            <div onChange={handleChange} className="flex justify-evenly items-center">
                                 <span className="label-text text-lg ">Max price <small>per night</small></span>
                                 <input
                                     onChange={e => setMax(e.target.value)} type="number"
@@ -138,7 +140,7 @@ const FindingRoom = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button style={{ letterSpacing: '2px' }} className='w-full flex items-center justify-center py-3 text-xl text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 mt-10'><FiSearch className='text-lg mr-2' /> Search</button>
+                            <button onClick={handleChange} style={{ letterSpacing: '2px' }} className='w-full flex items-center justify-center py-3 text-xl text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 mt-10'><FiSearch className='text-lg mr-2' /> Search</button>
                         </div>
                     </div>
                 </div>
@@ -163,7 +165,7 @@ const FindingRoom = () => {
                                         <GrStar />
                                         <GrStar />
                                     </div>
-                                    <button onClick={()=>handleClick(room._id)} className='border p-1 border-primary'>See Available</button>
+                                    <button onClick={() => handleClick(room._id)} className='border p-1 border-primary'>See Available</button>
                                 </div>
                             </div>
                         </div>)}
