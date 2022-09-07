@@ -7,6 +7,8 @@ import Navbar from '../Shared/Navbar';
 import img1 from '../../images/banner/6.jpg'
 import Spinner from '../Shared/Spinner';
 import Pricing from './Pricing';
+import { useContext } from 'react';
+import { SearchContext } from '../../context/SearchContext';
 
 const FindSingleRoom = () => {
     const location = useLocation()
@@ -19,6 +21,16 @@ const FindSingleRoom = () => {
     }
 
     const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
+    const { dates, options } = useContext(SearchContext)
+    console.log(dates);
+    const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
+    const dayDifference = (date1, date2)=>{
+        const timeDiff = Math.abs(date2?.getTime() - date1?.getTime())
+        const dayDiff = Math.ceil(timeDiff / MILLISECOND_PER_DAY)
+        return dayDiff
+    }
+    const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
+    console.log(days);
     const {
         _id,
         pets,
@@ -32,6 +44,8 @@ const FindSingleRoom = () => {
         description,
         instructions,
         roomNumbers } = data
+
+
 
     if (loading) {
         <Spinner></Spinner>
@@ -104,7 +118,7 @@ const FindSingleRoom = () => {
                     <div className='w-11/12'>
                         <div className='shadow-lg p-8'>
                             <Pricing
-                            title={title}
+                                title={title}
                                 date={date}
                                 price={price}
                                 shift={shift}
@@ -112,7 +126,7 @@ const FindSingleRoom = () => {
                                 roomNumbers={roomNumbers}
                                 photo={photos}
                             />
-                            <button onClick={()=>handleClick(_id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Book Now or Reserve</button>
+                            <button onClick={() => handleClick(_id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Book Now or Reserve</button>
                         </div>
                     </div>
                 </div>
