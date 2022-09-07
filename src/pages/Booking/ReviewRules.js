@@ -15,6 +15,7 @@ import { SearchContext } from '../../context/SearchContext';
 
 const ReviewRules = () => {
     const location = useLocation()
+    console.log(location);
     const id = location?.pathname.split('/')[2]
     const [allDates, setAllDates] = useState(location.state.allDates)
     const [selectedRoom, setSelectedRoom] = useState(location.state.selected)
@@ -27,7 +28,6 @@ const ReviewRules = () => {
         photos,
         title,
         roomNumbers } = data
-    console.log(allDates);
 
     const { dates, options } = useContext(SearchContext)
     if (loading) {

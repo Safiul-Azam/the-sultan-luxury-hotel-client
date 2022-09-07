@@ -83,79 +83,77 @@ const FindSingleRoom = () => {
                 </div>
 
             </div>
-            <div className='w-[1100px] mx-auto pt-28 pb-20'>
-                <div className='flex justify-between items-center'>
-                    <h2 className='text-3xl mb-3 text-black'>{title}</h2>
-                </div>
-                <div className='flex justify-center w-1/4 mb-10'>
-                    <img src={photos} alt="" />
-                </div>
-                <div className="w-full mt-3">
-                    <span className="label-text text-2xl font-bold">Choose Room Number</span>
-                    <div className="w-full rounded-none text-5xl flex items-center space-x-5">
-                        {roomNumbers?.map(roomNumber => (
-                            <div key={roomNumber._id} className='py-6'>
-                                <label>{roomNumber.number}</label>
-                                <input type="checkbox" disabled={!isAvailable(roomNumber)} onChange={handleSelected} value={roomNumber._id} />
-                            </div>
-                        ))}
-                    </div>
-                </div>
+            <div className='w-[1100px] mx-auto pt-8 pb-20 grid grid-cols-2 space-x-24'>
 
-                <div className='flex text-xl mb-4 text-secondary'>
-                    <GrStar />
-                    <GrStar />
-                    <GrStar />
-                    <GrStar />
-                    <GrStar />
-                </div>
-                <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-3'>LUXURY HOTEL</p>
-                <div className='grid grid-cols-2 space-x-20'>
+                <div className=''>
+                    <div className='flex justify-between items-center'>
+                        <h2 className='text-3xl mb-3 text-black'>{title}</h2>
+                    </div>
+                    <div className='flex justify-center w-1/2 mb-5'>
+                        <img src={photos} alt="" />
+                    </div>
+                    <div className="w-full mt-3">
+                        <span className="label-text text-2xl font-bold">Choose Room Number</span>
+                        <div className="w-full rounded-none text-4xl flex items-center space-x-5">
+                            {roomNumbers?.map(roomNumber => (
+                                <div key={roomNumber._id} className='py-2'>
+                                    <label>{roomNumber.number}</label>
+                                    <input type="checkbox" disabled={!isAvailable(roomNumber)} onChange={handleSelected} value={roomNumber._id} />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className='flex text-xl mb-4 text-secondary'>
+                        <GrStar />
+                        <GrStar />
+                        <GrStar />
+                        <GrStar />
+                        <GrStar />
+                    </div>
+                    <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-3'>LUXURY HOTEL</p>
+                    {description?.map((desc, index) => (
+                        <div key={index} className='mb-3'>
+                            <p className='text-lg text-[#777] tracking-wide'>{desc}</p>
+                        </div>
+                    ))}
+                    <div className='flex space-x-20'>
+                        <div className='space-y-3'>
+                            <h2 className='text-xl'>Check-in</h2>
+                            {
+                                checkIn?.map((i, index) => <p className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
+                            }
+                        </div>
+                        <div className='mb-4 space-y-3'>
+                            <h2 className='text-xl'>Check Out</h2>
+                            {
+                                checkOut?.map((i, index) => <p key={index} className='tracking-wide flex items-center text-lg text-[#777]'><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
+                            }
+                        </div>
+                    </div>
                     <div className=''>
-                        {description?.map((desc, index) => (
-                            <div key={index} className='mb-3'>
-                                <p className='text-lg text-[#777] tracking-wide'>{desc}</p>
-                            </div>
-                        ))}
-                        <div className='flex space-x-20'>
-                            <div className='space-y-3'>
-                                <h2 className='text-xl'>Check-in</h2>
-                                {
-                                    checkIn?.map((i, index) => <p className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
-                                }
-                            </div>
-                            <div className='mb-4 space-y-3'>
-                                <h2 className='text-xl'>Check Out</h2>
-                                {
-                                    checkOut?.map((i, index) => <p key={index} className='tracking-wide flex items-center text-lg text-[#777]'><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
-                                }
-                            </div>
-                        </div>
-                        <div className=''>
-                            <h2 className='text-2xl'>Special check-in instructions</h2>
-                            <p className='text-lg text-[#777] my-4 tracking-wide'>{instructions}</p>
-                            <h2 className='text-2xl'>Pets</h2>
-                            <p className='text-lg text-[#777] my-3 tracking-wide'>{pets}</p>
-                            <h2 className='text-2xl'>Children and extra beds</h2>
-                            <p className='text-lg text-[#777] my-4 tracking-wide'>{extraBeds}</p>
-                        </div>
+                        <h2 className='text-2xl'>Special check-in instructions</h2>
+                        <p className='text-lg text-[#777] my-4 tracking-wide'>{instructions}</p>
+                        <h2 className='text-2xl'>Pets</h2>
+                        <p className='text-lg text-[#777] my-3 tracking-wide'>{pets}</p>
+                        <h2 className='text-2xl'>Children and extra beds</h2>
+                        <p className='text-lg text-[#777] my-4 tracking-wide'>{extraBeds}</p>
                     </div>
-
-                    <div className='w-11/12'>
-                        <div className='shadow-lg p-8'>
-                            <Pricing
-                                title={title}
-                                price={price}
-                                shift={shift}
-                                selectedRoom={selectedRoom}
-                                roomNumbers={roomNumbers}
-                                photo={photos}
-                                id={data._id}
-                                loading={loading}
-                                reFetch={reFetch}
-                            />
-                            <button onClick={() => handleClick(id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Book Now or Reserve</button>
-                        </div>
+                </div>
+                <div className='w-11/12'>
+                    <div className='shadow-lg p-8 mt-16'>
+                        <Pricing
+                            title={title}
+                            price={price}
+                            shift={shift}
+                            selectedRoom={selectedRoom}
+                            roomNumbers={roomNumbers}
+                            photo={photos}
+                            id={data._id}
+                            loading={loading}
+                            reFetch={reFetch}
+                        />
+                        <button onClick={() => handleClick(id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Book Now or Reserve</button>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ import { GrStar } from 'react-icons/gr';
 import { SearchContext } from '../../context/SearchContext';
 import Spinner from '../Shared/Spinner';
 
-const Pricing = ({ price, shift, photo, title, id, loading, reFetch, selectedRoom , roomNumbers}) => {
+const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
     const { dates, options } = useContext(SearchContext)
     const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
     const dayDifference = (date1, date2) => {
@@ -15,8 +15,8 @@ const Pricing = ({ price, shift, photo, title, id, loading, reFetch, selectedRoo
         return dayDiff
     }
     const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
-
-    const totalPrice = price * days
+    const roomsPrice = price * days 
+    const totalPrice = roomsPrice * selectedRoom.length
     const forChildren = 10 * options?.children
     if (loading) {
         return <Spinner></Spinner>
@@ -36,20 +36,18 @@ const Pricing = ({ price, shift, photo, title, id, loading, reFetch, selectedRoo
                         <p className='text-sm ml-2 text-black'>(20 reviews)</p>
                     </div>
                 </div>
-                <img className='w-1/3' src={photo} alt="photos" />
+                <img className='w-1/4' src={photo} alt="photos" />
             </div>
-            <div className="w-3/4 my-4">
+            <div className="w-3/4 my-2">
                 <h2 className="label-text text-lg my-3 text-primary">Selected date for reserve</h2>
                 <h2 className="w-full rounded-none text-lg flex items-center justify-between my-2">{`${format(dates[0]?.startDate, 'MM-dd-yyyy')}`}<BsArrowRight className='text-2xl' />  {`${format(dates[0]?.endDate, 'MM-dd-yyyy')}`}</h2>
                 <hr />
             </div>
-            <div className="w-full mt-3">
-                <span className="label-text text-2xl font-bold">Choose Room Number</span>
-                <div className="w-full rounded-none text-5xl flex items-center space-x-5">
-                    {selectedRoom?.map(roomNumber => (
-                        <div key={roomNumber._id} className='py-6'>
-                            <label>{roomNumber.number}</label>
-                            <input type="input" value='' />
+            <div className="w-full">
+                <div className="w-full rounded-none text-xl flex items-center space-x-5">
+                    {selectedRoom?.map((roomNumber,index) => (
+                        <div key={index} className='py-3'>
+                            {roomNumber && <label className='font-bold'>{index + 1} Room is Chose</label>}
                         </div>
                     ))}
                 </div>
@@ -62,9 +60,10 @@ const Pricing = ({ price, shift, photo, title, id, loading, reFetch, selectedRoo
             </div>
             <div className='border p-3 w-full mt-3 space-y-2 text-lg'>
                 <p className='text-lg font-bold text-gray-600'>Thank You for Reserved {days} Night to stay</p>
+                {!selectedRoom[0] && <p className='text-primary text-lg'>You don't select any room yet!  Please select</p>}
                 <div className='flex justify-between'>
                     <p className='flex justify-between'>${`${price} X ${days}`}</p>
-                    <p>${totalPrice}</p>
+                    <p>{roomsPrice} X {selectedRoom.length} = ${totalPrice}</p>
                 </div>
                 <hr />
                 <div className='flex justify-between'>
