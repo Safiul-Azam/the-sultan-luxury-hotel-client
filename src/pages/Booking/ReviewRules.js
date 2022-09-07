@@ -16,8 +16,10 @@ import { SearchContext } from '../../context/SearchContext';
 const ReviewRules = () => {
     const location = useLocation()
     const id = location?.pathname.split('/')[2]
+    const [allDates, setAllDates] = useState(location.state.allDates)
+    const [selectedRoom, setSelectedRoom] = useState(location.state.selected)
     const navigate = useNavigate()
-    const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
+    const { data, loading, reFetch } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
     const {
         _id,
         shift,
@@ -25,13 +27,14 @@ const ReviewRules = () => {
         photos,
         title,
         roomNumbers } = data
+    console.log(allDates);
 
     const { dates, options } = useContext(SearchContext)
     if (loading) {
-        <Spinner></Spinner>
+        return <Spinner></Spinner>
     }
     const handleClick = (id) => {
-        navigate(`/payment/${id}`)
+        navigate(`/payment/${id}`, {state:{allDates, selected: selectedRoom}})
     }
     return (
         <div>
@@ -103,6 +106,9 @@ const ReviewRules = () => {
                                 shift={shift}
                                 roomNumbers={roomNumbers}
                                 photo={photos}
+                                selectedRoom={selectedRoom}
+                                loading={loading}
+                                reFetch={reFetch}
                             />
                         </div>
                     </div>

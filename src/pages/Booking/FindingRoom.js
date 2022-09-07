@@ -43,7 +43,7 @@ const FindingRoom = () => {
 
     }
     if (loading) {
-        <Spinner></Spinner>
+       return <Spinner></Spinner>
     }
     const handleChange = () => {
         reFetch()

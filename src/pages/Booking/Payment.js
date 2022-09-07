@@ -1,27 +1,40 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import Navbar from '../Shared/Navbar';
 import Pricing from './Pricing';
 import img1 from '../../images/banner/3.jpg'
-import { loadStripe } from '@stripe/stripe-js';
-import { Elements } from '@stripe/react-stripe-js';
-import CheckoutForm from './CheckoutForm';
+import axios from 'axios';
+import Spinner from '../Shared/Spinner';
 
-const stripePromise = loadStripe('pk_test_51L1lwNK8cblwyB4icoDXqCV5LRsqz0BUpH0hPggBa0b10LucJ4r91UIcNBp0DBWqe94yOFFslBJmqMDKdZNesRZ400Ewz7t6jX');
+// const stripePromise = loadStripe('pk_test_51L1lwNK8cblwyB4icoDXqCV5LRsqz0BUpH0hPggBa0b10LucJ4r91UIcNBp0DBWqe94yOFFslBJmqMDKdZNesRZ400Ewz7t6jX');
 
 const Payment = () => {
     const location = useLocation()
-    const [date, setDate] = useState(location?.state?.date)
-    const [option, setOption] = useState(location?.state?.option)
+    console.log(location);
     const id = location?.pathname.split('/')[2]
-    const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
+    const [allDates, setAllDates] = useState(location.state.allDates)
+    const [selectedRoom, setSelectedRoom] = useState(location.state.selected)
+    const { data, loading, reFetch } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
     const {
         shift,
         price,
         photos,
         title,
         roomNumbers } = data
+        console.log(allDates);
+  
+    const handleClick = async (id) => {
+        try {
+            await Promise.all(selectedRoom.map(roomId => {
+                const res = axios.put(`http://localhost:5000/api/rooms/availability/${roomId}`, { dates: allDates })
+                return res.data
+            }))
+        } catch (err) { }
+    }
+    if(loading){
+        return <Spinner />
+    }
     return (
         <div>
             <div className=' pt-8 mix-blend-normal bg-black-400' style={
@@ -41,21 +54,19 @@ const Payment = () => {
                 <div className='grid grid-cols-2 space-x-10'>
                     <div className=''>
                         <div className='border'>
-                            <Elements stripe={stripePromise}>
-                                <CheckoutForm />
-                            </Elements>
+                            <button onClick={() => handleClick(id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Complete your Booking</button>
                         </div>
                     </div>
                     <div>
                         <div className='shadow-lg p-8'>
                             <Pricing
                                 title={title}
-                                date={date}
                                 price={price}
                                 shift={shift}
-                                option={option}
                                 roomNumbers={roomNumbers}
                                 photo={photos}
+                                selectedRoom={selectedRoom}
+                                reFetch={reFetch}
                             />
                         </div>
                     </div>

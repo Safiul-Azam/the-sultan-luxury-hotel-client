@@ -6,13 +6,16 @@ import Navbar from '../Shared/Navbar';
 import img1 from '../../images/banner/6.jpg'
 import Spinner from '../Shared/Spinner';
 import Pricing from './Pricing';
+import { SearchContext } from '../../context/SearchContext';
+import { useContext, useState } from 'react';
 
 const FindSingleRoom = () => {
+    const [selectedRoom, setSelectedRoom] = useState([])
     const location = useLocation()
     const id = location?.pathname.split('/')[2]
     const navigate = useNavigate()
 
-    const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
+    const { data, loading, reFetch } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
 
     const {
         _id,
@@ -30,6 +33,37 @@ const FindSingleRoom = () => {
 
     if (loading) {
         <Spinner></Spinner>
+    }
+
+    // selected
+    const { dates, options } = useContext(SearchContext)
+    const getDatesInRange = (startDate, endDate) => {
+        const start = new Date(startDate)
+        const end = new Date(endDate)
+        const date = new Date(start.getTime())
+        const dates = []
+        while (date <= end) {
+            dates.push(new Date(date).getTime())
+            date.setDate(date.getDate() + 1)
+        }
+        return dates
+    }
+    const allDates = getDatesInRange(dates[0]?.startDate, dates[0]?.endDate);
+    const isAvailable = (roomNumber) => {
+        const isFound = roomNumber.unavailableDates.some((date) =>
+            allDates.includes(new Date(date).getTime())
+        );
+
+        return !isFound;
+    };
+    const handleSelected = (e) => {
+        const checked = e.target.checked
+        const value = e.target.value
+        setSelectedRoom(checked ? [...selectedRoom, value] : selectedRoom.filter(item => item !== value))
+    }
+    console.log(selectedRoom);
+    const handleClick = (id) => {
+        navigate(`/reviewRules/${id}`, { state: { selected: selectedRoom, allDates } })
     }
     return (
         <div>
@@ -55,6 +89,17 @@ const FindSingleRoom = () => {
                 </div>
                 <div className='flex justify-center w-1/4 mb-10'>
                     <img src={photos} alt="" />
+                </div>
+                <div className="w-full mt-3">
+                    <span className="label-text text-2xl font-bold">Choose Room Number</span>
+                    <div className="w-full rounded-none text-5xl flex items-center space-x-5">
+                        {roomNumbers?.map(roomNumber => (
+                            <div key={roomNumber._id} className='py-6'>
+                                <label>{roomNumber.number}</label>
+                                <input type="checkbox" disabled={!isAvailable(roomNumber)} onChange={handleSelected} value={roomNumber._id} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 <div className='flex text-xl mb-4 text-secondary'>
@@ -102,11 +147,14 @@ const FindSingleRoom = () => {
                                 title={title}
                                 price={price}
                                 shift={shift}
+                                selectedRoom={selectedRoom}
                                 roomNumbers={roomNumbers}
                                 photo={photos}
                                 id={data._id}
+                                loading={loading}
+                                reFetch={reFetch}
                             />
-                            
+                            <button onClick={() => handleClick(id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Book Now or Reserve</button>
                         </div>
                     </div>
                 </div>
