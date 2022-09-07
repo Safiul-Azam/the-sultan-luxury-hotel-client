@@ -27,9 +27,6 @@ const FindSingleRoom = () => {
         description,
         instructions,
         roomNumbers } = data
-    const handleClick = (id) => {
-        navigate(`/reviewRules/${id}`)
-    }
 
     if (loading) {
         <Spinner></Spinner>
@@ -85,7 +82,7 @@ const FindSingleRoom = () => {
                             <div className='mb-4 space-y-3'>
                                 <h2 className='text-xl'>Check Out</h2>
                                 {
-                                    checkOut?.map((i, index) => <p className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
+                                    checkOut?.map((i, index) => <p key={index} className='tracking-wide flex items-center text-lg text-[#777]'><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
                                 }
                             </div>
                         </div>
@@ -107,8 +104,9 @@ const FindSingleRoom = () => {
                                 shift={shift}
                                 roomNumbers={roomNumbers}
                                 photo={photos}
+                                id={data._id}
                             />
-                            <button onClick={() => handleClick(_id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Book Now or Reserve</button>
+                            
                         </div>
                     </div>
                 </div>

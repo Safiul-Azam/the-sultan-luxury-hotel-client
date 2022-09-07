@@ -1,12 +1,16 @@
+import axios from 'axios';
 import { format } from 'date-fns';
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import { GrStar } from 'react-icons/gr';
+import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../context/SearchContext';
 
-const Pricing = ({ price, shift, roomNumbers, photo, title }) => {
-
+const Pricing = ({ price, shift, roomNumbers, photo, title, id }) => {
+    const [selected, setSelected] = useState([])
+    const navigate = useNavigate()
     const { dates, options } = useContext(SearchContext)
     const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
     const dayDifference = (date1, date2) => {
@@ -15,10 +19,48 @@ const Pricing = ({ price, shift, roomNumbers, photo, title }) => {
         return dayDiff
     }
     const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
-    console.log(days);
 
     const totalPrice = price * days
     const forChildren = 10 * options?.children
+
+
+    const getDatesInRange = (startDate, endDate) => {
+        const start = new Date(startDate)
+        const end = new Date(endDate)
+        const date = new Date(start.getTime())
+
+        const dates = []
+
+        while (date <= end) {
+            dates.push(new Date(date).getTime())
+            date.setDate(date.getDate() + 1)
+        }
+        return dates
+    }
+    const allDates = getDatesInRange(dates[0]?.startDate, dates[0]?.endDate);
+    const isAvailable = (roomNumber) => {
+        const isFound = roomNumber.unavailableDates.some((date) =>
+          allDates.includes(new Date(date).getTime())
+        );
+    
+        return !isFound;
+      };
+
+    const handleSelected = (e) => {
+        const checked = e.target.checked
+        const value = e.target.value
+        setSelected(checked ? [...selected, value] : selected.filter(item => item !== value))
+    }
+    console.log(selected);
+    const handleClick = async ()=>{
+        try {
+            await Promise.all(selected.map(roomId => {
+                const res = axios.put(`http://localhost:5000/api/rooms/availability/${roomId}`, {dates:allDates})
+                return res.data
+            }))
+        } catch (err) {}
+    }
+
     return (
         <div>
             <div className='flex justify-between items-center'>
@@ -55,7 +97,7 @@ const Pricing = ({ price, shift, roomNumbers, photo, title }) => {
                     {roomNumbers?.map(roomNumber => (
                         <div key={roomNumber._id}>
                             <label>{roomNumber.number}</label>
-                            <input type="checkbox" value={roomNumber._id} />
+                            <input type="checkbox" disabled={!isAvailable(roomNumber)} onChange={handleSelected} value={roomNumber._id} />
                         </div>
                     ))}
                 </div>
@@ -90,6 +132,7 @@ const Pricing = ({ price, shift, roomNumbers, photo, title }) => {
                     <p>${totalPrice + forChildren + 10 + 25}</p>
                 </div>
             </div>
+            <button onClick={() => handleClick(id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Book Now or Reserve</button>
         </div>
     );
 };

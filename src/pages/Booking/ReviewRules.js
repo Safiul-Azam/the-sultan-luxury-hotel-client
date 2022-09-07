@@ -97,6 +97,7 @@ const ReviewRules = () => {
                     <div className='w-11/12'>
                         <div className='shadow-lg p-8'>
                             <Pricing
+                                id={_id}
                                 title={title}
                                 price={price}
                                 shift={shift}
