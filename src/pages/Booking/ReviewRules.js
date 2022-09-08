@@ -37,7 +37,6 @@ const ReviewRules = () => {
         return dayDiff
     }
     const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
-    console.log(days);
     //loading system
     if (loading) {
         return <Spinner></Spinner>

@@ -62,7 +62,6 @@ const FindSingleRoom = () => {
         const value = e.target.value
         setSelectedRoom(checked ? [...selectedRoom, value] : selectedRoom.filter(item => item !== value))
     }
-    console.log(selectedRoom);
     const handleClick = (id) => {
         navigate(`/reviewRules/${id}`, { state: { selected: selectedRoom, allDates } })
     }

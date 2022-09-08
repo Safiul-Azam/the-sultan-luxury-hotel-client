@@ -23,7 +23,6 @@ const CheckOut = () => {
         navigate('/findRoom', {state:{dates, option}})
         
     }
-    console.log(option);
     return (
         <div className='bg-[#F8F5F0]'>
             <div className='w-[1150px] mx-auto my-28 py-24'>
