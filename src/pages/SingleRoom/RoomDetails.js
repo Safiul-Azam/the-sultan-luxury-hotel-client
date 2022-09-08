@@ -5,6 +5,7 @@ import { GrStar } from 'react-icons/gr';
 import { Link, useParams } from 'react-router-dom';
 import RoomDetailsBanner from './RoomDetailsBanner';
 import { AiOutlineCheck } from "react-icons/ai";
+import useFetch from '../../hooks/useFetch';
 
 import icon1 from '../../images/icons/icon7.png'
 import icon2 from '../../images/icons/icon8.png'
@@ -12,7 +13,8 @@ import icon3 from '../../images/icons/icon9.png'
 import icon4 from '../../images/icons/icon10.png'
 import icon5 from '../../images/icons/icon11.png'
 import icon6 from '../../images/icons/icon12.png'
-import useFetch from '../../hooks/useFetch';
+import Spinner from '../Shared/Spinner';
+import CheckForm from '../Booking/CheckForm';
 
 const amenities = [
     { id: 1, img: icon1, text: '1-2 Persons' },
@@ -25,9 +27,12 @@ const amenities = [
 
 const RoomDetails = () => {
     const { roomId } = useParams()
-    const { data, loading, error } = useFetch(`http://localhost:5000/api/rooms/find/${roomId}`)
+    const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${roomId}`)
     console.log(data);
     const { title, extraBeds, pets, checkIn, checkOut, instructions, description } = data
+    if (loading) {
+        return <Spinner />
+    }
     return (
         <div>
             <RoomDetailsBanner />
@@ -70,7 +75,7 @@ const RoomDetails = () => {
                             <h2 className='text-2xl'>Children and extra beds</h2>
                             <p className='text-xl text-[#777] my-6 tracking-wide'>{extraBeds}</p>
                         </div>
-                        <Link to='/' style={{ letterSpacing: '2px' }} className='py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300'>Check Out</Link>
+                        <a href='#CheckRoom' style={{ letterSpacing: '2px' }} className='py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300'>Check Out</a>
                     </div>
                     <div className='ml-32 space-y-2'>
                         <h2 className='text-2xl mb-4'>Amenities</h2>
@@ -87,6 +92,7 @@ const RoomDetails = () => {
                     </div>
                 </div>
             </div>
+            <CheckForm></CheckForm>
         </div>
     );
 };

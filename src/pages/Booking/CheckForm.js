@@ -1,14 +1,36 @@
-import React from 'react';
+import { format } from 'date-fns';
+import { useState } from 'react';
+import { DateRange } from 'react-date-range';
+import { AiOutlineCalendar } from 'react-icons/ai';
 import { FiPhoneCall } from 'react-icons/fi';
 import { GrStar } from 'react-icons/gr';
+import { useNavigate } from 'react-router-dom'
 import img from '../../images/banner/2.jpg'
 import sponsor1 from '../../images/sponsor/3.png'
 import sponsor2 from '../../images/sponsor/4.png'
 import sponsor3 from '../../images/sponsor/5.png'
 
 const CheckForm = () => {
+    const [openDate, setOpenDate] = useState(false)
+    const [option, setOption] = useState([])
+    const navigate = useNavigate()
+    const [dates, setDates] = useState([
+        {
+            startDate: new Date(),
+            endDate: new Date(),
+            key: 'selection'
+        }
+    ]);
+    const handleChange = e => {
+        setOption(prev => ({ ...prev, [e.target.id]: e.target.value }))
+
+    }
+    const handleClick = () => {
+        navigate('/findRoom', { state: { dates, option } })
+
+    }
     return (
-        <div className='pt-24' style={
+        <div id='CheckRoom' className='pt-24' style={
             {
                 background: `linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url(${img})`,
                 backgroundPosition: 'center',
@@ -32,29 +54,49 @@ const CheckForm = () => {
                             <p className='text-lg'>For information<p className='block text-2xl tracking-widest'>855 100 4444</p></p>
                         </div>
                     </div>
+
                     <div className='bg-[#F8F5F0] px-10 py-16 relative -bottom-20 shadow-sm'>
                         <p style={{ letterSpacing: '5px' }} className='text-sm text-primary uppercase mb-3'>ROOMS & SUITES</p>
                         <h2 className='text-2xl text-black'>Hotel Booking Form</h2>
                         <hr className='my-5' />
-                        <form className='flex flex-col' action="">
-                            <input className='py-4 px-10 mb-4' type="date" name="" id="" placeholder='Check out' />
-                            <input className='py-4 px-10 mb-4' type="date" name="" id="" placeholder='Check out' />
-                            <div className='grid grid-cols-2 gap-6 mb-10'>
-                                <select className='py-4 px-10' value="Adult">
-                                    <option>Adult</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                                <select className='py-4 px-10' value="Adult">
-                                    <option>Children</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
+                        <div className='grid grid-cols-1 gap-2 relative'>
+                            <div className='flex space-x-2'>
+                                <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center' >{`${format(dates[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /></button>
+                                {openDate && <DateRange
+                                    editableDateInputs={true}
+                                    onChange={item => setDates([item.selection])}
+                                    moveRangeOnFirstSelection={false}
+                                    ranges={dates}
+                                    className='absolute top-16 left-0 z-40'
+                                />}
+                                <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center'>{`${format(dates[0].endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /> </button>
                             </div>
-                            <input style={{ letterSpacing: '2px' }} className='py-4 px-8 text-lg text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase' type='submit' value="Check Availability" />
-                        </form>
+                            <select onChange={handleChange} className='py-4 px-8 text-center' id="adult">
+                                <option className='text-lg hover:bg-primary hover:text-4xl focus:bg-primary'>Adult</option>
+                                <option className='text-lg'>1</option>
+                                <option className='text-lg'>2</option>
+                                <option className='text-lg'>3</option>
+                                <option className='text-lg'>4</option>
+                                <option className='text-lg'>5</option>
+                            </select>
+                            <select onChange={handleChange} className='py-4 px-8 text-center' name="" id="children">
+                                <option className='text-lg'>Children</option>
+                                <option className='text-lg'>1</option>
+                                <option className='text-lg'>2</option>
+                                <option className='text-lg'>3</option>
+                                <option className='text-lg'>4</option>
+                                <option className='text-lg'>5</option>
+                            </select>
+                            <select onChange={handleChange} className='py-4 px-8 text-center' name="" id="room">
+                                <option className='text-lg'>Room</option>
+                                <option className='text-lg'>1</option>
+                                <option className='text-lg'>2</option>
+                                <option className='text-lg'>3</option>
+                                <option className='text-lg'>4</option>
+                                <option className='text-lg'>5</option>
+                            </select>
+                            <button onClick={handleClick} style={{ letterSpacing: '2px' }} className='py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300'>CHECK NOW</button>
+                        </div>
                     </div>
                 </div>
                 <div className='bg-white py-5'>

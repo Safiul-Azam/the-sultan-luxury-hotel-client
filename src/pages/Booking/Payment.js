@@ -34,9 +34,9 @@ const Payment = () => {
                 const res = axios.put(`http://localhost:5000/api/rooms/availability/${roomId}`, { dates: allDates })
                 return res.data
             }))
-            toast.success(<div>
-                <h2 className='text-green-400 text-lg'>Your rooms is Booked / Reserved</h2>
-                <p className='text-green-400 text-xm'>{format(dates[0]?.startDate, 'MM-dd-yyyy')} to {format(dates[0]?.endDate, 'MM-dd-yyyy')}</p>
+            toast.success(<div className='text-lg text-green-600'>
+                <h2>Your rooms is Booked</h2>
+                <h2>{format(dates[0]?.startDate, 'MM-dd-yyyy')} to {format(dates[0]?.endDate, 'MM-dd-yyyy')}</h2>
             </div>)
             navigate('/')
         } catch (err) { }

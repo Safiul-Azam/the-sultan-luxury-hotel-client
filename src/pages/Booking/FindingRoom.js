@@ -12,15 +12,15 @@ import { SearchContext } from '../../context/SearchContext';
 
 const FindingRoom = () => {
     const location = useLocation()
-    const [dates, setDates] = useState(location.state.dates)
-    const [option, setOption] = useState(location.state.option)
+    const [dates, setDates] = useState(location?.state?.dates)
+    const [option, setOption] = useState(location?.state?.option)
     const [openDate, setOpenDate] = useState(false)
     const [min, setMin] = useState(undefined);
     const [max, setMax] = useState(undefined);
     const [options, setOptions] = useState({
-        adult: parseInt(option.adult),
-        children: parseInt(option.children),
-        room: parseInt(option.room),
+        adult: parseInt(option?.adult) || 1,
+        children: parseInt(option?.children) || 0,
+        room: parseInt(option?.room) || 1,
     });
     const handleOption = (name, operation) => {
         setOptions((prev) => {

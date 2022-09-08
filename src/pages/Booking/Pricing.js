@@ -58,7 +58,7 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
             </div>
             <div className='border p-3 w-full mt-3 space-y-2 text-lg'>
                 <p className='text-lg font-bold text-gray-600'>Thank You for Reserved {days} Night to stay</p>
-                {!selectedRoom?.length ? <p className='text-red-400 text-lg'>You haven't selected any room yet!  Please select</p> : <p className='text-xl text-primary'>Selected {selectedRoom.length} { selectedRoom.length <= 1 ? 'room' : 'rooms' } for stay</p>}
+                {!selectedRoom?.length ? <p className='text-red-400 text-lg'>You haven't selected any room yet!</p> : <p className='text-xl text-primary'>Selected {selectedRoom.length} { selectedRoom.length <= 1 ? 'room' : 'rooms' } for stay</p>}
                 <div className='flex justify-between'>
                     <p className='flex justify-between'>${`${price} X ${days} (nights)`}</p>
                     <p>{roomsPrice} X {selectedRoom?.length} {selectedRoom?.length <= 1 ? '(room)': '(rooms)'} = ${totalPrice}</p>

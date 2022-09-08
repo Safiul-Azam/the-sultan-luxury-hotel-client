@@ -28,22 +28,17 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/spa" element={<Spa />} />
-         <Route path='/rooms/:roomId' element={
-          <RequireAuth>
-            <RoomDetails />
-          </RequireAuth>
-        }></Route>
-        <Route path='/findRoom' element={<FindRoomBanner/>}/>
-        <Route path='/findRoom/:roomId' element={<FindSingleRoom/>}/>
-        <Route path='/reviewRules/:id' element={<ReviewRules/>}/>
-        <Route path='/payment/:id' element={<Payment/>}/>
+        <Route path='/rooms/:roomId' element={<RoomDetails />}/>
+        <Route path='/findRoom' element={<RequireAuth><FindRoomBanner /></RequireAuth>} />
+        <Route path='/findRoom/:roomId' element={<RequireAuth><FindSingleRoom /></RequireAuth>} />
+        <Route path='/reviewRules/:id' element={<RequireAuth><ReviewRules /></RequireAuth>} />
+        <Route path='/payment/:id' element={<RequireAuth><Payment /></RequireAuth>} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path='*' element={<NoFound />} />
       </Routes>
       <ToastContainer align='center' />
-      <CheckForm></CheckForm>
       <Footer></Footer>
       <CopyRight></CopyRight>
     </div>

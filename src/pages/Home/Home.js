@@ -9,6 +9,7 @@ import PromotionalVideo from './PromotionalVideo';
 import RoomsSuites from './RoomsSuites';
 import ServicesTheme from './ServicesTheme';
 import Testimonials from './Testimonials';
+import CheckForm from '../Booking/CheckForm';
 
 const Home = () => {
     return (
@@ -23,6 +24,7 @@ const Home = () => {
           <ServicesTheme></ServicesTheme>
           <Testimonials></Testimonials>
           <OurBlogs></OurBlogs>
+          <CheckForm></CheckForm>
         </div>
     );
 };
