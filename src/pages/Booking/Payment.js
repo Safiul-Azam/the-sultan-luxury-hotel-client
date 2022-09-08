@@ -8,6 +8,7 @@ import axios from 'axios';
 import Spinner from '../Shared/Spinner';
 import { toast } from 'react-toastify';
 import { SearchContext } from '../../context/SearchContext';
+import { format } from 'date-fns';
 
 // const stripePromise = loadStripe('pk_test_51L1lwNK8cblwyB4icoDXqCV5LRsqz0BUpH0hPggBa0b10LucJ4r91UIcNBp0DBWqe94yOFFslBJmqMDKdZNesRZ400Ewz7t6jX');
 
@@ -18,28 +19,36 @@ const Payment = () => {
     const [allDates, setAllDates] = useState(location.state.allDates)
     const [selectedRoom, setSelectedRoom] = useState(location.state.selected)
     const { data, loading, reFetch } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
-    const {dates} = useContext(SearchContext)
+    const { dates } = useContext(SearchContext)
+    // dates count system
+    const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
+    const dayDifference = (date1, date2) => {
+        const timeDiff = Math.abs(date2?.getTime() - date1?.getTime())
+        const dayDiff = Math.ceil(timeDiff / MILLISECOND_PER_DAY)
+        return dayDiff
+    }
+    const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
     const {
         shift,
         price,
         photos,
         title,
         roomNumbers } = data
-        console.log(allDates);
-        if(loading){
-            return <Spinner />
-        }
+    console.log(allDates);
+    if (loading) {
+        return <Spinner />
+    }
     const handleClick = async (id) => {
         try {
             await Promise.all(selectedRoom.map(roomId => {
                 const res = axios.put(`http://localhost:5000/api/rooms/availability/${roomId}`, { dates: allDates })
                 return res.data
             }))
-            toast.success('Your room is booked')
+            toast.success(`Your room is booked ${format(dates[0]?.startDate, 'MM-dd-yyyy')} to ${format(dates[0]?.endDate, 'MM-dd-yyyy')}`)
             navigate('/')
         } catch (err) { }
     }
-    console.log(dates);
+    console.log(dates,days);
     return (
         <div>
             <div className=' pt-8 mix-blend-normal bg-black-400' style={

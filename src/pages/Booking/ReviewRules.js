@@ -13,7 +13,7 @@ import { ImManWoman } from 'react-icons/im'
 import { useContext } from 'react';
 import { SearchContext } from '../../context/SearchContext';
 
-const ReviewRules = ({days}) => {
+const ReviewRules = () => {
     const location = useLocation()
     const id = location?.pathname.split('/')[2]
     const [allDates, setAllDates] = useState(location.state.allDates)
@@ -28,7 +28,17 @@ const ReviewRules = ({days}) => {
         title,
         roomNumbers } = data
 
-    const { dates, options } = useContext(SearchContext)
+    const { dates } = useContext(SearchContext)
+    // dates count system
+    const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
+    const dayDifference = (date1, date2) => {
+        const timeDiff = Math.abs(date2?.getTime() - date1?.getTime())
+        const dayDiff = Math.ceil(timeDiff / MILLISECOND_PER_DAY)
+        return dayDiff
+    }
+    const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
+    console.log(days);
+    //loading system
     if (loading) {
         return <Spinner></Spinner>
     }

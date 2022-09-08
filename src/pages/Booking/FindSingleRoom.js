@@ -8,6 +8,7 @@ import Spinner from '../Shared/Spinner';
 import Pricing from './Pricing';
 import { SearchContext } from '../../context/SearchContext';
 import { useContext, useState } from 'react';
+import { format } from 'date-fns';
 
 const FindSingleRoom = () => {
     const [selectedRoom, setSelectedRoom] = useState([])
@@ -36,7 +37,7 @@ const FindSingleRoom = () => {
     }
 
     // selected
-    const { dates, options } = useContext(SearchContext)
+    const { dates } = useContext(SearchContext)
     const getDatesInRange = (startDate, endDate) => {
         const start = new Date(startDate)
         const end = new Date(endDate)
@@ -63,7 +64,7 @@ const FindSingleRoom = () => {
     }
     console.log(selectedRoom);
     const handleClick = (id) => {
-        navigate(`/reviewRules/${id}`, { state: { selected: selectedRoom, allDates} })
+        navigate(`/reviewRules/${id}`, { state: { selected: selectedRoom, allDates } })
     }
     return (
         <div>
@@ -94,12 +95,17 @@ const FindSingleRoom = () => {
                     </div>
                     <div className="w-full mt-3">
                         <span className="label-text text-2xl font-bold">Choose Room Number</span>
-                        <div className="w-full rounded-none text-4xl flex items-center space-x-5">
+                        <div className="w-full rounded-none flex items-center space-x-5">
                             {roomNumbers?.map(roomNumber => (
-                                <div key={roomNumber._id} className='py-2'>
-                                    <label>{roomNumber.number}</label>
-                                    <input type="checkbox" disabled={!isAvailable(roomNumber)} onChange={handleSelected} value={roomNumber._id} />
-                                </div>
+                                <>
+                                    <div key={roomNumber._id} className='py-2 text-4xl'>
+                                        <label>{roomNumber.number}</label>
+                                        <input type="checkbox" disabled={!isAvailable(roomNumber)} onChange={handleSelected} value={roomNumber._id} />
+                                        {!isAvailable(roomNumber) && <p className='text-sm text-red-500'>{format(dates[0]?.startDate, 'MM-dd')} to {format(dates[0]?.startDate, 'MM-dd-yyyy')} Already Booked</p>}
+                                    </div>
+
+                                </>
+
                             ))}
                         </div>
                     </div>
@@ -153,7 +159,7 @@ const FindSingleRoom = () => {
                             loading={loading}
                             reFetch={reFetch}
                         />
-                        <button onClick={() => handleClick(id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Book Now or Reserve</button>
+                        <button disabled={selectedRoom.length === 0} onClick={() => handleClick(id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Book Now or Reserve</button>
                     </div>
                 </div>
             </div>

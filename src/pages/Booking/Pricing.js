@@ -28,7 +28,8 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
         <div>
             <div className='flex justify-between items-center'>
                 <div>
-                    <h2 className='text-2xl text-gray-600 font-bold'>{title}</h2>
+                    <h2 className='text-3xl text-primary mb-5'>Pricing Information</h2>
+                    <h2 className='text-xl text-gray-600 font-bold'>{title}</h2>
                     <p className='text-xl my-1 capitalize'>${price} / {shift}</p>
                     <div className='flex text-xs mb-4 items-center text-secondary'>
                         <GrStar />
@@ -47,13 +48,7 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
                 <hr />
             </div>
             <div className="w-full">
-                <div className="w-full rounded-none text-xl flex items-center space-x-5">
-                    {selectedRoom?.map((roomNumber,index) => (
-                        <div key={index} className='py-3'>
-                            {roomNumber && <label className='font-bold'>{index + 1} Room is Chose</label>}
-                        </div>
-                    ))}
-                </div>
+                
             </div>
             <div className="text-xl w-3/4 space-y-2">
                 <p>Adult : {options?.adult}</p>
@@ -63,7 +58,7 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
             </div>
             <div className='border p-3 w-full mt-3 space-y-2 text-lg'>
                 <p className='text-lg font-bold text-gray-600'>Thank You for Reserved {days} Night to stay</p>
-                {!selectedRoom?.length && <p className='text-primary text-lg'>You haven't selected any room yet!  Please select</p>}
+                {!selectedRoom?.length ? <p className='text-red-400 text-lg'>You haven't selected any room yet!  Please select</p> : <p className='text-xl text-primary'>Selected {selectedRoom.length} { selectedRoom.length <= 1 ? 'room' : 'rooms' } for stay</p>}
                 <div className='flex justify-between'>
                     <p className='flex justify-between'>${`${price} X ${days} (nights)`}</p>
                     <p>{roomsPrice} X {selectedRoom?.length} {selectedRoom?.length <= 1 ? '(room)': '(rooms)'} = ${totalPrice}</p>
