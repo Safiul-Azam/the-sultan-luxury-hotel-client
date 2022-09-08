@@ -23,7 +23,9 @@ const Payment = () => {
         title,
         roomNumbers } = data
         console.log(allDates);
-  
+        if(loading){
+            return <Spinner />
+        }
     const handleClick = async (id) => {
         try {
             await Promise.all(selectedRoom.map(roomId => {
@@ -31,9 +33,6 @@ const Payment = () => {
                 return res.data
             }))
         } catch (err) { }
-    }
-    if(loading){
-        return <Spinner />
     }
     return (
         <div>

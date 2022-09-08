@@ -5,6 +5,7 @@ import { BsArrowRight } from 'react-icons/bs';
 import { GrStar } from 'react-icons/gr';
 import { SearchContext } from '../../context/SearchContext';
 import Spinner from '../Shared/Spinner';
+import ReviewRules from './ReviewRules';
 
 const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
     const { dates, options } = useContext(SearchContext)
@@ -16,7 +17,7 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
     }
     const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
     const roomsPrice = price * days 
-    const totalPrice = roomsPrice * selectedRoom.length
+    const totalPrice = roomsPrice * selectedRoom?.length
     const forChildren = 10 * options?.children
     if (loading) {
         return <Spinner></Spinner>
@@ -60,10 +61,10 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
             </div>
             <div className='border p-3 w-full mt-3 space-y-2 text-lg'>
                 <p className='text-lg font-bold text-gray-600'>Thank You for Reserved {days} Night to stay</p>
-                {!selectedRoom[0] && <p className='text-primary text-lg'>You don't select any room yet!  Please select</p>}
+                {!selectedRoom?.length && <p className='text-primary text-lg'>You don't select any room yet!  Please select</p>}
                 <div className='flex justify-between'>
-                    <p className='flex justify-between'>${`${price} X ${days}`}</p>
-                    <p>{roomsPrice} X {selectedRoom.length} = ${totalPrice}</p>
+                    <p className='flex justify-between'>${`${price} X ${days} (nights)`}</p>
+                    <p>{roomsPrice} X {selectedRoom.length} {selectedRoom?.length === 1 ? '(room)': '(rooms)'} = ${totalPrice}</p>
                 </div>
                 <hr />
                 <div className='flex justify-between'>

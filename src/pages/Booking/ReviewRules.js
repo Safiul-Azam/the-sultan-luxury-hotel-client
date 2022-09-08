@@ -13,9 +13,8 @@ import { ImManWoman } from 'react-icons/im'
 import { useContext } from 'react';
 import { SearchContext } from '../../context/SearchContext';
 
-const ReviewRules = () => {
+const ReviewRules = ({days}) => {
     const location = useLocation()
-    console.log(location);
     const id = location?.pathname.split('/')[2]
     const [allDates, setAllDates] = useState(location.state.allDates)
     const [selectedRoom, setSelectedRoom] = useState(location.state.selected)
@@ -58,7 +57,7 @@ const ReviewRules = () => {
                 <div className='grid grid-cols-2 space-x-20'>
                     <div className=''>
                         <h2 style={{ lineHeight: '30px' }} className='text-4xl my-4'>Review Hotel Rules</h2>
-                        <h2 className='text-xl font-bold'>Thank You for Reserved 7 Night to stay</h2>
+                        <h2 className='text-xl font-bold'>Thank You for Reserved {days} Night to stay</h2>
                         <div className='flex space-x-20 my-6'>
                             <div className='flex items-center space-x-5'>
                                 <div className='bg-primary text-center text-white px-2 py-1'>
