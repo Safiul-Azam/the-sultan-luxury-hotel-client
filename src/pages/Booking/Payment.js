@@ -1,21 +1,24 @@
 import React, { useContext, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import Navbar from '../Shared/Navbar';
 import Pricing from './Pricing';
 import img1 from '../../images/banner/3.jpg'
 import axios from 'axios';
 import Spinner from '../Shared/Spinner';
+import { toast } from 'react-toastify';
+import { SearchContext } from '../../context/SearchContext';
 
 // const stripePromise = loadStripe('pk_test_51L1lwNK8cblwyB4icoDXqCV5LRsqz0BUpH0hPggBa0b10LucJ4r91UIcNBp0DBWqe94yOFFslBJmqMDKdZNesRZ400Ewz7t6jX');
 
 const Payment = () => {
     const location = useLocation()
-    console.log(location);
+    const navigate = useNavigate()
     const id = location?.pathname.split('/')[2]
     const [allDates, setAllDates] = useState(location.state.allDates)
     const [selectedRoom, setSelectedRoom] = useState(location.state.selected)
     const { data, loading, reFetch } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
+    const {dates} = useContext(SearchContext)
     const {
         shift,
         price,
@@ -32,8 +35,11 @@ const Payment = () => {
                 const res = axios.put(`http://localhost:5000/api/rooms/availability/${roomId}`, { dates: allDates })
                 return res.data
             }))
+            toast.success('Your room is booked')
+            navigate('/')
         } catch (err) { }
     }
+    console.log(dates);
     return (
         <div>
             <div className=' pt-8 mix-blend-normal bg-black-400' style={

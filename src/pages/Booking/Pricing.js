@@ -9,6 +9,7 @@ import ReviewRules from './ReviewRules';
 
 const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
     const { dates, options } = useContext(SearchContext)
+    // dates count system
     const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
     const dayDifference = (date1, date2) => {
         const timeDiff = Math.abs(date2?.getTime() - date1?.getTime())
@@ -16,6 +17,7 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
         return dayDiff
     }
     const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
+    // some price system updated
     const roomsPrice = price * days 
     const totalPrice = roomsPrice * selectedRoom?.length
     const forChildren = 10 * options?.children
@@ -61,10 +63,10 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
             </div>
             <div className='border p-3 w-full mt-3 space-y-2 text-lg'>
                 <p className='text-lg font-bold text-gray-600'>Thank You for Reserved {days} Night to stay</p>
-                {!selectedRoom?.length && <p className='text-primary text-lg'>You don't select any room yet!  Please select</p>}
+                {!selectedRoom?.length && <p className='text-primary text-lg'>You haven't selected any room yet!  Please select</p>}
                 <div className='flex justify-between'>
                     <p className='flex justify-between'>${`${price} X ${days} (nights)`}</p>
-                    <p>{roomsPrice} X {selectedRoom.length} {selectedRoom?.length === 1 ? '(room)': '(rooms)'} = ${totalPrice}</p>
+                    <p>{roomsPrice} X {selectedRoom?.length} {selectedRoom?.length <= 1 ? '(room)': '(rooms)'} = ${totalPrice}</p>
                 </div>
                 <hr />
                 <div className='flex justify-between'>

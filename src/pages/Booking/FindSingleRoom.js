@@ -41,12 +41,12 @@ const FindSingleRoom = () => {
         const start = new Date(startDate)
         const end = new Date(endDate)
         const date = new Date(start.getTime())
-        const dates = []
+        const datesRange = []
         while (date <= end) {
-            dates.push(new Date(date).getTime())
+            datesRange.push(new Date(date).getTime())
             date.setDate(date.getDate() + 1)
         }
-        return dates
+        return datesRange
     }
     const allDates = getDatesInRange(dates[0]?.startDate, dates[0]?.endDate);
     const isAvailable = (roomNumber) => {
@@ -63,7 +63,7 @@ const FindSingleRoom = () => {
     }
     console.log(selectedRoom);
     const handleClick = (id) => {
-        navigate(`/reviewRules/${id}`, { state: { selected: selectedRoom, allDates } })
+        navigate(`/reviewRules/${id}`, { state: { selected: selectedRoom, allDates} })
     }
     return (
         <div>
