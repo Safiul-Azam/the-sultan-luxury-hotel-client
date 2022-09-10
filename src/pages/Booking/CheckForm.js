@@ -30,7 +30,7 @@ const CheckForm = () => {
 
     }
     return (
-        <div id='CheckRoom' className='pt-24' style={
+        <div id='CheckRoom' className='lg:pt-24 pt-12' style={
             {
                 background: `linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url(${img})`,
                 backgroundPosition: 'center',
@@ -40,7 +40,7 @@ const CheckForm = () => {
         }>
             <div className='lg:relative'>
                 <div className='  lg:w-[1150px] mx-auto lg:flex justify-between items-center'>
-                    <div className=' w-2/5'>
+                    <div className='lg:w-2/5 p-10 lg:p-0'>
                         <div className='flex text-secondary mb-1'>
                             <GrStar />
                             <GrStar />
@@ -61,7 +61,7 @@ const CheckForm = () => {
                         <hr className='my-5' />
                         <div className='grid grid-cols-1 gap-2 relative'>
                             <div className='flex space-x-2'>
-                                <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center' >{`${format(dates[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /></button>
+                                <button onClick={() => setOpenDate(!openDate)} className='py-4 px-5 text-lg bg-white tracking-widest flex justify-between items-center w-full' >{`${format(dates[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /></button>
                                 {openDate && <DateRange
                                     editableDateInputs={true}
                                     onChange={item => setDates([item.selection])}
@@ -69,7 +69,7 @@ const CheckForm = () => {
                                     ranges={dates}
                                     className='absolute top-16 left-0 z-40'
                                 />}
-                                <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center'>{`${format(dates[0].endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /> </button>
+                                <button onClick={() => setOpenDate(!openDate)} className='py-4 px-5 text-lg bg-white tracking-widest flex justify-between items-center w-full'>{`${format(dates[0].endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /> </button>
                             </div>
                             <select onChange={handleChange} className='py-4 px-8 text-center' id="adult">
                                 <option className='text-lg hover:bg-primary hover:text-4xl focus:bg-primary'>Adult</option>
@@ -99,8 +99,8 @@ const CheckForm = () => {
                         </div>
                     </div>
                 </div>
-                <div className='bg-white py-5'>
-                    <div className=' lg:w-[1150px] mx-auto grid grid-cols-6'>
+                <div className='bg-white py-5 lg:px-0 px-10'>
+                    <div className='lg:w-[1150px] mx-auto grid grid-cols-6'>
                         <img src={sponsor1} alt="" />
                         <img src={sponsor2} alt="" />
                         <img src={sponsor3} alt="" />

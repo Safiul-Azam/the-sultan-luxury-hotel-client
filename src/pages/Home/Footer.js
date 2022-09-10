@@ -7,14 +7,14 @@ import { FiYoutube} from 'react-icons/fi';
 
 const Footer = () => {
     return (
-        <footer className='bg-[#222222] py-20'>
-            <div className=" lg:w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-24 ">
+        <footer className='bg-[#222222] lg:py-20 py-12 lg:px-0 px-10'>
+            <div className=" lg:w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-3 lg:gap-24 gap-12 ">
                 <div>
                     <h2 className="text-white text-2xl">About Hotel</h2>
                     <p className="text-accent my-8 text-lg">Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>
-                    <button className="px-6 flex  items-center text-accent text-left py-3 text-sm rounded-none bg-[#282828]">English <BsGlobe className='ml-8' /></button>
+                    <button className="px-6 flex items-center text-accent text-left py-3 text-sm rounded-none bg-[#282828]">English <BsGlobe className='ml-8' /></button>
                 </div>
-                <div className='ml-20'>
+                <div className='lg:ml-20'>
                     <h2 className="text-white text-2xl mb-5 tracking-wider">Explore</h2>
                     <ul className='text-accent tracking-wider text-lg space-y-1'>
                         <li><Link to='/'></Link></li>
