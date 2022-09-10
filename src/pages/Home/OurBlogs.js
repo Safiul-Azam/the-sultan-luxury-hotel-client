@@ -13,17 +13,32 @@ const OurBlogs = () => {
     }, [])
     return (
         <div className='bg-[#222] py-28'>
-            <div className=' lg:w-[1150px] mx-auto'>
+            <div className=' container mx-auto'>
                 <p style={{ letterSpacing: '5px' }} className='text-sm text-primary uppercase mb-3'>HOTEL BLOG</p>
                 <h2 className='text-5xl mb-5 text-white'>Our News</h2>
                 <Swiper
-                    slidesPerView={3}
+                
+                    // slidesPerView={3}
                     spaceBetween={30}
                     slidesPerGroup={1}
                     loop={true}
                     loopFillGroupWithBlank={true}
                     pagination={{
                         clickable: true,
+                    }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 40,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 50,
+                        },
                     }}
                     navigation={true}
                     modules={[Navigation]}

@@ -19,10 +19,10 @@ const ExtraServices = () => {
     }, [])
     console.log(exServices);
     return (
-        <div className='bg-[#222222] py-24'>
-            <div className=' lg:w-[1150px] mx-auto '>
+        <div className='bg-[#222222] lg:py-24 py-12'>
+            <div className='lg:w-[1150px] mx-auto '>
                 <div className='grid grid-cols-1 lg:grid-cols-3 lg:gap-10 '>
-                    <div className=''>
+                    <div className='px-10 pb-5 lg:px-0 lg:pb-0'>
                         <p style={{ letterSpacing: '6px' }} className='text-lg text-primary uppercase mb-4'>BEST PRICES</p>
                         <h2 className='text-5xl mb-7 text-white'>Extra Services</h2>
                         <p className='text-xl mb-4 text-accent'>The best prices for your relaxing vacation. The utanislen quam nestibulum ac quame odion elementum sceisue the aucan.</p>
@@ -34,9 +34,21 @@ const ExtraServices = () => {
                     </div>
                     <div className='lg:col-span-2'>
                         <Swiper
-                            slidesPerView={1}
-                            spaceBetween={30}
-                            slidesPerGroup={1}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 20,
+                                },
+                                768: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 30,
+                                },
+                                1024: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 30,
+                                },
+                            }}
+                            slidesPerGroup={2}
                             loop={true}
                             loopFillGroupWithBlank={true}
                             pagination={{
