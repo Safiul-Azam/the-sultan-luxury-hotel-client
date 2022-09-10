@@ -13,13 +13,13 @@ const OurBlogs = () => {
     }, [])
     return (
         <div className='bg-[#222] py-28'>
-            <div className='w-[1150px] mx-auto'>
+            <div className=' lg:w-[1150px] mx-auto'>
                 <p style={{ letterSpacing: '5px' }} className='text-sm text-primary uppercase mb-3'>HOTEL BLOG</p>
                 <h2 className='text-5xl mb-5 text-white'>Our News</h2>
                 <Swiper
                     slidesPerView={3}
                     spaceBetween={30}
-                    slidesPerGroup={3}
+                    slidesPerGroup={1}
                     loop={true}
                     loopFillGroupWithBlank={true}
                     pagination={{

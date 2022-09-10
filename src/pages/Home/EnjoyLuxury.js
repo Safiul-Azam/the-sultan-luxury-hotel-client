@@ -6,10 +6,10 @@ import { FiPhoneCall } from "react-icons/fi";
 
 const EnjoyLuxury = () => {
     return (
-        <div className=" mb-24 mt-10 hero min-h-screen w-[1150px] mx-auto bg-white">
+        <div className=" mb-24 mt-10 hero min-h-screen  lg:w-[1150px] mx-auto bg-white">
             <div className="hero-content flex-col lg:flex-row-reverse relative justify-center">
-                <img src={Image1} className="w-1/4 shadow-2xl" alt='' />
-                <img src={Image2} className="w-1/4 shadow-2xl relative top-24" alt='' />
+                <img src={Image1} className="lg:w-1/4 shadow-2xl" alt='' />
+                <img src={Image2} className="lg:w-1/4 shadow-2xl relative top-24" alt='' />
                 <div className=''>
                     <div className='flex text-xl mb-4 text-secondary'>
                         <GrStar />

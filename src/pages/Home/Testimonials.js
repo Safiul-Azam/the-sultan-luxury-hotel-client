@@ -24,7 +24,7 @@ const Testimonials = () => {
                 backgroundAttachment: 'fixed',
             }
         }>
-            <div className='w-[688px] mx-auto py-20 text-white'>
+            <div className=' lg:w-[688px] mx-auto py-20 text-white'>
                 <p style={{ letterSpacing: '5px' }} className='text-sm uppercase mb-3'>TESTIMONIALS</p>
                 <h2 className='text-3xl mb-3'>What Client's Say?</h2>
                 <hr className='w-16 opacity-25' />

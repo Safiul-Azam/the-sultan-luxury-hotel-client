@@ -6,11 +6,15 @@ import { MdDinnerDining } from "react-icons/md";
 import { GiTowel } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import Spinner from '../Shared/Spinner'
 
 const RoomSuiteThree = () => {
-    const { data, loading, error } = useFetch('http://localhost:5000/api/rooms')
+    const { data, loading } = useFetch('http://localhost:5000/api/rooms')
+    if(loading){
+        return <Spinner/>
+    }
     return (
-        <div className='grid grid-cols-3 gap-8'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 w-full gap-8'>
             {
                 data?.slice(0, 3)?.map(room => <div
                     key={room._id}

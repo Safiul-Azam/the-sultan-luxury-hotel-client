@@ -25,10 +25,10 @@ const CheckOut = () => {
     }
     return (
         <div className='bg-[#F8F5F0]'>
-            <div className='w-[1150px] mx-auto my-28 py-24'>
+            <div className=' lg:w-[1150px] mx-auto my-28 py-24'>
                 <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>CHECK NOW</p>
                 <h2 className='text-5xl mb-7 text-black'>Search Rooms</h2>
-                <div className='grid grid-cols-6 gap-2 relative'>
+                <div className='grid lg:grid-cols-6 grid-cols-2 gap-2 relative'>
                     <button onClick={() => setOpenDate(!openDate)} className='py-4 px-8 text-lg bg-white tracking-widest flex justify-between items-center' >{`${format(dates[0].startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /></button>
                     {openDate && <DateRange
                         editableDateInputs={true}

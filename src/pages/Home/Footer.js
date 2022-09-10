@@ -8,7 +8,7 @@ import { FiYoutube} from 'react-icons/fi';
 const Footer = () => {
     return (
         <footer className='bg-[#222222] py-20'>
-            <div className="w-[1100px] mx-auto grid grid-cols-3 gap-24 ">
+            <div className=" lg:w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-24 ">
                 <div>
                     <h2 className="text-white text-2xl">About Hotel</h2>
                     <p className="text-accent my-8 text-lg">Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>

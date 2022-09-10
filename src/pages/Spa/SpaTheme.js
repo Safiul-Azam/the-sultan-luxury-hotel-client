@@ -7,7 +7,7 @@ import { GiClockwork } from "react-icons/gi";
 const SpaTheme = () => {
     return (
         <div>
-            <div className='w-[1150px] mx-auto bg-[#F8F5F0] my-24'>
+            <div className=' lg:w-[1150px] mx-auto bg-[#F8F5F0] my-24'>
                 <div className='grid grid-cols-2 items-center'>
                     <div className='overflow-hidden'>
                         <img className=' hover:scale-110 hover:duration-1000 hover:ease-in-out ease-in-out duration-1000' src={theme2} alt="" />

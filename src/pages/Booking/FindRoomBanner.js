@@ -15,7 +15,7 @@ const FindRoomBanner = () => {
                 <Navbar></Navbar>
 
 
-                <div className='text-left text-white w-[1150px] py-32 mx-auto'>
+                <div className='text-left text-white  lg:w-[1150px] py-32 mx-auto'>
                     <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>LUXURY HOTEL</p>
                     <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Finding Room</h2>
                 </div>

@@ -22,7 +22,7 @@ import Payment from './pages/Booking/Payment';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

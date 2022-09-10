@@ -7,8 +7,8 @@ import theme4 from '../../images/photo/theme/4.jpg'
 const Services = () => {
     return (
         <div>
-            <div className='w-[1150px] mx-auto bg-[#F8F5F0] my-24'>
-                <div className='grid grid-cols-2 items-center'>
+            <div className=' lg:w-[1150px] mx-auto bg-[#F8F5F0] my-24'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 items-center'>
                     <div className=' overflow-hidden'>
                         <img className=' hover:scale-110 hover:duration-1000 hover:ease-in-out ease-in-out duration-1000' src={theme1} alt="" />
                     </div>
@@ -19,7 +19,7 @@ const Services = () => {
                         <button className='py-3 px-8 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500'>LEARN MORE</button>
                     </div>
                 </div>
-                <div className='grid grid-cols-2 items-center'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 items-center'>
 
                     <div className='p-10 text-[#666]'>
                         <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>EXPERIENCES</p>
@@ -31,7 +31,7 @@ const Services = () => {
                         <img className=' hover:scale-110 hover:duration-1000 hover:ease-in-out ease-in-out duration-1000' src={theme2} alt="" />
                     </div>
                 </div>
-                <div className='grid grid-cols-2 items-center'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 items-center'>
                     <div className=' overflow-hidden'>
                         <img className=' hover:scale-110 hover:duration-1000 hover:ease-in-out ease-in-out duration-1000' src={theme3} alt="" />
                     </div>
@@ -42,7 +42,7 @@ const Services = () => {
                         <button className='py-3 px-8 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500'>LEARN MORE</button>
                     </div>
                 </div>
-                <div className='grid grid-cols-2 items-center'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 items-center'>
                     <div className='p-10 text-[#666]'>
                         <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>EXPERIENCES</p>
                         <h2 className='text-4xl mb-7 text-black'>The Health Club & Pool</h2>

@@ -38,8 +38,8 @@ const CheckForm = () => {
                 backgroundAttachment: 'fixed',
             }
         }>
-            <div className=' relative'>
-                <div className=' w-[1150px] mx-auto flex justify-between items-center'>
+            <div className='lg:relative'>
+                <div className='  lg:w-[1150px] mx-auto lg:flex justify-between items-center'>
                     <div className=' w-2/5'>
                         <div className='flex text-secondary mb-1'>
                             <GrStar />
@@ -55,7 +55,7 @@ const CheckForm = () => {
                         </div>
                     </div>
 
-                    <div className='bg-[#F8F5F0] px-10 py-16 relative -bottom-20 shadow-sm'>
+                    <div className='bg-[#F8F5F0] px-10 py-16 lg:relative -bottom-20 shadow-sm'>
                         <p style={{ letterSpacing: '5px' }} className='text-sm text-primary uppercase mb-3'>ROOMS & SUITES</p>
                         <h2 className='text-2xl text-black'>Hotel Booking Form</h2>
                         <hr className='my-5' />
@@ -100,7 +100,7 @@ const CheckForm = () => {
                     </div>
                 </div>
                 <div className='bg-white py-5'>
-                    <div className='w-[1150px] mx-auto grid grid-cols-6'>
+                    <div className=' lg:w-[1150px] mx-auto grid grid-cols-6'>
                         <img src={sponsor1} alt="" />
                         <img src={sponsor2} alt="" />
                         <img src={sponsor3} alt="" />
