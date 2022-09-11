@@ -19,7 +19,10 @@ const Navbar = () => {
         <li><CustomLink to='/spa'>SPA</CustomLink></li>
         <li><CustomLink to='/contact-us'>CONTACT</CustomLink></li>
         {user ?
-            <li><CustomLink to='/login'><button onClick={logOut}>SIGN OUT</button></CustomLink></li> :
+            <>
+                <li><CustomLink to='/dashboard'>DASHBOARD</CustomLink></li>
+                <li><CustomLink to='/login'><button onClick={logOut}>SIGN OUT</button></CustomLink></li>
+            </> :
             <li><CustomLink to='/login'>LOGIN</CustomLink></li>}
     </>
 

@@ -18,6 +18,7 @@ import FindRoomBanner from './pages/Booking/FindRoomBanner';
 import FindSingleRoom from './pages/Booking/FindSingleRoom';
 import ReviewRules from './pages/Booking/ReviewRules';
 import Payment from './pages/Booking/Payment';
+import Dashboard from '../src/pages/Dashboard/Dashboard'
 
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard/>}>
+            <Route index element={<Dashboard></Dashboard>}></Route>
+        </Route>
         <Route path='*' element={<NoFound />} />
       </Routes>
       <ToastContainer align='center' />
