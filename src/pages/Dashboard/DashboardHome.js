@@ -4,8 +4,10 @@ import Featured from './Featured';
 const DashboardHome = () => {
     return (
         <div>
-            <h2>Dashboard</h2>
-            <Featured/>
+            <div className='mb-7'>
+                <p className='text-2xl font-semibold text-[#444]'>Dashboard</p>
+            </div>
+            <Featured />
         </div>
     );
 };

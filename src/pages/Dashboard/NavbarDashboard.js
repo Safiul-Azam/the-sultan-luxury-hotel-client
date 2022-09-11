@@ -25,7 +25,7 @@ const NavbarDashboard = () => {
     </>
 
     return (
-        <div className='lg:w-[1200px] mx-auto z-10 absolute top-3 left-16'>
+        <div className='lg:w-[1200px] mx-auto z-10 absolute left-16'>
             <div className="navbar">
                 <div className="space-x-32 lg:space-x-0 lg:navbar-start">
                     <div className="dropdown">

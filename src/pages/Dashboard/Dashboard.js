@@ -12,9 +12,8 @@ const Dashboard = () => {
     return (
         <>
             <NavbarDashboard />
-            <div className="bg-[#F3F2F7] grid grid-cols-6 container mx-auto">
-
-                <div className="bg-white">
+            <div className="bg-[#F3F2F7] grid grid-cols-6">
+                <div className="bg-white pl-8 py-6">
                     <div className=''>
                         <Link to='/' className="normal-case"><span className='lg:text-xl text-xl block text-primary font-medium lg:h-8'>THE SULTAN</span><p style={{ letterSpacing: '3px', fontSize: '10px' }} className='text-black'>LUXURY HOTEL</p></Link>
                     </div>
@@ -70,10 +69,8 @@ const Dashboard = () => {
                         </Link>
                     </div>
                 </div>
-                <div>
-                    <div className=" col-span-5 mt-20">
-                        <Outlet />
-                    </div>
+                <div className="col-span-5 mt-16 mx-10">
+                    <Outlet />
                 </div>
             </div>
         </>

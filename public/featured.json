@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "title": "User",
+        "title": "Total User",
         "counts": 40,
         "growth": 20,
         "photo":"https://i.ibb.co/N7gGkTG/people-1.png"
@@ -15,7 +15,7 @@
     },
     {
         "id":3,
-        "title": "Earning",
+        "title": "Total Earning",
         "earning": 2040,
         "growth": 30,
         "photo":"https://i.ibb.co/FqVjTVP/earning-3.png"
