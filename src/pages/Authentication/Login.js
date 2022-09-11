@@ -22,7 +22,7 @@ const Login = () => {
         e.preventDefault()
         dispatch({type:'LOGIN_START'})
         try {
-            const res =await axios.post('http://localhost:5000/api/auth/login', credentials) 
+            const res =await axios.post('https://sultan-hotel-1.onrender.com/api/auth/login', credentials) 
             dispatch({type:'LOGIN_SUCCESS', payload:res.data})
             navigate(from, {replace:true})
         } catch (err) {
@@ -62,7 +62,7 @@ const Login = () => {
 
                             />
                         </div>
-                        <input className='py-3 px-8 text-lg mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-full' type="submit" disabled={loading} value='LOGIN' />
+                        <input className='py-3 px-8 text-lg mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-full' type="submit" value='LOGIN' />
                         {error && <span>{error.message}</span>}
                         <p className='text-sm mt-6'>New to Wooden tools? <Link className='text-primary' to='/signup'>Create new account</Link></p>
                     </form>
