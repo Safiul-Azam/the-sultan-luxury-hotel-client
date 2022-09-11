@@ -20,6 +20,9 @@ import ReviewRules from './pages/Booking/ReviewRules';
 import Payment from './pages/Booking/Payment';
 import Dashboard from '../src/pages/Dashboard/Dashboard'
 import Users from './pages/Dashboard/Users';
+import Products from './pages/Dashboard/Products';
+import BookedRoom from './pages/Dashboard/BookedRoom';
+import DashboardHome from './pages/Dashboard/DashboardHome';
 
 
 function App() {
@@ -30,7 +33,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/spa" element={<Spa />} />
-        <Route path='/rooms/:roomId' element={<RoomDetails />}/>
+        <Route path='/rooms/:roomId' element={<RoomDetails />} />
         <Route path='/findRoom' element={<RequireAuth><FindRoomBanner /></RequireAuth>} />
         <Route path='/findRoom/:roomId' element={<RequireAuth><FindSingleRoom /></RequireAuth>} />
         <Route path='/reviewRules/:id' element={<RequireAuth><ReviewRules /></RequireAuth>} />
@@ -38,8 +41,11 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard/>}>
-            <Route index element={<Users></Users>}></Route>
+        <Route path="dashboard" element={<Dashboard />}>
+          <Route index element={<DashboardHome />}></Route>
+          <Route path='users' element={<Users />}></Route>
+          <Route path='products' element={<Products />}></Route>
+          <Route path='bookedRooms' element={<BookedRoom />}></Route>
         </Route>
         <Route path='*' element={<NoFound />} />
       </Routes>

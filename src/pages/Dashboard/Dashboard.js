@@ -12,7 +12,7 @@ const Dashboard = () => {
     return (
         <>
             <NavbarDashboard />
-            <div className=" bg-black grid grid-cols-6 container mx-auto">
+            <div className="bg-[#F3F2F7] grid grid-cols-6 container mx-auto">
 
                 <div className="bg-white">
                     <div className=''>
@@ -20,22 +20,22 @@ const Dashboard = () => {
                     </div>
                     <div className="">
                         <h2 className="text-xs tracking-wider font-semibold mt-8 mb-1">MAIN</h2>
-                        <Link to='/' className='flex items-center space-x-1 mb-6'>
+                        <Link to='/dashboard' className='flex items-center space-x-1 mb-6'>
                             <MdDashboard className="text-green-500" />
                             <span>Dashboard</span>
                         </Link>
                         <h2 className="text-xs tracking-wider font-semibold mb-1">LISTS</h2>
-                        <Link to='/' className='flex items-center space-x-1 mb-2'>
+                        <Link to='/dashboard/users' className='flex items-center space-x-1 mb-2'>
                             <BsPerson className="" />
                             <span>Users</span>
                         </Link>
-                        <Link to='/' className='flex items-center space-x-1 mb-2'>
+                        <Link to='/dashboard/products' className='flex items-center space-x-1 mb-2'>
                             <MdOutlineProductionQuantityLimits className="" />
                             <span>Products</span>
                         </Link>
-                        <Link to='/' className='flex items-center space-x-1 mb-2'>
+                        <Link to='/dashboard/bookedRooms' className='flex items-center space-x-1 mb-2'>
                             <BsCreditCard className="" />
-                            <span>Orders</span>
+                            <span>Booked Rooms</span>
                         </Link>
                         <Link to='/' className='flex items-center space-x-1 mb-6'>
                             <MdDeliveryDining className="" />
@@ -71,7 +71,7 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <div>
-                    <div className=" col-span-5">
+                    <div className=" col-span-5 mt-20">
                         <Outlet />
                     </div>
                 </div>

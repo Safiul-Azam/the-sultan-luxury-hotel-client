@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "title": "User",
+        "counts": 40,
+        "growth": 20,
+        "photo":"https://i.ibb.co/N7gGkTG/people-1.png"
+    },
+    {
+        "id":2,
+        "title": "Booked Rooms",
+        "counts": 25,
+        "growth": 15,
+        "photo":"https://i.ibb.co/fChxxCy/booking-2.png"
+    },
+    {
+        "id":3,
+        "title": "Earning",
+        "earning": 2040,
+        "growth": 30,
+        "photo":"https://i.ibb.co/FqVjTVP/earning-3.png"
+    },
+    {
+        "id":4,
+        "title": "Rest Rooms",
+        "counts": 17,
+        "growth": 24,
+        "photo":"https://i.ibb.co/23WcjNP/room-4.png"
+    }
+]
