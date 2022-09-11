@@ -8,7 +8,7 @@ import useFetch from '../../hooks/useFetch';
 import Spinner from '../Shared/Spinner';
 
 const RoomSuiteTwo = () => {
-    const { data, loading } = useFetch('http://localhost:5000/api/rooms')
+    const { data, loading } = useFetch('https://sultan-hotel-1.onrender.com/api/rooms')
     if(loading){
         return <Spinner/>
     }

@@ -19,7 +19,7 @@ const ReviewRules = () => {
     const [allDates, setAllDates] = useState(location.state.allDates)
     const [selectedRoom, setSelectedRoom] = useState(location.state.selected)
     const navigate = useNavigate()
-    const { data, loading, reFetch } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
+    const { data, loading, reFetch } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms/find/${id}`)
     const {
         _id,
         shift,

@@ -34,7 +34,7 @@ const FindingRoom = () => {
 
     const navigate = useNavigate()
 
-    const { data, loading, error, reFetch } = useFetch(`http://localhost:5000/api/rooms?min=${min || 0}&max=${max || 999}`)
+    const { data, loading, error, reFetch } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms?min=${min || 0}&max=${max || 999}`)
 
     const { dispatch } = useContext(SearchContext)
     const handleClick = id => {

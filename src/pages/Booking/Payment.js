@@ -16,7 +16,7 @@ const Payment = () => {
     const id = location?.pathname.split('/')[2]
     const [allDates, setAllDates] = useState(location.state.allDates)
     const [selectedRoom, setSelectedRoom] = useState(location.state.selected)
-    const { data, loading, reFetch } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
+    const { data, loading, reFetch } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms/find/${id}`)
     const { dates } = useContext(SearchContext)
 
     const {
@@ -31,7 +31,7 @@ const Payment = () => {
     const handleClick = async (id) => {
         try {
             await Promise.all(selectedRoom.map(roomId => {
-                const res = axios.put(`http://localhost:5000/api/rooms/availability/${roomId}`, { dates: allDates })
+                const res = axios.put(`https://sultan-hotel-1.onrender.com/api/rooms/availability/${roomId}`, { dates: allDates })
                 return res.data
             }))
             toast.success(<div className='text-lg text-green-600'>

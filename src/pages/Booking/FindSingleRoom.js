@@ -1,3 +1,4 @@
+import React from "react"
 import { AiOutlineCheck } from 'react-icons/ai';
 import { GrStar } from 'react-icons/gr';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -14,9 +15,10 @@ const FindSingleRoom = () => {
     const [selectedRoom, setSelectedRoom] = useState([])
     const location = useLocation()
     const id = location?.pathname.split('/')[2]
+    console.log(id);
     const navigate = useNavigate()
 
-    const { data, loading, reFetch } = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
+    const { data, loading, reFetch } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms/find/${id}`)
 
     const {
         _id,

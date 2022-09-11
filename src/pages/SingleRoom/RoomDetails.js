@@ -27,7 +27,7 @@ const amenities = [
 
 const RoomDetails = () => {
     const { roomId } = useParams()
-    const { data, loading } = useFetch(`http://localhost:5000/api/rooms/find/${roomId}`)
+    const { data, loading } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms/find/${roomId}`)
     console.log(data);
     const { title, extraBeds, pets, checkIn, checkOut, instructions, description } = data
     if (loading) {

@@ -4,7 +4,7 @@ import Spinner from '../Shared/Spinner';
 import OurFacility from './OurFacility';
 
 const OurFacilities = () => {
-    const {data, loading, error} = useFetch('http://localhost:5000/api/facilities')
+    const {data, loading, error} = useFetch('https://sultan-hotel-1.onrender.com/api/facilities')
     if(loading){
         <Spinner></Spinner>
     }
