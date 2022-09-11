@@ -19,6 +19,7 @@ import FindSingleRoom from './pages/Booking/FindSingleRoom';
 import ReviewRules from './pages/Booking/ReviewRules';
 import Payment from './pages/Booking/Payment';
 import Dashboard from '../src/pages/Dashboard/Dashboard'
+import Users from './pages/Dashboard/Users';
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard/>}>
-            <Route index element={<Dashboard></Dashboard>}></Route>
+            <Route index element={<Users></Users>}></Route>
         </Route>
         <Route path='*' element={<NoFound />} />
       </Routes>
