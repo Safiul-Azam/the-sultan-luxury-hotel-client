@@ -10,6 +10,7 @@ import Pricing from './Pricing';
 import { SearchContext } from '../../context/SearchContext';
 import { useContext, useState } from 'react';
 import { format } from 'date-fns';
+import Footer from "../Home/Footer";
 
 const FindSingleRoom = () => {
     const [selectedRoom, setSelectedRoom] = useState([])
@@ -68,7 +69,7 @@ const FindSingleRoom = () => {
         navigate(`/reviewRules/${id}`, { state: { selected: selectedRoom, allDates } })
     }
     return (
-        <div>
+        <>
             <div className=' pt-8 mix-blend-normal bg-black-400' style={
                 {
                     background: `linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url(${img1})`,
@@ -164,7 +165,8 @@ const FindSingleRoom = () => {
                     </div>
                 </div>
             </div>
-        </div>
+            <Footer/>
+        </>
     );
 };
 

@@ -15,6 +15,7 @@ import icon5 from '../../images/icons/icon11.png'
 import icon6 from '../../images/icons/icon12.png'
 import Spinner from '../Shared/Spinner';
 import CheckForm from '../Booking/CheckForm';
+import Footer from '../Home/Footer';
 
 const amenities = [
     { id: 1, img: icon1, text: '1-2 Persons' },
@@ -93,6 +94,7 @@ const RoomDetails = () => {
                 </div>
             </div>
             <CheckForm></CheckForm>
+            <Footer/>
         </div>
     );
 };

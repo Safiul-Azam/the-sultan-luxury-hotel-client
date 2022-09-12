@@ -25,7 +25,7 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
         return <Spinner></Spinner>
     }
     return (
-        <div>
+        <>
             <div className='flex justify-between items-center'>
                 <div>
                     <h2 className='text-3xl text-primary mb-5'>Pricing Information</h2>
@@ -84,7 +84,7 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
                     <p>${totalPrice + forChildren + 10 + 25}</p>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -10,23 +10,26 @@ import RoomsSuites from './RoomsSuites';
 import ServicesTheme from './ServicesTheme';
 import Testimonials from './Testimonials';
 import CheckForm from '../Booking/CheckForm';
+import Footer from '../Home/Footer'
+import CopyRight from '../Shared/CopyRight'
 
 const Home = () => {
-    return (
-        <div>
-          <Banner></Banner>
-          <EnjoyLuxury></EnjoyLuxury>
-          <RoomsSuites></RoomsSuites>
-          <ExtraServices></ExtraServices>
-          <PromotionalVideo></PromotionalVideo>
-          <OurFacilities></OurFacilities>
-          <CheckOut></CheckOut>
-          <ServicesTheme></ServicesTheme>
-          <Testimonials></Testimonials>
-          <OurBlogs></OurBlogs>
-          <CheckForm></CheckForm>
-        </div>
-    );
+  return (
+    <div>
+      <Banner></Banner>
+      <EnjoyLuxury></EnjoyLuxury>
+      <RoomsSuites></RoomsSuites>
+      <ExtraServices></ExtraServices>
+      <PromotionalVideo></PromotionalVideo>
+      <OurFacilities></OurFacilities>
+      <CheckOut></CheckOut>
+      <ServicesTheme></ServicesTheme>
+      <Testimonials></Testimonials>
+      <OurBlogs></OurBlogs>
+      <CheckForm></CheckForm>
+      <Footer></Footer>
+    </div>
+  );
 };
 
 export default Home;

@@ -21,7 +21,6 @@ const FindRoomBanner = () => {
                 </div>
             </div>
             <FindingRoom/>
-            
         </>
     );
 };

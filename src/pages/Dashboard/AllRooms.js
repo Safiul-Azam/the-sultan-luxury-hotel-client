@@ -5,11 +5,11 @@ import useFetch from '../../hooks/useFetch';
 
 const AllRooms = () => {
     const { data } = useFetch('https://sultan-hotel-1.onrender.com/api/rooms')
-    console.log(data);
+   
     return (
         <div className=''>
-            <h4 className='text-2xl font-bold mt-10'>All Users</h4>
-            <h4 className='text-lg mb-4'>Here is your all user list</h4>
+            <h4 className='text-2xl font-bold mt-10'>All Rooms</h4>
+            <h4 className='text-lg mb-4'>Here is hotel's all rooms list</h4>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -22,7 +22,6 @@ const AllRooms = () => {
                             <th>Price</th>
                             <th>Extra Beds</th>
                             <th>Room Number</th>
-                            <th>unavailable Dates</th>
                             <th>Details</th>
                         </tr>
                     </thead>
@@ -37,16 +36,13 @@ const AllRooms = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td>{room.createdAt.slice(0,10)}</td>
+                                <td>{room.createdAt.slice(0, 10)}</td>
                                 <td>{room.title}</td>
                                 <td className='capitalize'>{room.shift}</td>
                                 <td>${room.price}</td>
                                 <td>${room.extraBeds && 10}</td>
                                 <td>{room?.roomNumbers[0]?.number}/{room?.roomNumbers[1]?.number}</td>
-                                <td>
-                                    
-                                </td>
-                                <td><Link to={`/rooms/${room._id}`} className="text-right flex items-center text-sm uppercase text-[#3e98c7] tracking-widest font-semibold">Details<BiRightArrowAlt className='mt-1'/></Link></td>
+                                <td><Link to={`/rooms/${room._id}`} className="text-right flex items-center text-sm uppercase text-[#3e98c7] tracking-widest font-semibold">Details<BiRightArrowAlt className='mt-1' /></Link></td>
                             </tr>)
                         }
                     </tbody>

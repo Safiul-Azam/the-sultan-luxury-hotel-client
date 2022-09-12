@@ -7,7 +7,7 @@ const CopyRight = () => {
     return (
         <div>
             <div className='text-white text-sm tracking-wide bg-[#1e1e1e] py-8 text-center'>
-                <p className='text-xs text-accent'>&copy; Copyright {year} by <Link className='text-sm text-white hover:text-primary duration-300 hover:duration-300' to="/home">sultan@luxuryhotel.com</Link></p>
+                <h4 className='text-xs text-accent'>&copy; Copyright {year} by <Link className='text-sm text-white hover:text-primary duration-300 hover:duration-300' to="/home">sultan@luxuryhotel.com</Link></h4>
             </div>
         </div>
     );

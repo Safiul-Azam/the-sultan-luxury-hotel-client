@@ -12,6 +12,7 @@ import { MdPets, MdNoDrinks, MdOutlineChildFriendly } from 'react-icons/md'
 import { ImManWoman } from 'react-icons/im'
 import { useContext } from 'react';
 import { SearchContext } from '../../context/SearchContext';
+import Footer from '../Home/Footer';
 
 const ReviewRules = () => {
     const location = useLocation()
@@ -122,6 +123,7 @@ const ReviewRules = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

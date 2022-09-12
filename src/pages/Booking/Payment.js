@@ -9,6 +9,7 @@ import Spinner from '../Shared/Spinner';
 import { toast } from 'react-toastify';
 import { SearchContext } from '../../context/SearchContext';
 import { format } from 'date-fns';
+import Footer from '../Home/Footer';
 
 const Payment = () => {
     const location = useLocation()
@@ -42,8 +43,7 @@ const Payment = () => {
         } catch (err) { }
     }
     return (
-        <div>
-
+        <>
             <div className=' pt-8 mix-blend-normal bg-black-400' style={
                 {
                     background: `linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url(${img1})`,
@@ -73,7 +73,8 @@ const Payment = () => {
                     </div>
                 </div>
             </div>
-        </div>
+            <Footer/>
+        </>
     );
 };
 
