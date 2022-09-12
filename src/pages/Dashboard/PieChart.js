@@ -1,6 +1,6 @@
 import React from 'react';
 import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-progressbar';
-import {  XAxis, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
+import { XAxis, Tooltip, CartesianGrid, Area, AreaChart} from 'recharts';
 const data = [
     {
         day: 'Sunday',
@@ -51,7 +51,7 @@ const PieChart = () => {
     return (
         <div className='flex justify-between space-x-5'>
             <div className='w-1/2 rounded-xl bg-white mt-10'>
-                <h2 className='text-xl font-extrabold ml-12 mt-6'>Pie Chart</h2>
+                <h4 className='text-xl font-extrabold text-gray-600 ml-12 mt-6'>Pie Chart</h4>
                 <div className='flex justify-evenly pt-7 pb-16'>
                     <div style={{ width: 130, height: 130 }}>
                         <CircularProgressbarWithChildren
@@ -72,7 +72,7 @@ const PieChart = () => {
                                 <strong className='text-xs'>{35}%</strong>
                             </div>
                         </CircularProgressbarWithChildren>
-                        <h2 className='text-center mt-3'>Total User</h2>
+                        <h4 className='text-center mt-3'>Total User</h4>
                     </div>
                     <div style={{ width: 130, height: 130 }}>
                         <CircularProgressbarWithChildren
@@ -93,7 +93,7 @@ const PieChart = () => {
                                 <strong className='text-xs'>{55}%</strong>
                             </div>
                         </CircularProgressbarWithChildren>
-                        <h2 className='text-center mt-3'>Total Booked</h2>
+                        <h4 className='text-center mt-3'>Total Booked</h4>
                     </div>
                     <div style={{ width: 130, height: 130 }}>
                         <CircularProgressbarWithChildren
@@ -114,28 +114,29 @@ const PieChart = () => {
                                 <strong className='text-xs'>{85}%</strong>
                             </div>
                         </CircularProgressbarWithChildren>
-                        <h2 className='text-center mt-3'>Total Revenue</h2>
+                        <h4 className='text-center mt-3'>Total Revenue</h4>
                     </div>
                 </div>
             </div>
-            <div className='w-1/2 rounded-xl bg-white mt-10 p-5' >
-                <ResponsiveContainer width="100%" height="100%" className='border'>
-                    <LineChart
-                        width={500}
-                        height={400}
-                        data={data}
-                        margin={{
-                            top: 10,
-                            right: 10,
-                            left: 10,
-                            bottom: 10,
-                        }}
-                    >
-                        <XAxis dataKey="day" />
-                        <Tooltip />
-                        <Line type="monotone" dataKey="Total" stroke="#4285F4" fill="#4285F4" />
-                    </LineChart>
-                </ResponsiveContainer>
+            <div className='w-1/2 rounded-xl bg-white mt-10' >
+            <h4 className='text-xl font-extrabold ml-12 mt-6 text-gray-600'>Chart Booked</h4>
+            <p className='text-sm font-extrabold ml-12 text-gray-600'>Counts the booked room ratio per day</p>
+                <AreaChart width={550} height={250} data={data}
+                    margin={{ top: 10, right: 20, left: 30, bottom: 10 }}>
+                    <defs>
+                        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
+                            <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                        </linearGradient>
+                        <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
+                            <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
+                        </linearGradient>
+                    </defs>
+                    <XAxis dataKey="day" />
+                    <Tooltip />
+                    <Area type="monotone" dataKey="Total" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
+                </AreaChart>
             </div>
         </div>
     );

@@ -18,9 +18,9 @@ const Featured = () => {
                     <div className="flex space-x-10 items-center">
                         <img className='w-12' src={feature.photo} alt="" />
                         <div>
-                            {feature.earning ? <h2 className="text-3xl font-bold text-green-400"> ${feature.earning}</h2> : <h2 className='text-3xl font-bold text-green-400'>{feature.counts}</h2>}
+                            {feature.earning ? <h4 className="text-3xl font-bold text-green-400"> ${feature.earning}</h4> : <h4 className='text-3xl font-bold text-green-400'>{feature.counts}</h4>}
                             <p className='text-lg mb-1'>{feature.title}</p>
-                            <h3 className='flex items-center text-xs'>{feature.growth >= 20 ?<GoArrowSmallUp className='border rounded-full bg-green-100 text-green-500 mr-1 text-lg'/>:<GoArrowSmallDown className='border rounded-full bg-red-100 text-red-500 mr-1 text-lg'/>}{feature.growth}% (30 days)</h3>
+                            <h4 className='flex items-center text-xs'>{feature.growth >= 20 ?<GoArrowSmallUp className='border rounded-full bg-green-100 text-green-500 mr-1 text-lg'/>:<GoArrowSmallDown className='border rounded-full bg-red-100 text-red-500 mr-1 text-lg'/>}{feature.growth}% (30 days)</h4>
                         </div>
                     </div>
                 </div>)

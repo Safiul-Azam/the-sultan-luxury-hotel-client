@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600&family=Gilda+Display&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
   scroll-behavior: smooth;
 }
+
 h2,
 h3,
-h4,
 span {
 
   font-family: 'Gilda Display', serif;
 }
-
+h4,
+li{
+  font-family: 'Ubuntu', sans-serif;
+}
 p,
-li,
 button,
 input,
 small {
@@ -32,7 +36,9 @@ li {
 .swiper-pagination-bullet-active {
   background-color: #aa8453 !important;
 }
-.swiper-button-prev,.swiper-button-next{
+
+.swiper-button-prev,
+.swiper-button-next {
   width: 20px !important;
   height: 20px !important;
   border: 1px solid #ffffff;
@@ -40,10 +46,13 @@ li {
   padding: 18px;
   top: 40% !important;
 }
-.swiper-button-prev::after,.swiper-button-next::after{
-  color:#FFFFFF !important;
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #FFFFFF !important;
   font-size: 15px !important;
 }
+
 .swiper-pagination-bullet {
   margin-top: 20px;
   font-size: 12px;
