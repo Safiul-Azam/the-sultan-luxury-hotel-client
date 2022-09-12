@@ -1,5 +1,6 @@
 import React from 'react';
 import Featured from './Featured';
+import PieChart from './PieChart';
 
 const DashboardHome = () => {
     return (
@@ -8,6 +9,7 @@ const DashboardHome = () => {
                 <p className='text-2xl font-semibold text-[#444]'>Dashboard</p>
             </div>
             <Featured />
+            <PieChart/>
         </div>
     );
 };

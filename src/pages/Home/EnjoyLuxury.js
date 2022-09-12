@@ -6,7 +6,7 @@ import { FiPhoneCall } from "react-icons/fi";
 
 const EnjoyLuxury = () => {
     return (
-        <div className="lg:mb-24 mb-12 mt-10 hero min-h-screen  lg:w-[1150px] mx-auto bg-white">
+        <div className="lg:mb-24 mb-12 mt-10 hero min-h-screen lg:w-[1150px] mx-auto bg-white">
             <div className="hero-content flex-col lg:flex-row-reverse lg:relative justify-center">
                 <img src={Image1} className="lg:w-1/4 w-full shadow-2xl" alt='' />
                 <img src={Image2} className="lg:w-1/4 w-full shadow-2xl lg:relative top-24" alt='' />
