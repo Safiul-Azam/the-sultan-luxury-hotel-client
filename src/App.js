@@ -23,6 +23,7 @@ import Users from './pages/Dashboard/Users';
 import Products from './pages/Dashboard/Products';
 import BookedRoom from './pages/Dashboard/BookedRoom';
 import DashboardHome from './pages/Dashboard/DashboardHome';
+import AllRooms from './pages/Dashboard/AllRooms';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path='users' element={<Users />}></Route>
           <Route path='products' element={<Products />}></Route>
           <Route path='bookedRooms' element={<BookedRoom />}></Route>
+          <Route path='allRooms' element={<AllRooms />}></Route>
         </Route>
         <Route path='*' element={<NoFound />} />
       </Routes>

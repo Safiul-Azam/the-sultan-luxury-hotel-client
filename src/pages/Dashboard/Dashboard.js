@@ -28,9 +28,9 @@ const Dashboard = () => {
                             <BsPerson className="" />
                             <span>Users</span>
                         </Link>
-                        <Link to='/dashboard/products' className='flex items-center space-x-1 mb-2'>
+                        <Link to='/dashboard/allRooms' className='flex items-center space-x-1 mb-2'>
                             <MdOutlineProductionQuantityLimits className="" />
-                            <span>Products</span>
+                            <span>All Rooms</span>
                         </Link>
                         <Link to='/dashboard/bookedRooms' className='flex items-center space-x-1 mb-2'>
                             <BsCreditCard className="" />

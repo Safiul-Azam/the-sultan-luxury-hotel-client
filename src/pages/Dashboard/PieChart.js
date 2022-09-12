@@ -1,6 +1,6 @@
 import React from 'react';
 import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-progressbar';
-import { XAxis, Tooltip, CartesianGrid, Area, AreaChart} from 'recharts';
+import { XAxis, Tooltip, CartesianGrid, Area, AreaChart } from 'recharts';
 const data = [
     {
         day: 'Sunday',
@@ -63,8 +63,8 @@ const PieChart = () => {
                                 strokeLinecap: 'butt',
                                 textSize: '16px',
                                 pathTransitionDuration: 0.5,
-                                pathColor: `rgba(213, 247, 231)`,
-                                trailColor: '#0F9D58',
+                                pathColor: '#0F9D58',
+                                trailColor: `rgba(213, 247, 231)`,
                                 backgroundColor: '#3e98c7',
                             })}
                         >
@@ -84,8 +84,8 @@ const PieChart = () => {
                                 strokeLinecap: 'butt',
                                 textSize: '16px',
                                 pathTransitionDuration: 0.5,
-                                pathColor: `rgba(206, 220, 245)`,
-                                trailColor: '#4285F4',
+                                pathColor: '#4285F4',
+                                trailColor: `rgba(206, 220, 245)`,
                                 backgroundColor: '#3e98c7',
                             })}
                         >
@@ -105,8 +105,8 @@ const PieChart = () => {
                                 strokeLinecap: 'butt',
                                 textSize: '16px',
                                 pathTransitionDuration: 0.5,
-                                pathColor: `rgba(250, 241, 215)`,
-                                trailColor: '#F4B400',
+                                trailColor: `rgba(250, 241, 215)`,
+                                pathColor: '#F4B400',
                                 backgroundColor: '#3e98c7',
                             })}
                         >
@@ -119,8 +119,8 @@ const PieChart = () => {
                 </div>
             </div>
             <div className='w-1/2 rounded-xl bg-white mt-10' >
-            <h4 className='text-xl font-extrabold ml-12 mt-6 text-gray-600'>Chart Booked</h4>
-            <p className='text-sm font-extrabold ml-12 text-gray-600'>Counts the booked room ratio per day</p>
+                <h4 className='text-xl font-extrabold ml-12 mt-6 text-gray-600'>Chart Booked</h4>
+                <p className='text-sm font-extrabold ml-12 text-gray-600'>Counts the booked room ratio per day</p>
                 <AreaChart width={550} height={250} data={data}
                     margin={{ top: 10, right: 20, left: 30, bottom: 10 }}>
                     <defs>
