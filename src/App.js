@@ -21,6 +21,7 @@ import Products from './pages/Dashboard/Products';
 import BookedRoom from './pages/Dashboard/BookedRoom';
 import DashboardHome from './pages/Dashboard/DashboardHome';
 import AllRooms from './pages/Dashboard/AllRooms';
+import AddRoom from './pages/Dashboard/AddRoom';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route index element={<DashboardHome />}></Route>
           <Route path='users' element={<Users />}></Route>
           <Route path='products' element={<Products />}></Route>
+          <Route path='addRoom' element={<AddRoom />}></Route>
           <Route path='bookedRooms' element={<BookedRoom />}></Route>
           <Route path='allRooms' element={<AllRooms />}></Route>
         </Route>

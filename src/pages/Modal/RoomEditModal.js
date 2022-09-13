@@ -6,7 +6,6 @@ import { AuthContext } from '../../context/AuthContext';
 
 const RoomEditModal = ({ id }) => {
     const { user } = useContext(AuthContext)
-    console.log(user);
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);

@@ -3,7 +3,6 @@ import { BiRightArrowAlt } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import { FaTrashAlt } from 'react-icons/fa'
-import { FiEdit } from 'react-icons/fi';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import RoomEditModal from '../Modal/RoomEditModal';
