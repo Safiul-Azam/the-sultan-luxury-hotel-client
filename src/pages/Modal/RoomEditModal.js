@@ -1,56 +1,114 @@
-import React from 'react';
-import { useContext } from 'react';
-import { useForm } from 'react-hook-form';
-import { FiEdit } from 'react-icons/fi';
-import { AuthContext } from '../../context/AuthContext';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const RoomEditModal = ({ id }) => {
-    const { user } = useContext(AuthContext)
-    const { register, handleSubmit, reset } = useForm();
-    const onSubmit = data => {
-        console.log(data);
+    const [roomInfo, setRoomInfo] = useState({})
+    const handleChange = e => {
+        setRoomInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
+    }
+    console.log(id);
+    const handleSubmit = async e => {
+        e.preventDefault()
+        try {
+            const res = await axios.update(`localhost:5000/api/rooms/${id}`,roomInfo)
+            console.log(res);
+            if (res.status === 200) {
+                toast.success('Your added a new rooms :)')
+            };
+        } catch (err) {
+            console.log(err);
+        }
     }
     return (
         <>
-            <label htmlFor="room-edit-modal" className="modal-button"><FiEdit className='text-orange-500 cursor-pointer' /></label>
+            <div className="">
+                <div className="w-11/12 max-w-5xl relative pt-10">
+                
+                    <form className='space-y-4' onSubmit={handleSubmit}>
 
-            <input type="checkbox" id="room-edit-modal" className="modal-toggle" />
-            <div className="modal">
-                <div className="modal-box w-11/12 max-w-5xl relative pt-10">
-                    <label htmlFor="room-edit-modal" className="btn btn-sm btn-circle absolute right-0 top-0">✕</label>
-                    <form className='grid' onSubmit={handleSubmit(onSubmit)}>
-                        <input
-                            {...register("email")}
-                            type="text" value={user.email || ''} readOnly className="input input-bordered w-full mb-3" />
-                        <input
-                            required
-                            {...register("title")}
-                            type="text" placeholder='Room Title' className="input input-bordered w-full mb-3" />
-                        <textarea
-                            required
-                            {...register("description")}
-                            type="text" cols='30' rows='10' placeholder='Product Description' className="input input-bordered w-full mb-3"></textarea>
-                        <input
-                            {...register("minQuantity")}
-                            type="number"
-                            required
-                            placeholder='Minimum Quantity'
-                            className="input input-bordered w-full mb-3" />
-                        <input
-                            {...register("maxQuantity")}
-                            type="number"
-                            required
-                            placeholder='Available Quantity'
-                            className="input input-bordered w-full mb-3" />
-                        <input
-                            {...register("perPrice")}
-                            required
-                            type="number" placeholder="Per Price" className="input input-bordered w-full mb-3" />
-                        <input
-                            {...register("img")}
-                            required
-                            type="file" placeholder="Your Image" className="w-full mb-3" />
-                        <input className='btn btn-secondary w-full' type="submit" value='submit' />
+                        <div className="form-control w-full">
+                            <input
+                                type="text"
+                                id="title"
+                                onChange={handleChange}
+                                placeholder="Room Title"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent"
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <input
+                                type="number"
+                                id="price"
+                                onChange={handleChange}
+                                placeholder="Per day Price"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <input
+                                type="text"
+                                id="shift"
+                                onChange={handleChange}
+                                placeholder="Shift"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <input
+                                type="text"
+                                id="pet"
+                                onChange={handleChange}
+                                placeholder="Is Pet Allowed"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <input
+                                type="text"
+                                id="extraBeds"
+                                onChange={handleChange}
+                                placeholder="Extra Beds Facility"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <input
+                                type="text"
+                                id="instructions"
+                                onChange={handleChange}
+                                placeholder="Instructions"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <input
+                                type="text"
+                                id="checkIn"
+                                onChange={handleChange}
+                                placeholder="Check In Time"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <input
+                                type="text"
+                                id="checkOut"
+                                onChange={handleChange}
+                                placeholder="Check Out Time"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <input
+                                type="text"
+                                id="description"
+                                onChange={handleChange}
+                                placeholder="Description"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
+                            />
+                        </div>
+                        <input className='input p-0 text-sm mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-full col-span-2 mx-auto' type="submit" value='EDIT ROOM' />
                     </form>
                 </div>
             </div>

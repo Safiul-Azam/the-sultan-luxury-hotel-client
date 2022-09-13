@@ -5,7 +5,7 @@ import useFetch from '../../hooks/useFetch';
 import { FaTrashAlt } from 'react-icons/fa'
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import RoomEditModal from '../Modal/RoomEditModal';
+import { FiEdit } from 'react-icons/fi';
 
 const AllRooms = () => {
 
@@ -56,7 +56,7 @@ const AllRooms = () => {
                                 <td>${room.price}</td>
                                 <td>${room.extraBeds && 10}</td>
                                 <td>{room?.roomNumbers[0]?.number}/{room?.roomNumbers[1]?.number}</td>
-                                <td><RoomEditModal id={room._id}></RoomEditModal></td>
+                                <td><Link to={`/dashboard/editRoom/${room._id}`}><FiEdit className='text-orange-500 cursor-pointer' /></Link></td>
                                 <td onClick={() => handleDelete(room._id)}><FaTrashAlt className='text-red-500 cursor-pointer' /></td>
                                 <td><Link to={`/rooms/${room._id}`} className="flex items-center text-[#3e98c7]">Details<BiRightArrowAlt className='mt-1' /></Link></td>
                             </tr>)
