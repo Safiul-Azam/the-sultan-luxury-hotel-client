@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AiOutlineSetting } from 'react-icons/ai';
+import { AiOutlineAppstoreAdd, AiOutlineSetting } from 'react-icons/ai';
 import { BsCreditCard, BsPerson } from 'react-icons/bs';
 import { ImStatsBars } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
@@ -25,18 +25,18 @@ const Dashboard = () => {
                         <Link to='/' className="normal-case"><h4 className='lg:text-2xl text-xl block text-primary font-medium lg:h-8'>THE SULTAN</h4><h4 style={{ letterSpacing: '3px' }} className='text-xs'>LUXURY HOTEL</h4></Link>
                     </div>
                     <div className="">
-                        <h2 className="text-xs tracking-wider font-semibold mt-8 mb-1">MAIN</h2>
+                        <h4 className="text-xs tracking-wider mt-8 mb-1 font-bold">MAIN</h4>
                         <Link to='/dashboard' className='flex items-center space-x-1 mb-6'>
                             <MdDashboard className="text-green-500" />
                             <h4>Dashboard</h4>
                         </Link>
-                        <h2 className="text-xs tracking-wider font-semibold mb-1">LISTS</h2>
+                        <h4 className="text-xs tracking-wider font-bold mb-1">LISTS</h4>
                         <Link to='/dashboard/users' className='flex items-center space-x-1 mb-2'>
                             <BsPerson className="" />
                             <h4>Users</h4>
                         </Link>
                         <Link to='/dashboard/addRoom' className='flex items-center space-x-1 mb-2'>
-                            <MdOutlineProductionQuantityLimits className="" />
+                            <AiOutlineAppstoreAdd className="" />
                             <h4>Add Room</h4>
                         </Link>
                         <Link to='/dashboard/allRooms' className='flex items-center space-x-1 mb-2'>
@@ -47,11 +47,7 @@ const Dashboard = () => {
                             <BsCreditCard className="" />
                             <h4>Booked Rooms</h4>
                         </Link>
-                        <Link to='/' className='flex items-center space-x-1 mb-6'>
-                            <MdDeliveryDining className="" />
-                            <h4>Delivery</h4>
-                        </Link>
-                        <h2 className="text-xs tracking-wider font-semibold mt-8 mb-1">USEFUL</h2>
+                        <h4 className="text-xs tracking-wider font-bold mt-8 mb-1">USEFUL</h4>
                         <Link to='/' className='flex items-center space-x-1 mb-2'>
                             <ImStatsBars className="" />
                             <h4>Stats</h4>
@@ -60,7 +56,7 @@ const Dashboard = () => {
                             <MdOutlineNotificationsNone className="" />
                             <h4>Notifications</h4>
                         </Link>
-                        <h2 className="text-xs tracking-wider font-semibold mt-8 mb-1">SERVICE</h2>
+                        <h4 className="text-xs tracking-wider font-bold mt-8 mb-1">SERVICE</h4>
                         <Link to='/' className='flex items-center space-x-1 mb-2'>
                             <MdSettingsSystemDaydream className="" />
                             <h4>System Health</h4>
@@ -69,7 +65,7 @@ const Dashboard = () => {
                             <AiOutlineSetting className="" />
                             <h4>Settings</h4>
                         </Link>
-                        <p className="text-xs tracking-wider font-semibold mt-8 mb-1">USER</p>
+                        <h4 className="text-xs tracking-wider font-bold mt-8 mb-1">USER</h4>
                         <Link to='/' className='flex items-center space-x-1 mb-2'>
                             <CgProfile className="" />
                             <h4>Profile</h4>

@@ -20,7 +20,7 @@ const AddRoom = () => {
             const { url } = uploadRes.data;
             const newRoom = {
                 ...roomInfo,
-                img: url,
+                photos: url,
             }
             const res = await axios.post('http://localhost:5000/api/rooms', newRoom)
             console.log(res);
@@ -33,12 +33,12 @@ const AddRoom = () => {
     }
     return (
         <div>
-            <div className='lg:w-3/4 md:w-1/2 w-full mx-auto p-10  mt-28 mb-16'>
-                <h2 className="text-5xl text-black text-center">Signup</h2>
-                <hr className='mb-20 w-1/3 border-2 bg-gray-400 mt-3 mx-auto' />
+            <div className='lg:w-3/4 md:w-1/2 w-full mx-auto mb-16 mt-10'>
+                <h2 className="text-5xl text-gray-500 text-center">Add New Room</h2>
+                <hr className='mb-8 w-1/2 border-2 bg-gray-400 mt-3 mx-auto' />
                 <div className=''>
                     <div className=''>
-                        <img className='w-1/2 h-56 mx-auto rounded'
+                        <img className='w-80 h-80 mx-auto rounded'
                             src={
                                 file
                                     ? URL.createObjectURL(file)
@@ -141,7 +141,7 @@ const AddRoom = () => {
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
                             />
                         </div>
-                        <input className='input p-0 text-sm mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-1/2 col-span-2 mx-auto' type="submit" value='LOGIN' />
+                        <input className='input p-0 text-sm mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-full col-span-2 mx-auto' type="submit" value='ADD NEW ROOM' />
                     </form>
                 </div>
             </div>
