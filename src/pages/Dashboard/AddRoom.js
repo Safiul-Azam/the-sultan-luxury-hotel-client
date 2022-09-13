@@ -1,16 +1,35 @@
+import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 import { AiOutlineCloudUpload } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AddRoom = () => {
     const [file, setFile] = useState('')
-
-    const handleChange = ()=>{
-        
+    const [roomInfo, setRoomInfo] = useState({})
+    const handleChange = e => {
+        setRoomInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }
-    const handleSubmit = ()=>{
-
+    const handleSubmit = async e => {
+        e.preventDefault()
+        const data = new FormData()
+        data.append('file', file)
+        data.append('upload_preset', 'upload')
+        try {
+            const uploadRes = await axios.post('https://api.cloudinary.com/v1_1/Safiul-projects/image/upload', data)
+            const { url } = uploadRes.data;
+            const newRoom = {
+                ...roomInfo,
+                img: url,
+            }
+            const res = await axios.post('http://localhost:5000/api/rooms', newRoom)
+            console.log(res);
+            if (res.status === 200) {
+                toast.success('Your added a new rooms :)')
+            };
+        } catch (err) {
+            console.log(err);
+        }
     }
     return (
         <div>
