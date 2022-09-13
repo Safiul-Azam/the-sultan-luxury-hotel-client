@@ -12,12 +12,12 @@ span {
   font-family: 'Gilda Display', serif;
 }
 h4,
+input,
 li{
   font-family: 'Ubuntu', sans-serif;
 }
 p,
 button,
-input,
 small {
   font-family: 'Barlow Condensed', sans-serif;
 }

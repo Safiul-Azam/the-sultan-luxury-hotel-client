@@ -1,119 +1,128 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useUpdateProfile } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
+import { Link } from 'react-router-dom'
+import Footer from '../Home/Footer'
 import Authentication from './Authentication';
-import Spinner from '../Shared/Spinner';
-import {  toast } from 'react-toastify';
+import { useState } from 'react';
+import { AiOutlineCloudUpload } from 'react-icons/ai';
 
 const Login = () => {
-    const navigate = useNavigate()
-    const location = useLocation()
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth);
-    const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
-    const from = location?.state?.from?.pathName || '/'
-    let errorMessage;
-    if(error || UpdateError){
-        errorMessage = <p className='text-red-700'>{error.message || UpdateError.message}</p>
+    const [file, setFile] = useState('')
+    const [userInfo, setUserInfo] = useState({})
+    const handleChange = e => {
+        setUserInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }
-    if (user) {
-        navigate(from,{replace:true})
-    }
-    if (loading || updating) {
-        return <Spinner></Spinner>
-    }
-    const onSubmit = async data => {
-        const displayName = data.displayName
-        await createUserWithEmailAndPassword(data.email, data.password)
-        await updateProfile({displayName});
-        toast.success('Sign up is completed')
+    const handleSubmit = async e => {
 
     }
+
     return (
         <div>
             <Authentication></Authentication>
-            <div className='lg:w-1/2 md:w-1/2 w-full mx-auto border p-10  mt-28 mb-16'>
-                <div>
-                    <h2 className="text-2xl mb-7 text-black">Signup</h2>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-control w-full">
-                            <input
-                                {...register('displayName', {
-                                    required: {
-                                        value: true,
-                                        message: 'name is required'
-                                    }
-                                })}
-                                type="text" placeholder="Your Name"
-                                className="input input-bordered w-full rounded-none text-lg"
-
-                            />
-                            <label className="label">
-                                {errors.name?.type === 'required' && <span className="label-text-alt text-error">{errors.name.message}</span>}
+            <div className='lg:w-3/4 md:w-1/2 w-full mx-auto p-10  mt-28 mb-16'>
+                <h2 className="text-5xl text-black text-center">Signup</h2>
+                <hr className='mb-20 w-1/3 border-2 bg-gray-400 mt-3 mx-auto' />
+                <div className='grid grid-cols-3 gap-x-10'>
+                    <div className=''>
+                        <img className='w-1/2 mx-auto rounded-full'
+                            src={
+                                file
+                                    ? URL.createObjectURL(file)
+                                    : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                            }
+                            alt=""
+                        />
+                        <h4 className='text-sm mt-20 text-center'>New to Sultan Luxury Hotel? <Link className='text-primary' to='/signup'>Create new account</Link></h4>
+                    </div>
+                    <form className='grid grid-cols-2 gap-8 col-span-2' onSubmit={handleSubmit}>
+                        <div className="form-control w-full ">
+                            <label className='flex items-center space-x-3 text-xl text-green-500' htmlFor="file">
+                                Upload Image: <AiOutlineCloudUpload />
                             </label>
+                            <input
+                                className='input input-bordered w-full rounded-none text-lg'
+                                type="file"
+                                id="file"
+                                onChange={(e) => setFile(e.target.files[0])}
+                                style={{ display: "none" }}
+                            />
                         </div>
                         <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text text-lg">Email</span>
-                            </label>
-                            <input
-                                {...register('email', {
-                                    required: {
-                                        value: true,
-                                        message: 'Email is required'
-                                    },
-                                    pattern: {
-                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                        message: 'Provide a valid email'
-                                    }
-                                })}
-                                type="email" placeholder="Enter Your Email"
-                                className="input input-bordered w-full rounded-none text-lg"
 
+                            <input
+                                type="text"
+                                id="firstName"
+                                onChange={handleChange}
+                                placeholder="Enter Your First Name"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
                             />
-                            <label className="label">
-                                {errors.email?.type === 'required' && <span className="label-text-alt text-error">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-error">{errors.email.message}</span>}
-                            </label>
+                        </div>
+                        <div className="form-control w-full">
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                onChange={handleChange}
+                                placeholder="Enter Your Last Name"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
+                            />
+                        </div>
+                        <div className="form-control w-full">
+
+                            <input
+                                type="email"
+                                id="email"
+                                onChange={handleChange}
+                                placeholder="Enter Your Email"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
+                            />
+                        </div>
+                        <div className="form-control w-full">
+
+                            <input
+                                type="text"
+                                id="address"
+                                onChange={handleChange}
+                                placeholder="Enter Your Address"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
+                            />
+                        </div>
+                        <div className="form-control w-full">
+
+                            <input
+                                type="Number"
+                                id="phone"
+                                onChange={handleChange}
+                                placeholder="Enter Your Number"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
+                            />
                         </div>
                         <div className="form-control w-full ">
-                            <label className="label">
-                                <span className="label-text text-lg">Password</span>
-                            </label>
+
                             <input
-                                {...register('password', {
-                                    required: {
-                                        value: true,
-                                        message: 'password is required'
-                                    },
-                                    minLength: {
-                                        value: 6,
-                                        message: 'the password must be at least 6 characters long'
-                                    }
-                                })}
-                                type="password" placeholder="Enter Your Password"
-                                className="input input-bordered w-full rounded-none text-lg"
+                                type="password"
+                                id="password"
+                                onChange={handleChange}
+                                placeholder="Enter Password"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
 
                             />
-                            <label className="label">
-                                {errors.password?.type === 'required' && <span className="label-text-alt text-error">{errors.password.message}</span>}
-                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-error">{errors.password.message}</span>}
-                            </label>
                         </div>
-                        {errorMessage}
-                        <input className='py-3 px-8 text-lg mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-full' type="submit" value='SIGN UP' />
-                        <p className='mt-6 text-sm'>Already have an account? <Link className='text-primary' to='/login'>please Login</Link></p>
+                        <div className="form-control w-full ">
+
+                            <input
+                                type="password"
+                                id="ConfirmPassword"
+                                onChange={handleChange}
+                                placeholder="Enter Confirm Password"
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
+
+                            />
+                        </div>
+                        <input className='input p-0 text-sm mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-1/2 col-span-2 mx-auto' type="submit" value='LOGIN' />
                     </form>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };
