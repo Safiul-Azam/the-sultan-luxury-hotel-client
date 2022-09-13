@@ -2,10 +2,22 @@ import React from 'react';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import {FaTrashAlt} from 'react-icons/fa'
+import { FiEdit } from 'react-icons/fi';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const AllRooms = () => {
-    const { data } = useFetch('https://sultan-hotel-1.onrender.com/api/rooms')
-   
+    
+    const { data, reFetch } = useFetch('https://sultan-hotel-1.onrender.com/api/rooms')
+    const handleDelete =async (id)=>{
+        const res = await axios.delete(`http://localhost:5000/api/rooms/${id}`)
+        if(res.status === 200){
+            reFetch()
+            toast.error('Room is Deleted')
+        }
+    }
+
     return (
         <div className=''>
             <h4 className='text-2xl font-bold mt-10'>All Rooms</h4>
@@ -22,6 +34,8 @@ const AllRooms = () => {
                             <th>Price</th>
                             <th>Extra Beds</th>
                             <th>Room Number</th>
+                            <th>Update</th>
+                            <th>Delete</th>
                             <th>Details</th>
                         </tr>
                     </thead>
@@ -42,7 +56,9 @@ const AllRooms = () => {
                                 <td>${room.price}</td>
                                 <td>${room.extraBeds && 10}</td>
                                 <td>{room?.roomNumbers[0]?.number}/{room?.roomNumbers[1]?.number}</td>
-                                <td><Link to={`/rooms/${room._id}`} className="text-right flex items-center text-sm uppercase text-[#3e98c7] tracking-widest font-semibold">Details<BiRightArrowAlt className='mt-1' /></Link></td>
+                                <td><FiEdit className='text-orange-500'/></td>
+                                <td onClick={()=>handleDelete(room._id)}><FaTrashAlt className='text-red-500 cursor-pointer'/></td>
+                                <td><Link to={`/rooms/${room._id}`} className="flex items-center text-[#3e98c7]">Details<BiRightArrowAlt className='mt-1' /></Link></td>
                             </tr>)
                         }
                     </tbody>
