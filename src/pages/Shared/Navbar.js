@@ -1,7 +1,6 @@
 import React from 'react';
 import CustomLink from './CustomLink';
 import { Link } from "react-router-dom";
-import auth from '../../firebase.init';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 

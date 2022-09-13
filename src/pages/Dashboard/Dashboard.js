@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiOutlineSetting } from 'react-icons/ai';
 import { BsCreditCard, BsPerson } from 'react-icons/bs';
 import { ImStatsBars } from 'react-icons/im';
@@ -7,8 +7,15 @@ import { MdDashboard, MdDeliveryDining, MdOutlineNotificationsNone, MdOutlinePro
 import { Link, Outlet } from 'react-router-dom';
 import NavbarDashboard from './NavbarDashboard';
 import { FiLogOut } from 'react-icons/fi';
+import { AuthContext } from '../../context/AuthContext';
+import CustomLink from '../Shared/CustomLink';
 
 const Dashboard = () => {
+    const { user, dispatch } = useContext(AuthContext)
+    const logOut = () => {
+        dispatch({ type: 'LOGOUT' })
+        localStorage.removeItem()
+    }
     return (
         <>
             <NavbarDashboard />
@@ -21,51 +28,52 @@ const Dashboard = () => {
                         <h2 className="text-xs tracking-wider font-semibold mt-8 mb-1">MAIN</h2>
                         <Link to='/dashboard' className='flex items-center space-x-1 mb-6'>
                             <MdDashboard className="text-green-500" />
-                            <span>Dashboard</span>
+                            <h4>Dashboard</h4>
                         </Link>
                         <h2 className="text-xs tracking-wider font-semibold mb-1">LISTS</h2>
                         <Link to='/dashboard/users' className='flex items-center space-x-1 mb-2'>
                             <BsPerson className="" />
-                            <span>Users</span>
+                            <h4>Users</h4>
                         </Link>
                         <Link to='/dashboard/allRooms' className='flex items-center space-x-1 mb-2'>
                             <MdOutlineProductionQuantityLimits className="" />
-                            <span>All Rooms</span>
+                            <h4>All Rooms</h4>
                         </Link>
                         <Link to='/dashboard/bookedRooms' className='flex items-center space-x-1 mb-2'>
                             <BsCreditCard className="" />
-                            <span>Booked Rooms</span>
+                            <h4>Booked Rooms</h4>
                         </Link>
                         <Link to='/' className='flex items-center space-x-1 mb-6'>
                             <MdDeliveryDining className="" />
-                            <span>Delivery</span>
+                            <h4>Delivery</h4>
                         </Link>
                         <h2 className="text-xs tracking-wider font-semibold mt-8 mb-1">USEFUL</h2>
                         <Link to='/' className='flex items-center space-x-1 mb-2'>
                             <ImStatsBars className="" />
-                            <span>Stats</span>
+                            <h4>Stats</h4>
                         </Link>
                         <Link to='/' className='flex items-center space-x-1 mb-6'>
                             <MdOutlineNotificationsNone className="" />
-                            <span>Notifications</span>
+                            <h4>Notifications</h4>
                         </Link>
                         <h2 className="text-xs tracking-wider font-semibold mt-8 mb-1">SERVICE</h2>
                         <Link to='/' className='flex items-center space-x-1 mb-2'>
                             <MdSettingsSystemDaydream className="" />
-                            <span>System Health</span>
+                            <h4>System Health</h4>
                         </Link>
                         <Link to='/' className='flex items-center space-x-1 mb-6'>
                             <AiOutlineSetting className="" />
-                            <span>Settings</span>
+                            <h4>Settings</h4>
                         </Link>
                         <p className="text-xs tracking-wider font-semibold mt-8 mb-1">USER</p>
                         <Link to='/' className='flex items-center space-x-1 mb-2'>
                             <CgProfile className="" />
-                            <span>Profile</span>
+                            <h4>Profile</h4>
                         </Link>
                         <Link to='/' className='flex items-center space-x-1 mb-2'>
                             <FiLogOut className="" />
-                            <span>Logout</span>
+                            {user &&
+                                <Link to='/login'><h4 onClick={logOut}>Log Out</h4></Link>}
                         </Link>
                     </div>
                 </div>
