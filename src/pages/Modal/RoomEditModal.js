@@ -1,20 +1,25 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useFetch from '../../hooks/useFetch';
 
-const RoomEditModal = ({ id }) => {
+const RoomEditModal = () => {
     const [roomInfo, setRoomInfo] = useState({})
+    const location = useLocation()
+    const id = location?.pathname.split('/')[3]
     const handleChange = e => {
         setRoomInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }
-    console.log(id);
+    const {data} = useFetch(`http://localhost:5000/api/rooms/find/${id}`)
+    console.log(data);
     const handleSubmit = async e => {
         e.preventDefault()
         try {
-            const res = await axios.update(`localhost:5000/api/rooms/${id}`,roomInfo)
+            const res = await axios.put(`http://localhost:5000/api/rooms/${id}`,roomInfo)
             console.log(res);
             if (res.status === 200) {
-                toast.success('Your added a new rooms :)')
+                toast.success('Room information is updated :)')
             };
         } catch (err) {
             console.log(err);
@@ -24,7 +29,12 @@ const RoomEditModal = ({ id }) => {
         <>
             <div className="">
                 <div className="w-11/12 max-w-5xl relative pt-10">
-                
+                <div className=''>
+                        <img className='w-80 h-80 mx-auto rounded'
+                            src={data.photos}
+                            alt=""
+                        />
+                    </div>
                     <form className='space-y-4' onSubmit={handleSubmit}>
 
                         <div className="form-control w-full">
@@ -32,7 +42,7 @@ const RoomEditModal = ({ id }) => {
                                 type="text"
                                 id="title"
                                 onChange={handleChange}
-                                placeholder="Room Title"
+                                placeholder={data.title}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent"
                             />
                         </div>
@@ -41,7 +51,7 @@ const RoomEditModal = ({ id }) => {
                                 type="number"
                                 id="price"
                                 onChange={handleChange}
-                                placeholder="Per day Price"
+                                placeholder={`$${data.price}`}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
                             />
                         </div>
@@ -50,7 +60,7 @@ const RoomEditModal = ({ id }) => {
                                 type="text"
                                 id="shift"
                                 onChange={handleChange}
-                                placeholder="Shift"
+                                placeholder={data.shift}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
                             />
                         </div>
@@ -59,7 +69,7 @@ const RoomEditModal = ({ id }) => {
                                 type="text"
                                 id="pet"
                                 onChange={handleChange}
-                                placeholder="Is Pet Allowed"
+                                placeholder={data.pets}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
                             />
                         </div>
@@ -68,7 +78,7 @@ const RoomEditModal = ({ id }) => {
                                 type="text"
                                 id="extraBeds"
                                 onChange={handleChange}
-                                placeholder="Extra Beds Facility"
+                                placeholder={data.extraBeds}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
                             />
                         </div>
@@ -77,7 +87,7 @@ const RoomEditModal = ({ id }) => {
                                 type="text"
                                 id="instructions"
                                 onChange={handleChange}
-                                placeholder="Instructions"
+                                placeholder={data.instructions}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none bg-transparent "
                             />
                         </div>
