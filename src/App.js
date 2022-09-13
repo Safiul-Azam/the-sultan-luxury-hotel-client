@@ -22,7 +22,8 @@ import BookedRoom from './pages/Dashboard/BookedRoom';
 import DashboardHome from './pages/Dashboard/DashboardHome';
 import AllRooms from './pages/Dashboard/AllRooms';
 import AddRoom from './pages/Dashboard/AddRoom';
-import RoomEditModal from './pages/Modal/RoomEditModal';
+import RoomEdit from './pages/Home/RoomEdit';
+import EditProfile from './pages/Dashboard/EditProfile';
 
 
 function App() {
@@ -48,7 +49,8 @@ function App() {
           <Route path='addRoom' element={<AddRoom />}></Route>
           <Route path='bookedRooms' element={<BookedRoom />}></Route>
           <Route path='allRooms' element={<AllRooms />}></Route>
-          <Route path='editRoom/:id' element={<RoomEditModal />} />
+          <Route path='editProfile' element={<EditProfile />}></Route>
+          <Route path='editRoom/:id' element={<RoomEdit />} />
         </Route>
         <Route path='*' element={<NoFound />} />
       </Routes>

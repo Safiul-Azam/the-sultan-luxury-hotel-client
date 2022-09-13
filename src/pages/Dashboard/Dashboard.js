@@ -66,7 +66,7 @@ const Dashboard = () => {
                             <h4>Settings</h4>
                         </Link>
                         <h4 className="text-xs tracking-wider font-bold mt-8 mb-1">USER</h4>
-                        <Link to='/' className='flex items-center space-x-1 mb-2'>
+                        <Link to='/dashboard/editProfile' className='flex items-center space-x-1 mb-2'>
                             <CgProfile className="" />
                             <h4>Profile</h4>
                         </Link>

@@ -29,6 +29,9 @@ const RoomEditModal = () => {
         <>
             <div className="">
                 <div className="w-11/12 max-w-5xl relative pt-10">
+                <h2 className="text-2xl text-gray-500 text-center">Edit Room id :  {data._id}</h2>
+                <h2 className='text-2xl text-gray-500 text-center'>Name : {data.title}</h2>
+                <hr className='mb-8 w-1/2 border-2 bg-gray-400 mt-3 mx-auto' />
                 <div className=''>
                         <img className='w-80 h-80 mx-auto rounded'
                             src={data.photos}
