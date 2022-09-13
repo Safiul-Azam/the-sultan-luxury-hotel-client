@@ -34,11 +34,10 @@ const EditProfile = () => {
             console.log(err);
         }
     }
-
     return (
         <div>
             <div className='w-full mx-auto mb-16'>
-                <h2 className="text-2xl mt-3 text-gray-900">Update Profile</h2>
+                <h2 className="text-2xl mt-3 text-gray-800">Update Profile</h2>
                 <hr className='mb-10 border bg-gray-400 mt-3 mx-auto' />
                 <div className=''>
 
