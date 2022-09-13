@@ -1,17 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import Footer from '../Home/Footer'
 import { useState } from 'react';
 import { AiOutlineCloudUpload } from 'react-icons/ai';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const EditProfile = () => {
+    const { user } = useContext(AuthContext)
     const [file, setFile] = useState('')
     const [userInfo, setUserInfo] = useState({})
     const handleChange = e => {
         setUserInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }
+    console.log(user);
     const handleSubmit = async e => {
         e.preventDefault()
         const data = new FormData()
@@ -37,11 +39,11 @@ const EditProfile = () => {
         <div>
             <div className='w-full mx-auto mb-16'>
                 <h2 className="text-2xl mt-3 text-gray-900">Update Profile</h2>
-                <hr className='mb-20 border bg-gray-400 mt-3 mx-auto' />
+                <hr className='mb-10 border bg-gray-400 mt-3 mx-auto' />
                 <div className=''>
 
-                    <form className='grid grid-cols-2 gap-8 col-span-2' onSubmit={handleSubmit}>
-                        <div className="form-control w-full grid grid-cols-2 ">
+                    <form className='grid grid-cols-2 gap-6 col-span-2' onSubmit={handleSubmit}>
+                        <div className="form-control grid grid-cols-2 col-span-2 w-1/2">
                             <div className=''>
                                 <img className='w-32 h-32 rounded-full'
                                     src={
@@ -53,7 +55,7 @@ const EditProfile = () => {
                                 />
                             </div>
                             <label className='flex items-center space-x-3 text-xl text-green-500' htmlFor="file">
-                                Upload Image: <AiOutlineCloudUpload />
+                                Update Image: <AiOutlineCloudUpload />
                             </label>
                             <input
                                 className='input input-bordered w-full rounded-none text-lg'
@@ -64,51 +66,91 @@ const EditProfile = () => {
                             />
                         </div>
                         <div className="form-control w-full">
+                            <label className="label">
+                                <h4 className="label-text text-xl">Your Full Name</h4>
+                            </label>
                             <input
                                 type="text"
                                 id="userName"
                                 onChange={handleChange}
+                                value={user.userName}
+                                readOnly
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
                             />
                         </div>
                         <div className="form-control w-full">
+                            <label className="label">
+                                <h4 className="label-text text-xl">Your Email</h4>
+                            </label>
                             <input
                                 type="email"
                                 id="email"
+                                value={user.email}
                                 onChange={handleChange}
-                                placeholder="Enter Your Email"
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
                             />
                         </div>
                         <div className="form-control w-full">
-
+                            <label className="label">
+                                <h4 className="label-text text-xl">Your Address</h4>
+                            </label>
                             <input
                                 type="text"
                                 id="address"
                                 onChange={handleChange}
-                                placeholder="Enter Your Address"
+                                placeholder={user.address}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
                             />
                         </div>
                         <div className="form-control w-full">
+                            <label className="label">
+                                <h4 className="label-text text-xl">Your City</h4>
+                            </label>
+                            <input
+                                type="text"
+                                id="address"
+                                onChange={handleChange}
+                                placeholder='Your City'
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <h4 className="label-text text-xl">Your District</h4>
+                            </label>
+                            <input
+                                type="text"
+                                id="address"
+                                onChange={handleChange}
+                                placeholder='District'
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <h4 className="label-text text-xl">Your Street Address</h4>
+                            </label>
+                            <input
+                                type="text"
+                                id="address"
+                                onChange={handleChange}
+                                placeholder='Street Address'
+                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
+                            />
+                        </div>
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <h4 className="label-text text-xl">Your Phone</h4>
+                            </label>
                             <input
                                 type="text"
                                 id="phone"
                                 onChange={handleChange}
-                                placeholder="Enter Your Number"
+                                placeholder={user.phone}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
                             />
                         </div>
-                        <div className="form-control w-full ">
-                            <input
-                                type="password"
-                                id="password"
-                                onChange={handleChange}
-                                placeholder="Enter Password"
-                                className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
-                            />
-                        </div>
-                        <input className='input p-0 text-sm mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-1/2 col-span-2 mx-auto' type="submit" value='SIGN UP' />
+                        <input className='input p-0 text-sm mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-1/3 col-span-2 mx-auto' type="submit" value='UPDATE YOUR PROFILE' />
                     </form>
                 </div>
             </div>
