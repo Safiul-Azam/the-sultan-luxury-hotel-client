@@ -8,6 +8,7 @@ import { AuthContext } from '../../context/AuthContext';
 
 const EditProfile = () => {
     const { user } = useContext(AuthContext)
+    const id = user._id
     const [file, setFile] = useState('')
     const [userInfo, setUserInfo] = useState({})
     const handleChange = e => {
@@ -22,11 +23,11 @@ const EditProfile = () => {
         try {
             const uploadRes = await axios.put('https://api.cloudinary.com/v1_1/Safiul-projects/image/upload', data)
             const { url } = uploadRes.data;
-            const newUser = {
+            const updateUser = {
                 ...userInfo,
                 img: url,
             }
-            const res = await axios.put('http://localhost:5000/api/auth/register', newUser)
+            const res = await axios.put(`http://localhost:5000/api/users/${id}`, updateUser)
             if (res.status === 200) {
                 toast.success('your registration is completed :)')
             };
@@ -34,6 +35,7 @@ const EditProfile = () => {
             console.log(err);
         }
     }
+
     return (
         <div>
             <div className='w-full mx-auto mb-16'>
@@ -48,7 +50,7 @@ const EditProfile = () => {
                                     src={
                                         file
                                             ? URL.createObjectURL(file)
-                                            : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                                            : user.img ||"https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
                                     }
                                     alt=""
                                 />
@@ -85,6 +87,7 @@ const EditProfile = () => {
                                 type="email"
                                 id="email"
                                 value={user.email}
+                                readOnly
                                 onChange={handleChange}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
                             />
@@ -107,7 +110,7 @@ const EditProfile = () => {
                             </label>
                             <input
                                 type="text"
-                                id="address"
+                                id="city"
                                 onChange={handleChange}
                                 placeholder='Your City'
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
@@ -119,7 +122,7 @@ const EditProfile = () => {
                             </label>
                             <input
                                 type="text"
-                                id="address"
+                                id="district"
                                 onChange={handleChange}
                                 placeholder='District'
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
@@ -131,7 +134,7 @@ const EditProfile = () => {
                             </label>
                             <input
                                 type="text"
-                                id="address"
+                                id="street"
                                 onChange={handleChange}
                                 placeholder='Street Address'
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
