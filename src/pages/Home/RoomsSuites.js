@@ -6,9 +6,9 @@ const RoomsSuites = () => {
     
     return (
         <div id='room&suites' className='py-24 bg-neutral'>
-            <div className='container mx-auto'>
-                <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>THE SULTAN LUXURY HOTEL</p>
-                <h2 className='text-5xl mb-7 text-black'>Rooms & Suites</h2>
+            <div className='container mx-auto px-4'>
+                <p className='lg:text-lg text-sm uppercase mb-4 tracking-[3px] lg:tracking-[5px]'>THE SULTAN LUXURY HOTEL</p>
+                <h2 className='lg:text-5xl text-3xl mb-7'>Rooms & Suites</h2>
                     <RoomSuiteThree/>
                     <RoomSuiteTwo/>
             </div>

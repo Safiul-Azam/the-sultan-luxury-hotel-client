@@ -14,7 +14,7 @@ const banners = [
 ]
 const Banner = () => {
   return (
-    <div className="w-full">
+    <div className="relative">
       <Navbar></Navbar>
       <Swiper
         centeredSlides={true}

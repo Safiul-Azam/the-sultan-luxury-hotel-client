@@ -7,7 +7,7 @@ import theme4 from '../../images/photo/theme/4.jpg'
 const Services = () => {
     return (
         <div>
-            <div className='container mx-auto bg-[#F8F5F0] my-24'>
+            <div className='container mx-auto bg-[#F8F5F0] my-24 px-4'>
                 <div className='grid grid-cols-1 lg:grid-cols-2 items-center '>
                     <div className=' overflow-hidden order-1'>
                         <img className=' hover:scale-110 hover:duration-1000 hover:ease-in-out ease-in-out duration-1000' src={theme1} alt="" />

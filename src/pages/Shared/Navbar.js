@@ -8,7 +8,6 @@ const Navbar = () => {
     const { user, dispatch } = useContext(AuthContext)
     const logOut = () => {
         dispatch({ type: 'LOGOUT' })
-        localStorage.removeItem()
     }
     const menu = <>
         <li><CustomLink to='/'>HOME</CustomLink></li>
@@ -26,7 +25,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className='z-10 absolute'>
+        <div className='z-10 absolute w-full px-20'>
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -37,7 +36,7 @@ const Navbar = () => {
                             {menu}
                         </ul>
                     </div>
-                    <a href='/' className="btn btn-primary normal-case text-xl">daisyUI</a>
+                    <Link to='/' className="normal-case"><span className='lg:text-xl text-xl block text-primary font-medium lg:h-8'>THE SULTAN</span><p style={{ letterSpacing: '5px', fontSize: '10px' }} className='text-white'>LUXURY HOTEL</p></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
