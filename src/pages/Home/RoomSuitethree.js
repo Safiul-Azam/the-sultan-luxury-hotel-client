@@ -23,8 +23,8 @@ const RoomSuiteThree = () => {
                     className='relative group'
                 >
                     <div className='overflow-hidden'>
-                        {room.photos.map(photo => (
-                            <img className='group-hover:scale-110 group-hover:duration-500 group-hover:ease-in-out ease-in-out duration-500' src={photo} alt="" />
+                        {room.photos.map((photo,index) => (
+                            <img key={index} className='group-hover:scale-110 group-hover:duration-500 group-hover:ease-in-out ease-in-out duration-500' src={photo} alt="" />
                         ))}
                     </div>
                     <div className="text-white absolute -bottom-10 left-4 group-hover:bottom-10 group-hover:duration-500 group-hover:ease-out ease-in-out duration-500">

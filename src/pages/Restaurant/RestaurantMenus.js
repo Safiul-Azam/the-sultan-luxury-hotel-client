@@ -38,7 +38,7 @@ const RestaurantMenu = () => {
                     >
                         <div>
                         {
-                            menus.map(menu => <SwiperSlide className={`text-3xl text-white ${menu.menuName === clickBtn ? "border text-center p-3":"border-none text-center p-3"}`}>
+                            menus.map(menu => <SwiperSlide key={menu.id} className={`text-3xl text-white ${menu.menuName === clickBtn ? "border text-center p-3":"border-none text-center p-3"}`}>
                                 <div>
                                     <button onClick={() => setClickBtn(menu.menuName)}>{menu.menuName}</button>
                                 </div>
@@ -50,7 +50,7 @@ const RestaurantMenu = () => {
                 </div>
                 {
                     selected.map(single => <RestaurantSingleMenu
-                        key={single._id}
+                        key={single.id}
                         single={single}
                     ></RestaurantSingleMenu>)
                 }

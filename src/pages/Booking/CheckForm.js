@@ -51,7 +51,7 @@ const CheckForm = () => {
                         <h3 className='text-white text-2xl my-8'>Each of our guest rooms feature a private bath, wi-fi, cable television and include full breakfast.</h3>
                         <div className='flex justify-start items-center text-white'>
                             <FiPhoneCall className='text-4xl mr-8' />
-                            <p className='text-lg'>For information<p className='block text-2xl tracking-widest'>855 100 4444</p></p>
+                            {/* <p className='text-lg'>For information<p className='block text-2xl tracking-widest'>855 100 4444</p></p> */}
                         </div>
                     </div>
 

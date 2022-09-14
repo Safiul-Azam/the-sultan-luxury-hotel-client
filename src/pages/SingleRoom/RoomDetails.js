@@ -82,7 +82,7 @@ const RoomDetails = () => {
                         <h2 className='text-2xl mb-4'>Amenities</h2>
                         {
                             amenities.map(amenity => <div
-                                key={amenity._id}
+                                key={amenity.id}
                             >
                                 <div className='flex items-center space-x-3'>
                                     <img width={'25'} src={amenity.img} alt="" />

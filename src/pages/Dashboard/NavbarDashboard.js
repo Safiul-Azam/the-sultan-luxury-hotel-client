@@ -2,12 +2,12 @@ import React from 'react';
 import DashCustomLink from './DashCustomLink';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
-import { FaBell, FaEdit } from 'react-icons/fa';
+import { FaBell } from 'react-icons/fa';
 import { BiMessageDots } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
 const NavbarDashboard = () => {
-    const { user, dispatch } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     return (
         <div className='mx-auto z-10 mb-10 mt-2 border-b-4'>
@@ -25,10 +25,10 @@ const NavbarDashboard = () => {
                     </li>
                 </ul>
                 <div className="avatar flex space-x-3 items-center">
-                    <h4 className='capitalize'> Hello, {user.userName}</h4>
+                    <h4 className='capitalize'> Hello, {user?.userName}</h4>
                     <div className="w-10 rounded-full">
                         <Link to='/dashboard/editProfile'>
-                            <img src={user.img} alt='' />
+                            <img src={user?.img} alt='' />
                         </Link>
                     </div>
                 </div>

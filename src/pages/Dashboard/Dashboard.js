@@ -70,13 +70,13 @@ const Dashboard = () => {
                             <h4>Profile</h4>
                         </DashCustomLink>
                         <DashCustomLink to='/' className='flex items-center space-x-1 mb-2'>
-                            <FiLogOut className="" />
+                            <FiLogOut />
                             {user &&
                                 <DashCustomLink to='/login'><h4 onClick={logOut}>Log Out</h4></DashCustomLink>}
                         </DashCustomLink>
                     </div>
                 </div>
-                <div className="col-span-5 mx-10">
+                <div className="col-span-5 mb-24 mx-10">
                     <NavbarDashboard />
                     <Outlet />
                 </div>

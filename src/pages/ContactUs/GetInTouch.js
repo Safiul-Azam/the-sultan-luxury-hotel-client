@@ -17,18 +17,18 @@ const GetInTouch = () => {
                     <div className=' space-y-6'>
                         <div className='flex justify-start items-center'>
                             <FiPhoneCall className='text-4xl mr-8 text-primary' />
-                            <p className='text-xl text-gray-700'>Reservation <p className='block text-3xl text-primary tracking-wide'>855 100 4444</p></p>
+                            {/* <p className='text-xl text-gray-700'>Reservation <p className='block text-3xl text-primary tracking-wide'>855 100 4444</p></p> */}
                         </div>
                         <div className='flex justify-start items-center'>
                             <BsEnvelope className='text-4xl mr-8 text-primary' />
-                            <p className='text-lg text-gray-700'>Email Info<p className='block text-3xl text-primary tracking-wide'>sultan@luxuryhotel.com</p></p>
+                            {/* <p className='text-lg text-gray-700'>Email Info<p className='block text-3xl text-primary tracking-wide'>sultan@luxuryhotel.com</p></p> */}
                         </div>
                         <div className='flex justify-start items-center'>
                             <MdLocationSearching className='text-4xl mr-8 text-primary' />
-                            <p className='text-xl text-gray-500'>Address
+                            {/* <p className='text-xl text-gray-500'>Address
                                 <p>1616 Broadway NY, New York 10001</p>
                                 <p>United States of America</p>
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                 </div>

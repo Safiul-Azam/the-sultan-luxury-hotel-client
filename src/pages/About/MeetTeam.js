@@ -8,7 +8,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaPinterestP } from 'react-icons/f
 const MeetTeam = () => {
     const [meetTeams, setMeetTeams] = useState([])
     useEffect(() => {
-        fetch('/team.json')
+        fetch('team.json')
             .then(res => res.json())
             .then(data => setMeetTeams(data))
     }, [])
@@ -35,7 +35,7 @@ const MeetTeam = () => {
                 >
                     {
                         meetTeams.map(meetTeam => <SwiperSlide
-                            key={meetTeam._id}
+                            key={meetTeam.id}
                         >
                             <div className="group">
                                 <div className='group'>

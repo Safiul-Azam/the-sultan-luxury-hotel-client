@@ -16,8 +16,8 @@ const SpaEtiquette = () => {
                 <h2 className='text-5xl mb-7 text-[#222]'>Spa Etiquette</h2>
                 <div className='space-y-5'>
                     {
-                        etiquettes.map(etiquette => <div>
-                            <div tabindex="0" className="collapse peer bg-white px-8 py-3">
+                        etiquettes.map(etiquette => <div key={etiquette.id}>
+                            <div tabIndex="0" className="collapse peer bg-white px-8 py-3">
                             <input type="checkbox" className="peer collapse-plus" /> 
                                 <div className="collapse-title text-2xl font-medium">
                                     <h3>{etiquette.question}</h3>

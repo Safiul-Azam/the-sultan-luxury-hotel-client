@@ -26,7 +26,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className='lg:w-[1200px] mx-auto z-10 absolute top-3 left-16'>
+        <div className='lg:max-w-6xl mx-auto z-10 absolute top-3 left-16'>
             <div className="navbar">
                 <div className="space-x-32 lg:space-x-0 lg:navbar-start">
                     <div className="dropdown">
@@ -42,7 +42,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal p-0">
+                    <ul className="menu menu-horizontal font-normal tracking-widest p-0">
                         {menu}
                     </ul>
                 </div>

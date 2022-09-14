@@ -37,7 +37,7 @@ const RestaurantBanner = () => {
 
                 {
                     banners.map(banner => <SwiperSlide
-                        key={banner._id}
+                        key={banner.id}
                         className='pt-6'
                         style={
                             {

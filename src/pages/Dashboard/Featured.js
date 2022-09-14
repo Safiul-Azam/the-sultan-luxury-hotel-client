@@ -14,7 +14,7 @@ const Featured = () => {
     return (
         <div className='grid grid-cols-4 gap-6'>
             {
-                features.map(feature => <div className="bg-base-100 px-5 py-5 rounded-xl">
+                features.map(feature => <div key={feature.id} className="bg-base-100 px-5 py-5 rounded-xl">
                     <div className="flex space-x-10 items-center">
                         <img className='w-12' src={feature.photo} alt="" />
                         <div>

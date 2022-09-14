@@ -129,7 +129,8 @@ const FindSingleRoom = () => {
                         <div className='space-y-3'>
                             <h2 className='text-xl'>Check-in</h2>
                             {
-                                checkIn?.map((i, index) => <p className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
+                                checkIn?.map((i, index) => <p 
+                                className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
                             }
                         </div>
                         <div className='mb-4 space-y-3'>

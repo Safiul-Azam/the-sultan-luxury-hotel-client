@@ -21,7 +21,7 @@ const Users = () => {
                     </thead>
                     <tbody>
                         {
-                            data.map(user => <tr>
+                            data.map(user => <tr key={user._id}>
                                 <th>#{user?._id?.slice(0, 7)}</th>
                                 <td>{user.createdAt.slice(0, 10)}</td>
                                 <td>
