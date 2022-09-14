@@ -21,7 +21,7 @@ const EditProfile = () => {
         data.append('file', file)
         data.append('upload_preset', 'upload')
         try {
-            const uploadRes = await axios.put('https://api.cloudinary.com/v1_1/Safiul-projects/image/upload', data)
+            const uploadRes = await axios.post('https://api.cloudinary.com/v1_1/Safiul-projects/image/upload', data)
             const { url } = uploadRes.data;
             const updateUser = {
                 ...userInfo,
@@ -50,7 +50,7 @@ const EditProfile = () => {
                                     src={
                                         file
                                             ? URL.createObjectURL(file)
-                                            : user.img ||"https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                                            : user?.img ||"https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
                                     }
                                     alt=""
                                 />
@@ -112,7 +112,7 @@ const EditProfile = () => {
                                 type="text"
                                 id="city"
                                 onChange={handleChange}
-                                placeholder='Your City'
+                                placeholder={user.city||'Your City'}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
                             />
                         </div>
@@ -124,7 +124,7 @@ const EditProfile = () => {
                                 type="text"
                                 id="district"
                                 onChange={handleChange}
-                                placeholder='District'
+                                placeholder={user.district||'District'}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
                             />
                         </div>
@@ -136,7 +136,7 @@ const EditProfile = () => {
                                 type="text"
                                 id="street"
                                 onChange={handleChange}
-                                placeholder='Street Address'
+                                placeholder={user.street||'Street Address'}
                                 className="input border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
                             />
                         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Footer from '../Home/Footer'
 import Authentication from './Authentication';
 import { useState } from 'react';
@@ -10,6 +10,9 @@ import { toast } from 'react-toastify';
 const Signup = () => {
     const [file, setFile] = useState('')
     const [userInfo, setUserInfo] = useState({})
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathName || '/'
     const handleChange = e => {
         setUserInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }
@@ -27,6 +30,7 @@ const Signup = () => {
             }
             const res = await axios.post('http://localhost:5000/api/auth/register',newUser)
             if(res.status === 200){
+                navigate(from, {replace:true})
                 toast.success('your registration is completed :)')
             };
         } catch (err) {
