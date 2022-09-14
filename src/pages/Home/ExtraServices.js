@@ -20,7 +20,7 @@ const ExtraServices = () => {
     console.log(exServices);
     return (
         <div className='bg-[#222222] lg:py-24 py-12'>
-            <div className='lg:w-[1150px] mx-auto '>
+            <div className='lg:w-6xl mx-20'>
                 <div className='grid grid-cols-1 lg:grid-cols-3 lg:gap-10 '>
                     <div className='px-10 pb-5 lg:px-0 lg:pb-0'>
                         <p style={{ letterSpacing: '6px' }} className='text-lg text-primary uppercase mb-4'>BEST PRICES</p>
@@ -40,7 +40,7 @@ const ExtraServices = () => {
                                     spaceBetween: 20,
                                 },
                                 768: {
-                                    slidesPerView: 1,
+                                    slidesPerView: 2,
                                     spaceBetween: 30,
                                 },
                                 1024: {

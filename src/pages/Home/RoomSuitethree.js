@@ -27,7 +27,7 @@ const RoomSuiteThree = () => {
                             <img key={index} className='group-hover:scale-110 group-hover:duration-500 group-hover:ease-in-out ease-in-out duration-500' src={photo} alt="" />
                         ))}
                     </div>
-                    <div className="text-white absolute -bottom-10 left-4 group-hover:bottom-10 group-hover:duration-500 group-hover:ease-out ease-in-out duration-500">
+                    <div className="text-white absolute -bottom-10 lg:left-4 group-hover:bottom-10 group-hover:duration-500 group-hover:ease-out ease-in-out duration-500">
                         <p className=" text-xl tracking-widest uppercase">{room.price}$ / {room.shift}</p>
                         <h2 className='text-2xl font-semibold tracking-wider'>{room.title}</h2>
                         <hr className='w-20 mt-3 group-hover:w-full group-hover:delay-100 group-hover:duration-500 group-hover:ease-out ease-in-out duration-500' />

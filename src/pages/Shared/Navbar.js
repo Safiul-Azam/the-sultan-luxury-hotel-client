@@ -26,23 +26,21 @@ const Navbar = () => {
     </>
 
     return (
-        <div className='lg:max-w-6xl mx-auto z-10 absolute top-3 left-16'>
+        <div className='z-10'>
             <div className="navbar">
-                <div className="space-x-32 lg:space-x-0 lg:navbar-start">
+                <div className="navbar-start">
                     <div className="dropdown">
-                        <label tabIndex="0" className="btn btn-white lg:hidden">
+                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box">
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52">
                             {menu}
                         </ul>
                     </div>
-                    <div className=''>
-                        <Link to='/' className="normal-case text-center"><span className='lg:text-3xl text-xl block text-primary font-medium lg:h-8'>THE SULTAN</span><p style={{ letterSpacing: '8px', fontSize: '10px' }} className='text-white'>LUXURY HOTEL</p></Link>
-                    </div>
+                    <a href='/' className="btn btn-primary normal-case text-xl">daisyUI</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal font-normal tracking-widest p-0">
+                    <ul className="menu menu-horizontal p-0">
                         {menu}
                     </ul>
                 </div>

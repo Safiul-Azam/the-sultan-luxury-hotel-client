@@ -36,6 +36,10 @@ const OurBlogs = () => {
                             spaceBetween: 40,
                         },
                         1024: {
+                            slidesPerView: 2,
+                            spaceBetween: 50,
+                        },
+                        1200: {
                             slidesPerView: 3,
                             spaceBetween: 50,
                         },
@@ -55,7 +59,7 @@ const OurBlogs = () => {
                                 </div>
                                 <div className="bg-white w-5/6 mx-auto p-5 relative bottom-16 group-hover:bottom-40 group-hover:duration-300 group-hover:ease-in-out ease-in-out duration-300">
                                     <p style={{ letterSpacing: '5px' }} className=' uppercase text-sm mb-3'>{blog.serviceName}</p>
-                                    <h2 className='text-2xl'>{blog.description}</h2>
+                                    <h2 className='lg:text-xl text-lg'>{blog.description}</h2>
                                 </div>
                             </div>
                         </SwiperSlide>)

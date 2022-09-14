@@ -46,7 +46,6 @@ const Banner = () => {
                 }
               }
             >
-              <Navbar></Navbar>
               <div className='text-white text-center mt-16 lg:mt-40'>
                 <div className='flex justify-center lg:text-xl text-sm mb-6 text-secondary'>
                   <GrStar />
