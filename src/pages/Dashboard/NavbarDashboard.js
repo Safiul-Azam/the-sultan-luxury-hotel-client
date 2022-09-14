@@ -24,7 +24,8 @@ const NavbarDashboard = () => {
                         <span className="badge badge-sm bg-red-500 text-white indicator-item">3</span>
                     </li>
                 </ul>
-                <div className="avatar">
+                <div className="avatar flex space-x-3 items-center">
+                    <h4 className='capitalize'> Hello, {user.userName}</h4>
                     <div className="w-10 rounded-full">
                         <Link to='/dashboard/editProfile'>
                             <img src={user.img} alt='' />

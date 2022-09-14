@@ -20,7 +20,7 @@ const Navbar = () => {
         {user ?
             <>
                 <li><CustomLink to='/dashboard'>DASHBOARD</CustomLink></li>
-                <li><CustomLink to='/login'><button onClick={logOut}>SIGN OUT</button></CustomLink></li>
+                <li onClick={logOut}><CustomLink to='/login'>SIGN OUT</CustomLink></li>
             </> :
             <li><CustomLink to='/login'>LOGIN</CustomLink></li>}
     </>

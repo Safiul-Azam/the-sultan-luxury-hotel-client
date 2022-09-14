@@ -50,7 +50,7 @@ const EditProfile = () => {
                                     src={
                                         file
                                             ? URL.createObjectURL(file)
-                                            : user?.img ||"https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                                            : user.img ||"https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
                                     }
                                     alt=""
                                 />
