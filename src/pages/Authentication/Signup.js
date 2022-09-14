@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Footer from '../Home/Footer'
 import Authentication from './Authentication';
@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { AiOutlineCloudUpload } from 'react-icons/ai';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { AuthContext } from '../../context/AuthContext';
 
 const Signup = () => {
     const [file, setFile] = useState('')
@@ -13,11 +14,13 @@ const Signup = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathName || '/'
+    const { loading, error, dispatch } = useContext(AuthContext)
     const handleChange = e => {
         setUserInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }
     const handleSubmit = async e => {
         e.preventDefault()
+        dispatch({ type: 'LOGIN_START' })
         const data = new FormData()
         data.append('file',file)
         data.append('upload_preset', 'upload')
@@ -31,10 +34,11 @@ const Signup = () => {
             const res = await axios.post('http://localhost:5000/api/auth/register',newUser)
             if(res.status === 200){
                 navigate(from, {replace:true})
+                dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
                 toast.success('your registration is completed :)')
             };
         } catch (err) {
-            console.log(err);
+            dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
         }
     }
 

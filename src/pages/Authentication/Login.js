@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext';
 import Authentication from './Authentication';
+import Spinner from '../Shared/Spinner'
 
 const Login = () => {
     const [credentials, setCredentials] = useState({
@@ -13,23 +14,25 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathName || '/'
-    const {user,loading, error, dispatch} = useContext(AuthContext)
+    const { loading, error, dispatch } = useContext(AuthContext)
 
     const handleChange = e => {
         setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }
-    const handleSubmit =async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        dispatch({type:'LOGIN_START'})
+        dispatch({ type: 'LOGIN_START' })
         try {
-            const res =await axios.post('https://sultan-hotel-1.onrender.com/api/auth/login', credentials) 
-            dispatch({type:'LOGIN_SUCCESS', payload:res.data})
-            navigate(from, {replace:true})
+            const res = await axios.post('https://sultan-hotel-1.onrender.com/api/auth/login', credentials)
+            dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
+            navigate(from, { replace: true })
         } catch (err) {
-            dispatch({type:'LOGIN_FAILURE', payload:err.response.data})
+            dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
         }
     }
-    console.log(user);
+    if(loading){
+        return <Spinner/>
+    }
     return (
         <div>
             <Authentication></Authentication>
