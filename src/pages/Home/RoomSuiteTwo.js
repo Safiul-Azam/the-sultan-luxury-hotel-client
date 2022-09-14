@@ -21,15 +21,13 @@ const RoomSuiteTwo = () => {
                     className='relative group'
                 >
                     <div className='overflow-hidden'>
-                        {room.photos.map((photo,index) => (
-                            <img key={index} className='group-hover:scale-110 group-hover:duration-500 group-hover:ease-in-out ease-in-out duration-500' src={photo} alt="" />
-                        ))}
+                            <img className='group-hover:scale-110 group-hover:duration-500 group-hover:ease-in-out ease-in-out duration-500' src={room.photos[1]} alt="" />
                     </div>
-                    <div className="text-white absolute -bottom-10 lg:left-4 group-hover:bottom-10 group-hover:duration-500 group-hover:ease-out ease-in-out duration-500">
-                        <p className=" text-xl tracking-widest uppercase">{room.price}$ / {room.shift}</p>
-                        <h2 className='text-2xl font-semibold tracking-wider'>{room.title}</h2>
-                        <hr className='w-20 mt-3 group-hover:w-full group-hover:delay-100 group-hover:duration-500 group-hover:ease-out ease-in-out duration-500' />
-                        <div className="inline-flex justify-between w-80 items-center mt-5">
+                    <div className="text-white absolute -bottom-10 group-hover:bottom-10 group-hover:duration-500 group-hover:ease-out ease-in-out duration-500">
+                        <p className="text-xl tracking-widest uppercase pl-3">{room.price}$ / {room.shift}</p>
+                        <h2 className='text-2xl font-semibold tracking-wider pl-3'>{room.title}</h2>
+                        <hr className='w-20 mt-3 group-hover:w-full group-hover:delay-100 group-hover:duration-500 group-hover:ease-out ease-in-out duration-500 ml-3' />
+                        <div className="inline-flex justify-between w-80 items-center mt-5 pl-3">
                             <div className='flex text-xl items-center gap-3'>
                                 <BiBed />
                                 <FaBath />
