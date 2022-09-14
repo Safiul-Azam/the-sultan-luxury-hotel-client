@@ -18,7 +18,6 @@ const Dashboard = () => {
     }
     return (
         <>
-            <NavbarDashboard />
             <div className="bg-[#F3F2F7] grid grid-cols-6">
                 <div className="bg-white pl-8 py-6">
                     <div className=''>
@@ -77,7 +76,8 @@ const Dashboard = () => {
                         </DashCustomLink>
                     </div>
                 </div>
-                <div className="col-span-5 my-16 mx-10">
+                <div className="col-span-5 mx-10">
+                    <NavbarDashboard />
                     <Outlet />
                 </div>
             </div>
