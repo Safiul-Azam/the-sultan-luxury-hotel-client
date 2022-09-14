@@ -55,7 +55,7 @@ const EditProfile = () => {
                                     alt=""
                                 />
                             </div>
-                            <label className='flex items-center space-x-3 text-xl text-green-500' htmlFor="file">
+                            <label className='flex items-center space-x-3 text-xl text-primary' htmlFor="file">
                                 Update Image: <AiOutlineCloudUpload />
                             </label>
                             <input

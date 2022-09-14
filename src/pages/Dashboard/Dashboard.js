@@ -34,13 +34,13 @@ const Dashboard = () => {
                             <BsPerson className="" />
                             <h4>Users</h4>
                         </DashCustomLink>
-                        <DashCustomLink to='/dashboard/addRoom' className='flex items-center space-x-1 mb-2'>
-                            <AiOutlineAppstoreAdd className="" />
-                            <h4>Add Room</h4>
-                        </DashCustomLink>
                         <DashCustomLink to='/dashboard/allRooms' className='flex items-center space-x-1 mb-2'>
                             <MdOutlineProductionQuantityLimits className="" />
                             <h4>All Rooms</h4>
+                        </DashCustomLink>
+                        <DashCustomLink to='/dashboard/addRoom' className='flex items-center space-x-1 mb-2'>
+                            <AiOutlineAppstoreAdd className="" />
+                            <h4>Add Room</h4>
                         </DashCustomLink>
                         <DashCustomLink to='/dashboard/bookedRooms' className='flex items-center space-x-1 mb-2'>
                             <BsCreditCard className="" />

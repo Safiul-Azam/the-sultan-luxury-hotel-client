@@ -38,7 +38,7 @@ const AddRoom = () => {
                 <hr className='mb-8 w-1/2 border-2 bg-gray-400 mt-3 mx-auto' />
                 <div className=''>
                     <div className=''>
-                        <img className='w-80 h-80 mx-auto rounded'
+                        <img className='w-40 h-40 mx-auto rounded'
                             src={
                                 file
                                     ? URL.createObjectURL(file)
@@ -49,7 +49,7 @@ const AddRoom = () => {
                     </div>
                     <form className='space-y-4' onSubmit={handleSubmit}>
                         <div className="form-control w-full ">
-                            <label className='flex items-center space-x-3 text-xl text-green-500' htmlFor="file">
+                            <label className='flex items-center space-x-3 text-xl text-primary' htmlFor="file">
                                 Upload Image: <AiOutlineCloudUpload />
                             </label>
                             <input
