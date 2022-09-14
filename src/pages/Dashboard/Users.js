@@ -22,10 +22,10 @@ const Users = () => {
                     <tbody>
                         {
                             data.map(user => <tr>
-                                <th>#{user?._id?.slice(0,7)}</th>
-                                <td>{user.createdAt.slice(0,10)}</td>
+                                <th>#{user?._id?.slice(0, 7)}</th>
+                                <td>{user.createdAt.slice(0, 10)}</td>
                                 <td>
-                                <div className="avatar">
+                                    <div className="avatar">
                                         <div className="w-12 rounded-full">
                                             <img src={user.img} alt='' />
                                         </div>
@@ -33,7 +33,7 @@ const Users = () => {
                                 </td>
                                 <td className='capitalize'>{user.userName}</td>
                                 <td>{user.email}</td>
-                                <td>{user.isAdmin === true ? 'Admin':'Customer'}</td>
+                                <td>{user.isAdmin === true ? 'Admin' : 'Customer'}</td>
                             </tr>)
                         }
                     </tbody>

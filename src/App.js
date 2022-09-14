@@ -24,6 +24,7 @@ import AllRooms from './pages/Dashboard/AllRooms';
 import AddRoom from './pages/Dashboard/AddRoom';
 import RoomEdit from './pages/Home/RoomEdit';
 import EditProfile from './pages/Dashboard/EditProfile';
+import DashCustomLink from './pages/Dashboard/DashCustomLink';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<DashboardHome />}></Route>
           <Route path='users' element={<Users />}></Route>
+          <Route path='link-dash' element={<DashCustomLink />}></Route>
           <Route path='products' element={<Products />}></Route>
           <Route path='addRoom' element={<AddRoom />}></Route>
           <Route path='bookedRooms' element={<BookedRoom />}></Route>

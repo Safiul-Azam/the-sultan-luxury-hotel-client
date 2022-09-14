@@ -4,12 +4,12 @@ import {
     useMatch,
     useResolvedPath,
   } from "react-router-dom";
-function CustomLink({ children, to, ...props }) {
+function DashCustomLink({ children, to, ...props }) {
     let resolved = useResolvedPath(to);
     let match = useMatch({ path: resolved.pathname, end: true });
   
     return (
-      <div className='hover:text-primary text-white hover:bg-transparent'>
+      <div className='hover:text-primary text-gray-600 hover:bg-transparent'>
         <Link
           style={{ color: match ? "#aa8453" : "" }}
           to={to}
@@ -21,4 +21,4 @@ function CustomLink({ children, to, ...props }) {
     );
   }
 
-export default CustomLink;
+export default DashCustomLink;
