@@ -46,7 +46,7 @@ const Banner = () => {
                 }
               }
             >
-              <div className='text-white text-center mt-16 lg:mt-40'>
+              <div className='text-white text-center mt-12 lg:mt-40'>
                 <div className='flex justify-center lg:text-xl text-sm mb-6 text-secondary'>
                   <GrStar />
                   <GrStar />
@@ -54,8 +54,8 @@ const Banner = () => {
                   <GrStar />
                   <GrStar />
                 </div>
-                <p style={{ letterSpacing: '6px' }} className='lg:text-lg text-sm uppercase mb-6'>The Ultimate Luxury Experience</p>
-                <h2 style={{ letterSpacing: '12px' }} className='lg:text-6xl md:text-3xl text-2xl uppercase lg:w-3/4 w-full mx-auto mb-7 leading-loose'>Enjoy The Best Moments of Life</h2>
+                <p className='lg:text-lg md:text-sm text-xs uppercase mb-6 tracking-[4px]'>The Ultimate Luxury Experience</p>
+                <h2 className='lg:text-6xl md:text-3xl text-xl uppercase lg:w-3/4 w-full mx-auto mb-7 leading-loose tracking-[8px]'>Enjoy The Best Moments of Life</h2>
                 <button className=" bg-transparent tracking-widest border px-5 py-3 lg:my-0 my-5 uppercase"><a href="#room&suites">Rooms & Suites</a></button>
               </div>
             </SwiperSlide>)

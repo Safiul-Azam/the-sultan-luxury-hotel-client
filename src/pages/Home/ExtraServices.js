@@ -20,11 +20,11 @@ const ExtraServices = () => {
     console.log(exServices);
     return (
         <div className='bg-[#222222] lg:py-24 py-12'>
-            <div className='lg:w-6xl mx-20'>
+            <div className='lg:w-6xl lg:mx-20'>
                 <div className='grid grid-cols-1 lg:grid-cols-3 lg:gap-10 '>
                     <div className='px-10 pb-5 lg:px-0 lg:pb-0'>
-                        <p style={{ letterSpacing: '6px' }} className='text-lg text-primary uppercase mb-4'>BEST PRICES</p>
-                        <h2 className='text-5xl mb-7 text-white'>Extra Services</h2>
+                        <p style={{ letterSpacing: '6px' }} className='lg:text-lg text-primary text-sm uppercase mb-4'>BEST PRICES</p>
+                        <h2 className='lg:text-5xl text-3xl mb-7 text-white'>Extra Services</h2>
                         <p className='text-xl mb-4 text-accent'>The best prices for your relaxing vacation. The utanislen quam nestibulum ac quame odion elementum sceisue the aucan.</p>
                         <p className='text-xl mb-6 text-accent'>Orci varius natoque penatibus et magnis disney parturient monte nascete ridiculus mus nellen etesque habitant morbine.</p>
                         <div className='flex justify-start items-center'>

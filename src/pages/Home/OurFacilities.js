@@ -9,7 +9,7 @@ const OurFacilities = () => {
         <Spinner></Spinner>
     }
     return (
-        <div className='lg:w-[1150px] mx-auto lg:py-28 lg:p-0 py-12 p-8'>
+        <div className='container mx-auto lg:py-28 lg:p-0 py-12 p-8'>
             <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>OUR SERVICES</p>
             <h2 className='text-5xl mb-7 text-black'>Hotel Facilities</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>

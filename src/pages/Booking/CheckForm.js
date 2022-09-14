@@ -39,7 +39,7 @@ const CheckForm = () => {
             }
         }>
             <div className='lg:relative'>
-                <div className='lg:w-[1150px] mx-auto lg:flex lg:justify-between lg:items-center lg:space-x-32'>
+                <div className='container mx-auto lg:flex lg:justify-between lg:items-center lg:space-x-32'>
                     <div className='lg:w-1/2 p-10 lg:p-0'>
                         <div className='flex text-secondary mb-1'>
                             <GrStar />
@@ -100,7 +100,7 @@ const CheckForm = () => {
                     </div>
                 </div>
                 <div className='bg-white py-5 lg:px-0 px-10'>
-                    <div className='lg:w-[1150px] mx-auto grid grid-cols-6'>
+                    <div className='container mx-auto grid grid-cols-6'>
                         <img src={sponsor1} alt="" />
                         <img src={sponsor2} alt="" />
                         <img src={sponsor3} alt="" />

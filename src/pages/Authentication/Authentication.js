@@ -12,7 +12,7 @@ const Authentication = () => {
             }
         }>
             <Navbar></Navbar>
-            <div className='text-left text-white  lg:w-[1150px] py-24 mx-auto'>
+            <div className='text-left text-white container py-24 mx-auto'>
                 <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>New to Wooden tools</p>
                 <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Login / Sign Up</h2>
             </div>

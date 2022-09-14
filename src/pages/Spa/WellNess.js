@@ -4,7 +4,7 @@ import { GrStar } from 'react-icons/gr';
 
 const WellNess = () => {
     return (
-        <div className=' lg:w-[1150px] mx-auto my-24'>
+        <div className='container mx-auto my-24'>
             <div className='flex text-xl mb-4 text-secondary'>
                 <GrStar />
                 <GrStar />

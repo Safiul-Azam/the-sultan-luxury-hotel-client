@@ -9,7 +9,7 @@ const GetInTouch = () => {
 
     const onSubmit = (data) => console.log(data);
     return (
-        <div className=' lg:w-[1200px] mx-auto py-28 '>
+        <div className=' container mx-auto py-28 '>
             <div className='flex space-x-32'>
                 <div className=''>
                     <h2 className='text-2xl mb-7 text-black'>The Cappa Luxury Hotel</h2>

@@ -14,7 +14,7 @@ const MeetTeam = () => {
     }, [])
     return (
         <div className='bg-[#F8F5F0] py-28'>
-            <div className=' lg:w-[1150px] mx-auto'>
+            <div className='container mx-auto'>
                 <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>PROFESSIONALS</p>
                 <h2 className='text-5xl mb-7 text-black'>Meet The Team</h2>
                 <Swiper

@@ -4,7 +4,7 @@ import { AiOutlineClockCircle } from 'react-icons/ai';
 
 const RestaurantInfo = () => {
     return (
-        <div className=' lg:w-[1150px] mx-auto my-24'>
+        <div className=' container mx-auto my-24'>
             <div className='flex text-xl mb-4 text-secondary'>
                         <GrStar />
                         <GrStar />

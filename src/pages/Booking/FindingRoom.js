@@ -52,7 +52,7 @@ const FindingRoom = () => {
     return (
         <>
             <div className='bg-neutral'>
-                <div className=' lg:w-[1150px] mx-auto py-24 flex justify-between space-x-10'>
+                <div className='container mx-auto py-24 flex justify-between space-x-10'>
                     <div className='w-1/3'>
                         <div className='border w-full pt-10 '>
                             <div className='flex p-3 justify-evenly space-x-2 w-full'>

@@ -11,7 +11,7 @@ const SpaEtiquette = () => {
     }, [])
     return (
         <div className='bg-[#F8F5F0] py-28'>
-            <div className=' lg:w-[1150px] mx-auto'>
+            <div className='container mx-auto'>
                 <p style={{ letterSpacing: '5px' }} className='text-lg text-gray-500 uppercase mb-4'>F.A.QS</p>
                 <h2 className='text-5xl mb-7 text-[#222]'>Spa Etiquette</h2>
                 <div className='space-y-5'>

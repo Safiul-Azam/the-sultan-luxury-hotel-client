@@ -37,7 +37,7 @@ const RoomDetails = () => {
     return (
         <div>
             <RoomDetailsBanner />
-            <div className=' lg:w-[1200px] mx-auto py-28'>
+            <div className='container mx-auto py-28'>
                 <div className='flex text-xl mb-4 text-secondary'>
                     <GrStar />
                     <GrStar />

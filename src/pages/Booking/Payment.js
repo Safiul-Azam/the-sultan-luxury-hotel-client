@@ -52,12 +52,12 @@ const Payment = () => {
                 }
             }>
                 <Navbar></Navbar>
-                <div className='text-left text-white  lg:w-[1150px] py-32 mx-auto'>
+                <div className='text-left text-white container py-32 mx-auto'>
                     <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>LUXURY HOTEL</p>
                     <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Payment Selection</h2>
                 </div>
             </div>
-            <div className=' lg:w-[1100px] mx-auto my-20'>
+            <div className='container mx-auto my-20'>
                 <div>
                     <div className='shadow-lg p-8'>
                         <Pricing
