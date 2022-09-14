@@ -4,7 +4,7 @@ import { BsCreditCard, BsPerson } from 'react-icons/bs';
 import { ImStatsBars } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
 import { MdDashboard, MdOutlineNotificationsNone, MdOutlineProductionQuantityLimits, MdSettingsSystemDaydream } from 'react-icons/md';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import NavbarDashboard from './NavbarDashboard';
 import { FiLogOut } from 'react-icons/fi';
 import { AuthContext } from '../../context/AuthContext';
@@ -14,7 +14,6 @@ const Dashboard = () => {
     const { user, dispatch } = useContext(AuthContext)
     const logOut = () => {
         dispatch({ type: 'LOGOUT' })
-        localStorage.removeItem()
     }
     return (
         <>
@@ -69,10 +68,10 @@ const Dashboard = () => {
                             <CgProfile className="" />
                             <h4>Profile</h4>
                         </DashCustomLink>
-                        <DashCustomLink to='/' className='flex items-center space-x-1 mb-2'>
+                        <DashCustomLink to='/login' className='flex items-center space-x-1 mb-2'>
                             <FiLogOut />
                             {user &&
-                                <DashCustomLink to='/login'><h4 onClick={logOut}>Log Out</h4></DashCustomLink>}
+                                <h4 onClick={logOut}>Log Out</h4>}
                         </DashCustomLink>
                     </div>
                 </div>
