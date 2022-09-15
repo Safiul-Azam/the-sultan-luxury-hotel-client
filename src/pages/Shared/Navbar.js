@@ -41,7 +41,7 @@ const Navbar = () => {
             <div className="navbar-start w-11/12 lg:w-11/12 justify-between lg:justify-around flex-row lg:flex-row-reverse items-center">
                 <div className="dropdown text-white mt-2">
                     <label tabIndex="0" className="lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex="0" className="space-y-2 text-xs dropdown-content p-4 shadow text-white bg-accent">
                         {menu}
