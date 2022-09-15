@@ -38,7 +38,7 @@ const Navbar = () => {
     return (
         <>
        {scroll?<ScrollNavbar/> : <div className="navbar bg-transparent fixed top-3 z-20">
-            <div className="navbar-start w-full justify-around flex-row-reverse">
+            <div className="navbar-start w-11/12 lg:w-11/12 justify-between lg:justify-around flex-row lg:flex-row-reverse items-center">
                 <div className="dropdown text-white mt-2">
                     <label tabIndex="0" className="lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -47,10 +47,10 @@ const Navbar = () => {
                         {menu}
                     </ul>
                 </div>
-                <Link to='/' className="normal-case"><span className='lg:text-3xl text-xl block text-primary font-medium mb-2 lg:h-8'>THE SULTAN</span><h4 className='text-white tracking-[6px] text-sm'>LUXURY HOTEL</h4></Link>
+                <Link to='/' className="normal-case"><span className='lg:text-3xl text-lg text-primary font-medium mb-2'>THE SULTAN</span><h4 className='text-white lg:tracking-[6px] lg:text-sm text-xs tracking-[4px]'>LUXURY HOTEL</h4></Link>
             </div>
             <div className="navbar-center hidden lg:flex z-10">
-                <ul className="menu menu-horizontal p-0 text-white gap-5">
+                <ul className="menu menu-horizontal text-white text-sm">
                     {menu}
 
                 </ul>

@@ -54,8 +54,8 @@ const Banner = () => {
                 <GrStar />
                 <GrStar />
               </div>
-              <p className='lg:text-lg md:text-lg text-xs uppercase mb-6 tracking-[10px]'>{banner.subTitle}</p>
-              <h2 className='lg:text-6xl md:text-4xl text-2xl uppercase w-3/4 mx-auto mb-7 lg:tracking-[20px] lg:leading-relaxed md:leading-relaxed sm:leading-relaxed tracking-[8px]'>{banner.title}</h2>
+              <p className='lg:text-lg md:text-lg text-sm uppercase mb-6 lg:tracking-[10px] tracking-[4px]'>{banner.subTitle}</p>
+              <h2 className='lg:text-6xl md:text-4xl text-3xl uppercase lg:w-3/4 w-11/12 mx-auto mb-7 lg:tracking-[20px] lg:leading-relaxed md:leading-relaxed sm:leading-relaxed tracking-[8px]'>{banner.title}</h2>
               <button className='py-4 px-5 bg-transparent hover:bg-black rounded-none text-white hover:border-black hover:duration-500 lg:tracking-[5px] tracking-widest border hover:ease-in-out ease-in-out duration-500 uppercase'>Rooms & Suites</button>
             </div>
           </SwiperSlide>)
