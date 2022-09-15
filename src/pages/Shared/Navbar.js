@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomLink from './CustomLink';
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import ScrollNavbar from './ScrollNavbar';
 
 const Navbar = () => {
     const { user, dispatch } = useContext(AuthContext)
     const logOut = () => {
         dispatch({ type: 'LOGOUT' })
     }
+    const [scroll, setScroll] = useState(false)
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100 ) {
+                setScroll(true);
+            } else {
+                setScroll(false);
+            }
+        })
+    }, [])
     const menu = <>
         <li><CustomLink to='/'>HOME</CustomLink></li>
         <li><CustomLink to='/about'>ABOUT</CustomLink></li>
@@ -25,7 +36,8 @@ const Navbar = () => {
     </>
 
     return (
-        <div class="navbar bg-transparent fixed top-3 z-20">
+        <>
+       {scroll?<ScrollNavbar/> : <div class="navbar bg-transparent fixed top-3 z-20">
             <div class="navbar-start w-full justify-around flex-row-reverse">
                 <div class="dropdown text-white mt-2">
                     <label tabIndex="0" class="lg:hidden">
@@ -35,15 +47,16 @@ const Navbar = () => {
                         {menu}
                     </ul>
                 </div>
-                <Link to='/' className="normal-case"><span className='lg:text-3xl text-xl block text-primary font-medium lg:h-8'>THE SULTAN</span><p className='text-white tracking-[6px] text-sm'>LUXURY HOTEL</p></Link>
+                <Link to='/' className="normal-case"><span className='lg:text-3xl text-xl block text-primary font-medium mb-2 lg:h-8'>THE SULTAN</span><h4 className='text-white tracking-[6px] text-sm'>LUXURY HOTEL</h4></Link>
             </div>
             <div class="navbar-center hidden lg:flex z-10">
                 <ul class="menu menu-horizontal p-0 text-white gap-5">
                     {menu}
-                    
+
                 </ul>
             </div>
-        </div>
+        </div>}
+        </>
     );
 };
 
