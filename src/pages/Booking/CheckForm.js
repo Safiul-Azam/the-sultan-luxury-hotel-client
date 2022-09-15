@@ -40,7 +40,7 @@ const CheckForm = () => {
         }>
             <div className='lg:relative'>
                 <div className='container mx-auto lg:flex lg:justify-between lg:items-center lg:space-x-32'>
-                    <div className='lg:w-1/2 p-10 lg:p-0'>
+                    <div className='lg:w-1/2 lg:p-10 p-6'>
                         <div className='flex text-secondary mb-1'>
                             <GrStar />
                             <GrStar />
@@ -55,7 +55,7 @@ const CheckForm = () => {
                         </div>
                     </div>
 
-                    <div className='bg-[#F8F5F0] px-10 py-16 lg:relative -bottom-20 shadow-sm lg:w-1/2'>
+                    <div className='bg-[#F8F5F0] lg:px-10 px-4 py-16 lg:relative -bottom-20 shadow-sm lg:w-1/2'>
                         <p style={{ letterSpacing: '5px' }} className='text-sm text-primary uppercase mb-3'>ROOMS & SUITES</p>
                         <h2 className='text-2xl text-black'>Hotel Booking Form</h2>
                         <hr className='my-5' />

@@ -9,7 +9,7 @@ import CopyRight from '../Shared/CopyRight';
 const Footer = () => {
     return (
         <>
-            <footer className='bg-[#222222] lg:py-20 py-12 lg:px-0 px-10'>
+            <footer className='bg-[#222222] lg:py-20 py-12 lg:px-10 px-4'>
                 <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 lg:gap-24 gap-12 ">
                     <div>
                         <h2 className="text-white text-2xl">About Hotel</h2>

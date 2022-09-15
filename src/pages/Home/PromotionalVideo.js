@@ -13,7 +13,7 @@ const PromotionalVideo = () => {
                 backgroundAttachment: 'fixed',
             }
         }>
-            <div className='py-28'>
+            <div className='py-28 px-4'>
                 <div className='flex justify-center text-xl mb-6 text-secondary'>
                     <GrStar />
                     <GrStar />

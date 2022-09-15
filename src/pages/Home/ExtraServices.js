@@ -22,7 +22,7 @@ const ExtraServices = () => {
         <div className='bg-[#222222] lg:py-24 py-12'>
             <div className='lg:w-6xl lg:mx-20'>
                 <div className='grid grid-cols-1 lg:grid-cols-3 lg:gap-10 '>
-                    <div className='px-10 pb-5 lg:px-0 lg:pb-0'>
+                    <div className='px-4 pb-5 lg:px-0 lg:pb-0'>
                         <p style={{ letterSpacing: '6px' }} className='lg:text-lg text-primary text-sm uppercase mb-4'>BEST PRICES</p>
                         <h2 className='lg:text-5xl text-3xl mb-7 text-white'>Extra Services</h2>
                         <p className='text-xl mb-4 text-accent'>The best prices for your relaxing vacation. The utanislen quam nestibulum ac quame odion elementum sceisue the aucan.</p>

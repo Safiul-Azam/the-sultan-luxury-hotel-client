@@ -46,7 +46,7 @@ const Banner = () => {
               }
             }
           >
-            <div className='text-white text-center mt-56 lg:mt-40'>
+            <div className='text-white text-center mt-44 lg:mt-40'>
               <div className='flex justify-center lg:text-xl text-sm mb-6 text-secondary'>
                 <GrStar />
                 <GrStar />
