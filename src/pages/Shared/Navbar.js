@@ -25,7 +25,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className='z-10 absolute w-full px-20'>
+        <div className='z-10 absolute w-full px-16 mt-8'>
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -36,10 +36,10 @@ const Navbar = () => {
                             {menu}
                         </ul>
                     </div>
-                    <Link to='/' className="normal-case"><span className='lg:text-xl text-xl block text-primary font-medium lg:h-8'>THE SULTAN</span><p style={{ letterSpacing: '5px', fontSize: '10px' }} className='text-white'>LUXURY HOTEL</p></Link>
+                    <Link to='/'className="normal-case"><h2 className='lg:text-3xl text-xl block text-primary font-medium lg:h-8'>THE SULTAN</h2><h2 className='text-white text-xs text-center tracking-[5px]'>LUXURY HOTEL</h2></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal p-0">
+                    <ul className="menu menu-horizontal p-0 tracking-widest">
                         {menu}
                     </ul>
                 </div>
