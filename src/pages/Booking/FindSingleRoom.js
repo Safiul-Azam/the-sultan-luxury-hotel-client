@@ -70,6 +70,7 @@ const FindSingleRoom = () => {
     }
     return (
         <>
+            <Navbar></Navbar>
             <div className=' pt-8 mix-blend-normal bg-black-400' style={
                 {
                     background: `linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url(${img1})`,
@@ -77,9 +78,6 @@ const FindSingleRoom = () => {
                     backgroundSize: 'cover'
                 }
             }>
-                <Navbar></Navbar>
-
-
                 <div className='text-left text-white container py-32 mx-auto'>
                     <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>LUXURY HOTEL</p>
                     <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Booking Info</h2>
@@ -129,8 +127,8 @@ const FindSingleRoom = () => {
                         <div className='space-y-3'>
                             <h2 className='text-xl'>Check-in</h2>
                             {
-                                checkIn?.map((i, index) => <p 
-                                className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
+                                checkIn?.map((i, index) => <p
+                                    className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
                             }
                         </div>
                         <div className='mb-4 space-y-3'>
@@ -166,7 +164,7 @@ const FindSingleRoom = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };

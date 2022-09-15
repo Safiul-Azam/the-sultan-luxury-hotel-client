@@ -17,6 +17,7 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
         return dayDiff
     }
     const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
+    console.log(days);
     // some price system updated
     const roomsPrice = price * days 
     const totalPrice = roomsPrice * selectedRoom?.length
