@@ -2,7 +2,7 @@ import { GrStar } from "react-icons/gr";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-// import { Autoplay, Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import banner1 from '../../images/banner/1.jpg'
 import banner2 from '../../images/banner/2.jpg'
 import banner3 from '../../images/banner/3.jpg'
@@ -20,17 +20,17 @@ const Banner = () => {
         centeredSlides={true}
         slidesPerView={1}
         slidesPerGroup={1}
-        // autoplay={{
-        //   delay: 3500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
 
         loop={true}
         loopFillGroupWithBlank={true}
         pagination={{
           clickable: true,
         }}
-        // modules={[Autoplay, Pagination]}
+        modules={[Autoplay, Pagination]}
         className="mySwiper h-screen"
       >
 

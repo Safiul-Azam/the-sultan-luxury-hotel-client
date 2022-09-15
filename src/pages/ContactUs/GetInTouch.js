@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { FiPhoneCall } from 'react-icons/fi';
 import { BsEnvelope } from 'react-icons/bs';
 import { MdLocationSearching } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const GetInTouch = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -17,18 +18,18 @@ const GetInTouch = () => {
                     <div className=' space-y-6'>
                         <div className='flex justify-start items-center'>
                             <FiPhoneCall className='text-4xl mr-8 text-primary' />
-                            {/* <p className='text-xl text-gray-700'>Reservation <p className='block text-3xl text-primary tracking-wide'>855 100 4444</p></p> */}
+                            <Link to='/' className='text-xl text-gray-700'>Reservation <p className='block text-3xl text-primary tracking-wide'>855 100 4444</p></Link>
                         </div>
                         <div className='flex justify-start items-center'>
                             <BsEnvelope className='text-4xl mr-8 text-primary' />
-                            {/* <p className='text-lg text-gray-700'>Email Info<p className='block text-3xl text-primary tracking-wide'>sultan@luxuryhotel.com</p></p> */}
+                            <Link to='/' className='text-lg text-gray-700'>Email Info<p className='block text-3xl text-primary tracking-wide'>sultan@luxuryhotel.com</p></Link>
                         </div>
                         <div className='flex justify-start items-center'>
                             <MdLocationSearching className='text-4xl mr-8 text-primary' />
-                            {/* <p className='text-xl text-gray-500'>Address
+                            <Link to='/' className='text-xl text-gray-500'>Address
                                 <p>1616 Broadway NY, New York 10001</p>
                                 <p>United States of America</p>
-                            </p> */}
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import { DateRange } from 'react-date-range';
 import { AiOutlineCalendar } from 'react-icons/ai';
 import { FiPhoneCall } from 'react-icons/fi';
 import { GrStar } from 'react-icons/gr';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import img from '../../images/banner/2.jpg'
 import sponsor1 from '../../images/sponsor/3.png'
 import sponsor2 from '../../images/sponsor/4.png'
@@ -51,7 +51,7 @@ const CheckForm = () => {
                         <h3 className='text-white text-2xl my-8'>Each of our guest rooms feature a private bath, wi-fi, cable television and include full breakfast.</h3>
                         <div className='flex justify-start items-center text-white'>
                             <FiPhoneCall className='text-4xl mr-8' />
-                            {/* <p className='text-lg'>For information<p className='block text-2xl tracking-widest'>855 100 4444</p></p> */}
+                            <Link to='/' className='text-lg'>For information<p className='block text-2xl tracking-widest'>855 100 4444</p></Link>
                         </div>
                     </div>
 

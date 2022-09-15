@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const ExtraServices = () => {
@@ -28,7 +29,7 @@ const ExtraServices = () => {
                         <p className='text-xl mb-6 text-accent'>Orci varius natoque penatibus et magnis disney parturient monte nascete ridiculus mus nellen etesque habitant morbine.</p>
                         <div className='flex justify-start items-center'>
                             <FiPhoneCall className='text-4xl mr-8 text-primary' />
-                            {/* <p className='text-lg text-accent'>For information <p className='block text-2xl text-primary tracking-widest'>855 100 4444</p></p> */}
+                            <Link to='/' className='text-xl text-accent'>For information <p className='block text-2xl text-primary tracking-widest'>855 100 4444</p></Link>
                         </div>
                     </div>
                     <div className='lg:col-span-2'>
