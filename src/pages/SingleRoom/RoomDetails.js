@@ -1,8 +1,5 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import { GrStar } from 'react-icons/gr';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import RoomDetailsBanner from './RoomDetailsBanner';
 import { AiOutlineCheck } from "react-icons/ai";
 import useFetch from '../../hooks/useFetch';
@@ -15,7 +12,7 @@ import icon5 from '../../images/icons/icon11.png'
 import icon6 from '../../images/icons/icon12.png'
 import Spinner from '../Shared/Spinner';
 import CheckForm from '../Booking/CheckForm';
-import Footer from '../Home/Footer';
+import Footer from '../Shared/Footer';
 
 const amenities = [
     { id: 1, img: icon1, text: '1-2 Persons' },

@@ -10,8 +10,7 @@ import RoomsSuites from './RoomsSuites';
 import ServicesTheme from './ServicesTheme';
 import Testimonials from './Testimonials';
 import CheckForm from '../Booking/CheckForm';
-import Footer from '../Home/Footer'
-import CopyRight from '../Shared/CopyRight'
+import Footer from '../Shared/Footer'
 
 const Home = () => {
   return (

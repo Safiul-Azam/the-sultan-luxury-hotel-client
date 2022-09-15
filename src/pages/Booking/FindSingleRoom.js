@@ -10,7 +10,7 @@ import Pricing from './Pricing';
 import { SearchContext } from '../../context/SearchContext';
 import { useContext, useState } from 'react';
 import { format } from 'date-fns';
-import Footer from "../Home/Footer";
+import Footer from "../Shared/Footer";
 
 const FindSingleRoom = () => {
     const [selectedRoom, setSelectedRoom] = useState([])

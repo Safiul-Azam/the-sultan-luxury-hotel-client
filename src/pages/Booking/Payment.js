@@ -9,7 +9,7 @@ import Spinner from '../Shared/Spinner';
 import { toast } from 'react-toastify';
 import { SearchContext } from '../../context/SearchContext';
 import { format } from 'date-fns';
-import Footer from '../Home/Footer';
+import Footer from '../Shared/Footer';
 
 const Payment = () => {
     const location = useLocation()

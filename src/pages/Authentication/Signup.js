@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import Footer from '../Home/Footer'
+import Footer from '../Shared/Footer'
 import Authentication from './Authentication';
 import { useState } from 'react';
 import { AiOutlineCloudUpload } from 'react-icons/ai';

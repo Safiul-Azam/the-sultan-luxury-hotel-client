@@ -9,7 +9,7 @@ import { GrStar } from 'react-icons/gr';
 import { FiSearch } from 'react-icons/fi';
 import Spinner from '../Shared/Spinner';
 import { SearchContext } from '../../context/SearchContext';
-import Footer from '../Home/Footer';
+import Footer from '../Shared/Footer';
 
 const FindingRoom = () => {
     const location = useLocation()
