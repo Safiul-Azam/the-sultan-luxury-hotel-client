@@ -25,20 +25,20 @@ const ScrollNavbar = () => {
     </>
 
     return (
-        <div class="navbar bg-white fixed z-20 py-6 shadow-lg">
-            <div class="navbar-start w-full justify-around flex-row-reverse">
-                <div class="dropdown text-white mt-2">
-                    <label tabIndex="0" class="lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+        <div className="navbar bg-white fixed z-20 py-6 shadow-lg">
+            <div className="navbar-start w-full justify-around flex-row-reverse">
+                <div className="dropdown text-white mt-2">
+                    <label tabIndex="0" className="lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex="0" class="space-y-2 text-xs dropdown-content p-4 shadow text-white bg-accent">
+                    <ul tabIndex="0" className="space-y-2 text-xs dropdown-content p-4 shadow text-white bg-accent">
                         {menu}
                     </ul>
                 </div>
                 <Link to='/' className="normal-case"><span className='lg:text-4xl text-xl block text-primary font-medium lg:h-8 mb-2'>THE SULTAN</span><h4 className='text-black tracking-[10px] text-sm'>LUXURY HOTEL</h4></Link>
             </div>
-            <div class="navbar-center hidden lg:flex z-10">
-                <ul class="menu menu-horizontal p-0 text-white gap-5">
+            <div className="navbar-center hidden lg:flex z-10">
+                <ul className="menu menu-horizontal p-0 text-white gap-5">
                     {menu}
 
                 </ul>

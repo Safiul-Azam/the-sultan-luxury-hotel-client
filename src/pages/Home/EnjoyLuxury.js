@@ -24,7 +24,7 @@ const EnjoyLuxury = () => {
                     <p className='text-xl mb-6 text-gray-700'>Hotel ut nisl quam nestibulum ac quam nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis parturient monte nascete ridiculus mus nellentesque habitant morbine.</p>
                     <div className='flex justify-start items-center'>
                         <FiPhoneCall className='text-4xl mr-8 text-primary' />
-                        {/* <span className='text-lg text-gray-700'>Reservation <span className='block text-2xl text-primary tracking-widest'>855 100 4444</span></span> */}
+                        <a href='/' className='text-lg text-gray-700'>Reservation <span className='block text-2xl text-primary tracking-widest'>855 100 4444</span></a>
                     </div>
                 </div>
             </div>

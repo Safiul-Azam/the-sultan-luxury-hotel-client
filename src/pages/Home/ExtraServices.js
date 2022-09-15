@@ -17,7 +17,6 @@ const ExtraServices = () => {
             .then(res => res.json())
             .then(data => setExServices(data))
     }, [])
-    console.log(exServices);
     return (
         <div className='bg-[#222222] lg:py-24 py-12'>
             <div className='lg:w-6xl lg:mx-20'>

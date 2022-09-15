@@ -161,9 +161,9 @@ const FindingRoom = () => {
                                 room={room}
                                 className=''
                             >
-                                <div class="card rounded-none">
+                                <div className="card rounded-none">
                                     <figure><img src={room.photos[0]} alt="Shoes" /></figure>
-                                    <div class="py-3 border px-2">
+                                    <div className="py-3 border px-2">
                                         <small className='capitalize text-lg'>{room.title} / {room.shift}</small>
                                         <p className='text-primary font-medium text-lg'>${room.price} Per Day</p>
                                         <p className='text-lg'>{room.checkIn[0]}</p>
