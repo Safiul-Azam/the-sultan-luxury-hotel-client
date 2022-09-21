@@ -27,7 +27,7 @@ const EditProfile = () => {
                 ...userInfo,
                 img: url,
             }
-            const res = await axios.put(`http://localhost:5000/api/users/${id}`, updateUser)
+            const res = await axios.put(`https://sultan-hotel-1.onrender.com/api/users/${id}`, updateUser)
             if (res.status === 200) {
                 toast.success('your registration is completed :)')
             };

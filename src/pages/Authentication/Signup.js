@@ -31,7 +31,7 @@ const Signup = () => {
                 ...userInfo,
                 img: url,
             }
-            const res = await axios.post('http://localhost:5000/api/auth/register',newUser)
+            const res = await axios.post('https://sultan-hotel-1.onrender.com/api/auth/register',newUser)
             if(res.status === 200){
                 navigate(from, {replace:true})
                 dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })

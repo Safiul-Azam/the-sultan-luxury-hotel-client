@@ -2,7 +2,7 @@ import React from 'react';
 import useFetch from '../../hooks/useFetch';
 
 const Users = () => {
-    const { data } = useFetch('http://localhost:5000/api/users')
+    const { data } = useFetch('https://sultan-hotel-1.onrender.com/api/users')
     return (
         <div className=''>
             <h4 className='text-2xl font-bold mt-10'>All Users</h4>

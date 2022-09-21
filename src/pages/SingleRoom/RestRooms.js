@@ -4,7 +4,7 @@ import RoomSuiteThree from '../Home/RoomSuiteThree';
 const RestRooms = () => {
     const [rooms, setRooms] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/roomsSuites')
+        fetch('https://sultan-hotel-1.onrender.com/roomsSuites')
             .then(res => res.json())
             .then(data => setRooms(data))
     }, [])

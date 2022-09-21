@@ -11,7 +11,7 @@ const AllRooms = () => {
 
     const { data, reFetch } = useFetch('https://sultan-hotel-1.onrender.com/api/rooms')
     const handleDelete = async (id) => {
-        const res = await axios.delete(`http://localhost:5000/api/rooms/${id}`)
+        const res = await axios.delete(`https://sultan-hotel-1.onrender.com/api/rooms/${id}`)
         if (res.status === 200) {
             reFetch()
             toast.error('Room is Deleted')
