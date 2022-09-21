@@ -6,7 +6,7 @@
 #
 
 # `features and functionality`
-* This site is created with an awesome UI design and some features and functionality. and it is responsive for some devices.
+* This site is created with an awesome UI design and some features and functionality. and it is responsive for all devices.
 * Implemented Oauth for authorization and authentication by JSON web token. 
 * Can book any room with date. without the dates that are already booked. and implemented some awesome features
 * implemented awesome slider, carousel and animation.
@@ -45,12 +45,12 @@
 
 
 ### `features for normal user`
-* User can book any room with dates, adult, children.
-* User can see all room and his/her booked room through the dashboard.
 * User can update his/her profile.
+* User can see all room and his/her booked room through the dashboard.
 * User can delete his/her booked if dates is not over.
-* User can give some review with rating.
+* User can book any room with dates, adult, children.
 * But users can not book on those dates on which the room is already booked.
+* User can give some review with rating.
 
 ### `features for admin`
 * Admins can add a room with details.
