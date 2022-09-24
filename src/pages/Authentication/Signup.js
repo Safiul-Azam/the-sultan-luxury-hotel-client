@@ -45,10 +45,10 @@ const Signup = () => {
     return (
         <div>
             <Authentication></Authentication>
-            <div className='lg:w-3/4 md:w-1/2 w-full mx-auto p-10  mt-28 mb-16'>
-                <h2 className="text-5xl text-gray-500 text-center">Signup</h2>
-                <hr className='mb-20 w-1/3 border-2 bg-gray-400 mt-3 mx-auto' />
-                <div className='grid grid-cols-3 gap-x-10'>
+            <div className='lg:w-3/4 md:w-1/2 w-full mx-auto lg:p-10 p-2 lg:mt-24 mt-12 mb-16'>
+                <h2 className="lg:text-5xl text-3xl text-gray-500 text-center">Signup</h2>
+                <hr className='lg:mb-20 mb-10 lg:w-1/3 w-3/4  border-2 bg-gray-400 mt-3 mx-auto' />
+                <div className='lg:grid grid-cols-3 lg:gap-x-10'>
                     <div className=''>
                         <img className='w-40 h-40 mx-auto rounded-full'
                             src={
@@ -58,11 +58,11 @@ const Signup = () => {
                             }
                             alt=""
                         />
-                        <h4 className='text-sm mt-20 text-center'>New to Sultan Luxury Hotel? <Link className='text-primary' to='/signup'>Create new account</Link></h4>
+                        <h4 className='text-sm mt-20 lg:flex hidden text-center'>New to Sultan Luxury Hotel? <Link className='text-primary' to='/signup'>Create new account</Link></h4>
                     </div>
-                    <form className='grid grid-cols-2 gap-8 col-span-2' onSubmit={handleSubmit}>
+                    <form className='lg:grid grid-cols-2 lg:gap-8 col-span-2 space-y-4' onSubmit={handleSubmit}>
                         <div className="form-control w-full ">
-                            <label className='flex items-center space-x-3 text-xl text-green-500' htmlFor="file">
+                            <label className='flex items-center justify-center my-2 space-x-3 text-xl text-green-500' htmlFor="file">
                                 Upload Image: <AiOutlineCloudUpload />
                             </label>
                             <input
@@ -121,6 +121,7 @@ const Signup = () => {
                         </div>
                         <input className='input p-0 text-sm mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-1/2 col-span-2 mx-auto' type="submit" value='SIGN UP' />
                     </form>
+                    <h4 className='text-xs mt-10 lg:hidden text-center'>Already have an account?<Link className='text-primary' to='/login'>please login</Link></h4>
                 </div>
             </div>
             <Footer/>

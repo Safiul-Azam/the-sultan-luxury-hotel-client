@@ -25,7 +25,6 @@ import AddRoom from './pages/Dashboard/AddRoom';
 import RoomEdit from './pages/Home/RoomEdit';
 import EditProfile from './pages/Dashboard/EditProfile';
 
-
 function App() {
   return (
     <div>

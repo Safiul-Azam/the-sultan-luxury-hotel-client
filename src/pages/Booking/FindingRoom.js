@@ -35,16 +35,12 @@ const FindingRoom = () => {
 
     const navigate = useNavigate()
 
-    const { data, loading, error, reFetch } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms?min=${min || 0}&max=${max || 999}`)
+    const { data, loading, reFetch } = useFetch(`http://localhost:5000/api/rooms?&min=${min || 0}&max=${max || 999}`)
 
     const { dispatch } = useContext(SearchContext)
     const handleClick = id => {
         dispatch({ type: 'NEW_SEARCH', payload: { dates, options } })
         navigate(`/findRoom/${id}`, { state: { dates, options } })
-
-    }
-    if (loading) {
-        return <Spinner></Spinner>
     }
     const handleChange = () => {
         reFetch()
@@ -57,7 +53,7 @@ const FindingRoom = () => {
                         <div className='border w-full pt-10 '>
                             <div className='flex p-3 justify-evenly space-x-2 w-full'>
                                 <button onClick={() => setOpenDate(!openDate)} className='w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center' >{`${format(dates[0]?.startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /></button>
-                                <button onClick={() => setOpenDate(!openDate)} className=' w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center'>{`${format(dates[0]?.endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl'/> </button>
+                                <button onClick={() => setOpenDate(!openDate)} className=' w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center'>{`${format(dates[0]?.endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /> </button>
                             </div>
                             {openDate && <DateRange
                                 editableDateInputs={true}
@@ -182,7 +178,7 @@ const FindingRoom = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };
