@@ -7,6 +7,7 @@ import { AiOutlineCloudUpload } from 'react-icons/ai';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/AuthContext';
+import Spinner from '../Shared/Spinner';
 
 const Signup = () => {
     const [file, setFile] = useState('')
@@ -14,6 +15,7 @@ const Signup = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathName || '/'
+    console.log(from);
     const { loading, error, dispatch } = useContext(AuthContext)
     const handleChange = e => {
         setUserInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
@@ -41,7 +43,9 @@ const Signup = () => {
             dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
         }
     }
-
+    if(loading){
+        return <Spinner/>
+    }
     return (
         <div>
             <Authentication></Authentication>

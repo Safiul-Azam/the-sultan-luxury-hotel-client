@@ -25,7 +25,7 @@ const ScrollNavbar = () => {
     </>
 
     return (
-        <div className="navbar bg-white py-4 fixed z-20 shadow-lg">
+        <div className="navbar bg-white py-4 fixed z-20 shadow-md">
             <div className="navbar-start w-11/12 lg:w-11/12 justify-between lg:justify-around flex-row lg:flex-row-reverse">
                 <div className="dropdown text-accent mt-2">
                     <label tabIndex="0" className="lg:hidden">
