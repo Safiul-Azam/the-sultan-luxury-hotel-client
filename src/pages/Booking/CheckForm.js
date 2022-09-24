@@ -21,13 +21,12 @@ const CheckForm = () => {
             key: 'selection'
         }
     ]);
+    console.log(dates);
     const handleChange = e => {
         setOption(prev => ({ ...prev, [e.target.id]: e.target.value }))
-
     }
     const handleClick = () => {
         navigate('/findRoom', { state: { dates, option } })
-
     }
     return (
         <div id='CheckRoom' className='lg:pt-24 pt-12' style={

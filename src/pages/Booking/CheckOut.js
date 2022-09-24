@@ -25,7 +25,7 @@ const CheckOut = () => {
     }
     return (
         <div className='bg-[#F8F5F0]'>
-            <div className='container mx-auto lg:py-28 py-12 px-4'>
+            <div className='container mx-auto lg:py-12 py-12 px-4'>
                 <p style={{ letterSpacing: '5px' }} className='lg:text-lg text-sm uppercase mb-4 tracking-[3px] lg:tracking-[5px]'>CHECK NOW</p>
                 <h2 className='lg:text-5xl text-3xl mb-7'>Search Rooms</h2>
                 <div className='grid lg:grid-cols-6 grid-cols-1 gap-2 relative'>
