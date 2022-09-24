@@ -34,13 +34,12 @@ const Login = () => {
         return <Spinner/>
     }
     return (
-        <div>
+        <>
             <Authentication></Authentication>
-            <div className='my-28'>
-                <div className='lg:w-1/2 md:w-1/2 w-full mx-auto p-10  my-28 mb-16'>
-                    <h2 className="text-4xl text-gray-500">Login</h2>
-                    <hr className='w-1/4 mb-6 mt-3 border bg-gray-300' />
-                    <form className='space-y-8' onSubmit={handleSubmit}>
+                <div className='lg:w-1/2 md:w-1/2 w-full mx-auto lg:p-10 p-3  my-12'>
+                    <h2 className="lg:text-4xl text-3xl text-gray-500 lg:text-left text-center">Login</h2>
+                    <hr className='lg:w-1/4 w-3/4 mb-6 mt-3 border bg-gray-300 mx-auto lg:mx-0' />
+                    <form className='space-y-4' onSubmit={handleSubmit}>
                         <div className="form-control w-full">
                             <input
                                 type="text"
@@ -60,13 +59,12 @@ const Login = () => {
 
                             />
                         </div>
-                        <input className='input py-3 px-8 text-lg mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-1/2' type="submit" value='LOGIN' />
-                        {error && <span>{error.message}</span>}
+                        {error && <p className='text-red-400'>{error.message}</p>}
+                        <input className='input lg:py-3 text-sm mt-2 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500 w-1/2 lg:w-1/3' type="submit" value='LOGIN' />
                         <p className='text-sm mt-6'>New to Wooden tools? <Link className='text-primary' to='/signup'>Create new account</Link></p>
                     </form>
                 </div>
-            </div>
-        </div>
+        </>
     );
 };
 
