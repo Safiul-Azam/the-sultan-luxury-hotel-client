@@ -12,17 +12,14 @@ const RoomEditModal = () => {
         setRoomInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }
     const {data} = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms/find/${id}`)
-    console.log(data);
     const handleSubmit = async e => {
         e.preventDefault()
         try {
             const res = await axios.put(`https://sultan-hotel-1.onrender.com/api/rooms/${id}`,roomInfo)
-            console.log(res);
             if (res.status === 200) {
                 toast.success('Room information is updated :)')
             };
         } catch (err) {
-            console.log(err);
         }
     }
     return (

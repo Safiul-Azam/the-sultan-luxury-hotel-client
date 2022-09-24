@@ -40,7 +40,9 @@ const Payment = () => {
                 <h2>{format(dates[0]?.startDate, 'MM-dd-yyyy')} to {format(dates[0]?.endDate, 'MM-dd-yyyy')}</h2>
             </div>)
             navigate('/')
-        } catch (err) { }
+        } catch (err) {
+            toast(err?.message)
+         }
     }
     return (
         <>

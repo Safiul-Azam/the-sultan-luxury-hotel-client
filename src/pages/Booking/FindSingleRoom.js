@@ -16,7 +16,6 @@ const FindSingleRoom = () => {
     const [selectedRoom, setSelectedRoom] = useState([])
     const location = useLocation()
     const id = location?.pathname.split('/')[2]
-    console.log(id);
     const navigate = useNavigate()
 
     const { data, loading, reFetch } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms/find/${id}`)

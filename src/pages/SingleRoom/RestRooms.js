@@ -8,7 +8,6 @@ const RestRooms = () => {
             .then(res => res.json())
             .then(data => setRooms(data))
     }, [])
-    console.log(rooms);
     return (
         <div id='room&suites' className='py-24 bg-neutral'>
             <div className='container mx-auto'>

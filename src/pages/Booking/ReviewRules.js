@@ -28,10 +28,8 @@ const ReviewRules = () => {
         photos,
         title,
         roomNumbers } = data
-        console.log(allDates);
         
     const { dates } = useContext(SearchContext)
-    console.log(dates);
     // dates count system
     const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
     const dayDifference = (date1, date2) => {

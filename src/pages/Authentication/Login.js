@@ -13,9 +13,7 @@ const Login = () => {
     })
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location);
     const from = location?.state?.from?.pathName || '/'
-    console.log(from);
     const { loading, error, dispatch } = useContext(AuthContext)
 
     const handleChange = e => {

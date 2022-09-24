@@ -15,7 +15,6 @@ const Signup = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathName || '/'
-    console.log(from);
     const { loading, error, dispatch } = useContext(AuthContext)
     const handleChange = e => {
         setUserInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))

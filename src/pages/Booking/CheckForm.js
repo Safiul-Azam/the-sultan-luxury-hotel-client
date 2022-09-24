@@ -21,7 +21,6 @@ const CheckForm = () => {
             key: 'selection'
         }
     ]);
-    console.log(dates);
     const handleChange = e => {
         setOption(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }

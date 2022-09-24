@@ -23,12 +23,10 @@ const AddRoom = () => {
                 photos: url,
             }
             const res = await axios.post('https://sultan-hotel-1.onrender.com/api/rooms', newRoom)
-            console.log(res);
             if (res.status === 200) {
                 toast.success('Your added a new rooms :)')
             };
         } catch (err) {
-            console.log(err);
         }
     }
     return (

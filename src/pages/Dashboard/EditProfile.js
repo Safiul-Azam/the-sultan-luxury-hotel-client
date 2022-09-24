@@ -14,7 +14,6 @@ const EditProfile = () => {
     const handleChange = e => {
         setUserInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }
-    console.log(user);
     const handleSubmit = async e => {
         e.preventDefault()
         const data = new FormData()
@@ -32,7 +31,6 @@ const EditProfile = () => {
                 toast.success('your registration is completed :)')
             };
         } catch (err) {
-            console.log(err);
         }
     }
 
