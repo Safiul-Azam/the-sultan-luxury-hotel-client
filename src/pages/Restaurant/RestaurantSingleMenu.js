@@ -3,8 +3,8 @@ import React from 'react';
 const RestaurantSingleMenu = ({single}) => {
     const {first, second, third, forth, fifth, sixth} = single
     return (
-        <div>
-            <div className='grid grid-cols-2 gap-x-56 space-y-4'>
+        <div className='container mx-auto p-3'>
+            <div className='lg:grid grid-cols-2  lg:gap-x-56 space-y-7 lg:space-y-4'>
             <div className=''>
                 <div className='text-white flex justify-between items-center text-xl'>
                     <h2 className='text-primary'>{first?.firstItem}</h2>

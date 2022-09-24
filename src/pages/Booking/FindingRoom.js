@@ -35,14 +35,19 @@ const FindingRoom = () => {
 
     const navigate = useNavigate()
 
-    const { data, loading, reFetch } = useFetch(`http://localhost:5000/api/rooms?&min=${min || 0}&max=${max || 999}`)
+    const { data, reFetch } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms?&min=${min || 0}&max=${max || 999}`)
 
     const { dispatch } = useContext(SearchContext)
     const handleClick = id => {
         dispatch({ type: 'NEW_SEARCH', payload: { dates, options } })
         navigate(`/findRoom/${id}`, { state: { dates, options } })
     }
-    const handleChange = () => {
+    const handleChange = (e) => {
+        e.preventDefault()
+        reFetch()
+    }
+    const handleSearch = (e) => {
+        e.preventDefault()
         reFetch()
     }
     return (
@@ -146,7 +151,7 @@ const FindingRoom = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button onClick={handleChange} style={{ letterSpacing: '2px' }} className='w-full flex items-center justify-center py-3 text-xl text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 mt-10'><FiSearch className='text-lg mr-2' /> Search</button>
+                                <button onClick={handleSearch} style={{ letterSpacing: '2px' }} className='w-full flex items-center justify-center py-3 text-xl text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 mt-10'><FiSearch className='text-lg mr-2' /> Search</button>
                             </div>
                         </div>
                     </div>

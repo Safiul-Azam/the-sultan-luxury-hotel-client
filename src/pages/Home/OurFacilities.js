@@ -5,7 +5,7 @@ import OurFacility from './OurFacility';
 const OurFacilities = () => {
     const {data, loading} = useFetch('https://sultan-hotel-1.onrender.com/api/facilities')
     if(loading){
-        <Spinner></Spinner>
+        return<Spinner></Spinner>
     }
     return (
         <div className='container mx-auto lg:py-24 py-12 px-4'>
@@ -16,6 +16,7 @@ const OurFacilities = () => {
                     data.map(service => <OurFacility
                     key={service._id}
                     service={service}
+                    loading={loading}
                     ></OurFacility>)
                 }
             </div>

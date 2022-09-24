@@ -11,6 +11,7 @@ import ServicesTheme from './ServicesTheme';
 import Testimonials from './Testimonials';
 import CheckForm from '../Booking/CheckForm';
 import Footer from '../Shared/Footer'
+import RestaurantMenus from '../Restaurant/RestaurantMenus'
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <OurFacilities></OurFacilities>
       <CheckOut></CheckOut>
       <ServicesTheme></ServicesTheme>
+      <RestaurantMenus/>
       <Testimonials></Testimonials>
       <OurBlogs></OurBlogs>
       <CheckForm></CheckForm>
