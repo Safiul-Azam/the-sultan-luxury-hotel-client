@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import img from '../../images/banner/2.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { GrStar } from 'react-icons/gr';
@@ -33,7 +33,14 @@ const Testimonials = () => {
                     pagination={{
                         clickable: true,
                     }}
-                    modules={[Pagination]}
+                    autoplay={{
+                        delay: 3500,
+                        disableOnInteraction: false,
+                    }}
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    navigation={false}
+                    modules={[Pagination, Autoplay]}
                 >
                     {
                         testimonials.map(testimonial => <SwiperSlide
