@@ -21,14 +21,7 @@ const ReviewRules = () => {
     const [selectedRoom, setSelectedRoom] = useState(location.state.selected)
     const navigate = useNavigate()
     const { data, loading, reFetch } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms/find/${id}`)
-    const {
-        _id,
-        shift,
-        price,
-        photos,
-        title,
-        roomNumbers } = data
-        
+
     const { dates } = useContext(SearchContext)
     // dates count system
     const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
@@ -43,11 +36,11 @@ const ReviewRules = () => {
         return <Spinner></Spinner>
     }
     const handleClick = (id) => {
-        navigate(`/payment/${id}`, {state:{allDates, selected: selectedRoom}})
+        navigate(`/payment/${id}`, { state: { allDates, selected: selectedRoom } })
     }
     return (
         <div>
-             <Navbar></Navbar>
+            <Navbar></Navbar>
             <div className='pt-8 mix-blend-normal bg-black-400' style={
                 {
                     background: `linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url(${img1})`,
@@ -101,18 +94,13 @@ const ReviewRules = () => {
                                 <p className='flex items-center'><ImManWoman className='text-gray-500 text-2xl mr-2' />Can't stay in hotel any guests without counted</p>
                             </div>
                         </div>
-                        <button onClick={() => handleClick(_id)} style={{ letterSpacing: '2px' }} className='py-4 mt-10 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Agree & continue</button>
+                        <button onClick={() => handleClick(data._id)} style={{ letterSpacing: '2px' }} className='py-4 mt-10 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Agree & continue</button>
                     </div>
 
                     <div className='w-11/12'>
                         <div className='shadow-lg p-8'>
                             <Pricing
-                                id={_id}
-                                title={title}
-                                price={price}
-                                shift={shift}
-                                roomNumbers={roomNumbers}
-                                photo={photos}
+                                data={data}
                                 selectedRoom={selectedRoom}
                                 loading={loading}
                                 reFetch={reFetch}
@@ -121,7 +109,7 @@ const ReviewRules = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };

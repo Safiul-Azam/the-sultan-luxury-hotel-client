@@ -20,12 +20,10 @@ const FindSingleRoom = () => {
 
     const { data, loading, reFetch } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms/find/${id}`)
 
+    const { dates } = useContext(SearchContext)
     const {
-        _id,
         pets,
-        shift,
         title,
-        price,
         photos,
         checkIn,
         checkOut,
@@ -34,12 +32,11 @@ const FindSingleRoom = () => {
         instructions,
         roomNumbers } = data
 
-    if (loading) {
-        <Spinner></Spinner>
-    }
+    // if (loading) {
+    //     return <Spinner></Spinner>
+    // }
 
     // selected
-    const { dates } = useContext(SearchContext)
     const getDatesInRange = (startDate, endDate) => {
         const start = new Date(startDate)
         const end = new Date(endDate)
@@ -77,67 +74,61 @@ const FindSingleRoom = () => {
                     backgroundSize: 'cover'
                 }
             }>
-                <div className='text-left text-white container py-32 mx-auto'>
-                    <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>LUXURY HOTEL</p>
-                    <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Booking Info</h2>
+                <div className='text-left text-white container py-32 px-4 mx-auto'>
+                    <p className='text-lg uppercase mb-6 tracking-[5px]'>LUXURY HOTEL</p>
+                    <h2 className='lg:text-6xl text-4xl'>Booking Info</h2>
                 </div>
 
             </div>
-            <div className='container mx-auto pt-8 pb-20 grid grid-cols-2 space-x-24'>
-
-                <div className=''>
-                    <div className='flex justify-between items-center'>
-                        <h2 className='text-3xl mb-3 text-black'>{title}</h2>
-                    </div>
-                    <div className='flex justify-center w-1/2 mb-5'>
-                        <img src={photos} alt="" />
-                    </div>
-                    <div className="w-full mt-3">
-                        <span className="label-text text-2xl font-bold">Choose Room Number</span>
-                        <div className="w-full rounded-none flex items-center space-x-5">
-                            {roomNumbers?.map(roomNumber => (
-                                <>
+            <div className='container mx-auto pt-8 pb-20 lg:grid grid-cols-2 lg:space-x-24'>
+                <div className="flex flex-col p-4">
+                    <div>
+                        <div className='w-full lg:w-1/2'>
+                            <h2 className='lg:text-3xl text-2xl mb-3 text-black'>{title}</h2>
+                            <img src={photos} alt="" />
+                            <div className='flex text-xl my-4 text-secondary'>
+                                <GrStar />
+                                <GrStar />
+                                <GrStar />
+                                <GrStar />
+                                <GrStar />
+                            </div>
+                        </div>
+                        <div className="w-full mt-3">
+                            <span className="label-text text-2xl font-bold">Choose Room Number</span>
+                            <div className="w-full rounded-none flex items-center space-x-5">
+                                {roomNumbers?.map(roomNumber => (
                                     <div key={roomNumber._id} className='py-2 text-4xl'>
                                         <label>{roomNumber.number}</label>
                                         <input type="checkbox" disabled={!isAvailable(roomNumber)} onChange={handleSelected} value={roomNumber._id} />
                                         {!isAvailable(roomNumber) && <p className='text-sm text-red-500'>{format(dates[0]?.startDate, 'MM-dd')} to {format(dates[0]?.startDate, 'MM-dd-yyyy')} Already Booked</p>}
                                     </div>
-
-                                </>
-
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
-
-                    <div className='flex text-xl mb-4 text-secondary'>
-                        <GrStar />
-                        <GrStar />
-                        <GrStar />
-                        <GrStar />
-                        <GrStar />
-                    </div>
-                    <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-3'>LUXURY HOTEL</p>
-                    {description?.map((desc, index) => (
-                        <div key={index} className='mb-3'>
-                            <p className='text-lg text-[#777] tracking-wide'>{desc}</p>
+                    <div>
+                        <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-3'>LUXURY HOTEL</p>
+                        {description?.map((desc, index) => (
+                            <div key={index} className='mb-3'>
+                                <p className='text-lg text-[#777] tracking-wide'>{desc}</p>
+                            </div>
+                        ))}
+                        <div className='lg:flex lg:space-x-20 lg:space-y-0 space-y-4 my-4'>
+                            <div className='space-y-3'>
+                                <h2 className='text-xl'>Check-in</h2>
+                                {
+                                    checkIn?.map((i, index) => <p
+                                        className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
+                                }
+                            </div>
+                            <div className='mb-4 space-y-3'>
+                                <h2 className='text-xl'>Check Out</h2>
+                                {
+                                    checkOut?.map((i, index) => <p key={index} className='tracking-wide flex items-center text-lg text-[#777]'><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
+                                }
+                            </div>
                         </div>
-                    ))}
-                    <div className='flex space-x-20'>
-                        <div className='space-y-3'>
-                            <h2 className='text-xl'>Check-in</h2>
-                            {
-                                checkIn?.map((i, index) => <p
-                                    className='tracking-wide flex items-center text-lg text-[#777]' key={index}><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
-                            }
-                        </div>
-                        <div className='mb-4 space-y-3'>
-                            <h2 className='text-xl'>Check Out</h2>
-                            {
-                                checkOut?.map((i, index) => <p key={index} className='tracking-wide flex items-center text-lg text-[#777]'><AiOutlineCheck className='mr-4 text-primary' />{i}</p>)
-                            }
-                        </div>
-                    </div>
-                    <div className=''>
                         <h2 className='text-2xl'>Special check-in instructions</h2>
                         <p className='text-lg text-[#777] my-4 tracking-wide'>{instructions}</p>
                         <h2 className='text-2xl'>Pets</h2>
@@ -146,16 +137,11 @@ const FindSingleRoom = () => {
                         <p className='text-lg text-[#777] my-4 tracking-wide'>{extraBeds}</p>
                     </div>
                 </div>
-                <div className='w-11/12'>
-                    <div className='shadow-lg p-8 mt-16'>
+                <div className='lg:w-11/12 w-full'>
+                    <div className='shadow-lg lg:p-8 p-4 mt-12'>
                         <Pricing
-                            title={title}
-                            price={price}
-                            shift={shift}
+                            data={data}
                             selectedRoom={selectedRoom}
-                            roomNumbers={roomNumbers}
-                            photo={photos}
-                            id={data._id}
                             loading={loading}
                             reFetch={reFetch}
                         />

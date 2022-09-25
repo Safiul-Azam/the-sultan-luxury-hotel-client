@@ -5,9 +5,8 @@ import { BsArrowRight } from 'react-icons/bs';
 import { GrStar } from 'react-icons/gr';
 import { SearchContext } from '../../context/SearchContext';
 import Spinner from '../Shared/Spinner';
-import ReviewRules from './ReviewRules';
 
-const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
+const Pricing = ({ data, loading, selectedRoom}) => {
     const { dates, options } = useContext(SearchContext)
     // dates count system
     const MILLISECOND_PER_DAY = 1000 * 24 * 60 * 60
@@ -16,9 +15,10 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
         const dayDiff = Math.ceil(timeDiff / MILLISECOND_PER_DAY)
         return dayDiff
     }
+    console.log(data);
     const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
     // some price system updated
-    const roomsPrice = price * days 
+    const roomsPrice = data.price * days 
     const totalPrice = roomsPrice * selectedRoom?.length
     const forChildren = 10 * options?.children
     if (loading) {
@@ -28,9 +28,9 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
         <>
             <div className='flex justify-between items-center'>
                 <div>
-                    <h2 className='text-3xl text-primary mb-5'>Pricing Information</h2>
-                    <h2 className='text-xl text-gray-600 font-bold'>{title}</h2>
-                    <p className='text-xl my-1 capitalize'>${price} / {shift}</p>
+                    <h2 className='lg:text-3xl text-2xl text-primary mb-5'>Pricing Information</h2>
+                    <h2 className='text-xl text-gray-600 font-bold'>{data.title}</h2>
+                    <p className='text-xl my-1 capitalize'>${data.price} / {data.shift}</p>
                     <div className='flex text-xs mb-4 items-center text-secondary'>
                         <GrStar />
                         <GrStar />
@@ -40,7 +40,7 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
                         <p className='text-sm ml-2 text-black'>(20 reviews)</p>
                     </div>
                 </div>
-                <img className='w-1/4' src={photo} alt="photos" />
+                <img className='lg:w-1/4 w-1/2' src={data?.photos} alt="photos" />
             </div>
             <div className="w-3/4 my-2">
                 <h2 className="label-text text-lg my-3 text-primary">Selected date for reserve</h2>
@@ -60,7 +60,7 @@ const Pricing = ({ price, shift, photo, title, loading, selectedRoom}) => {
                 <p className='text-lg font-bold text-gray-600'>Thank You for Reserved {days} Night to stay</p>
                 {!selectedRoom?.length ? <p className='text-red-400 text-lg'>You haven't selected any room yet!</p> : <p className='text-xl text-primary'>Selected {selectedRoom.length} { selectedRoom.length <= 1 ? 'room' : 'rooms' } for stay</p>}
                 <div className='flex justify-between'>
-                    <p className='flex justify-between'>${`${price} X ${days} (nights)`}</p>
+                    <p className='flex justify-between'>${`${data.price} X ${days} (nights)`}</p>
                     <p>{roomsPrice} X {selectedRoom?.length} {selectedRoom?.length <= 1 ? '(room)': '(rooms)'} = ${totalPrice}</p>
                 </div>
                 <hr />

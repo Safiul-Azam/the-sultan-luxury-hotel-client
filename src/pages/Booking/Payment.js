@@ -20,12 +20,6 @@ const Payment = () => {
     const { data, loading, reFetch } = useFetch(`https://sultan-hotel-1.onrender.com/api/rooms/find/${id}`)
     const { dates } = useContext(SearchContext)
 
-    const {
-        shift,
-        price,
-        photos,
-        title,
-        roomNumbers } = data
     if (loading) {
         return <Spinner />
     }
@@ -42,7 +36,7 @@ const Payment = () => {
             navigate('/')
         } catch (err) {
             toast(err?.message)
-         }
+        }
     }
     return (
         <>
@@ -54,25 +48,19 @@ const Payment = () => {
                     backgroundSize: 'cover'
                 }
             }>
-                <div className='text-left text-white container py-32 mx-auto'>
+                <div className='text-left text-white container py-32 px-4 mx-auto'>
                     <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>LUXURY HOTEL</p>
                     <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Payment Selection</h2>
                 </div>
             </div>
-            <div className='container mx-auto my-20'>
-                <div>
-                    <div className='shadow-lg p-8'>
-                        <Pricing
-                            title={title}
-                            price={price}
-                            shift={shift}
-                            roomNumbers={roomNumbers}
-                            photo={photos}
-                            selectedRoom={selectedRoom}
-                            reFetch={reFetch}
-                        />
-                        <button onClick={() => handleClick(id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Complete your Booking</button>
-                    </div>
+            <div className='container mx-auto lg:my-20'>
+                <div className='shadow-lg p-8'>
+                    <Pricing
+                        data={data}
+                        selectedRoom={selectedRoom}
+                        reFetch={reFetch}
+                    />
+                    <button onClick={() => handleClick(id)} style={{ letterSpacing: '2px' }} className='mt-10 w-full py-4 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Complete your Booking</button>
                 </div>
             </div>
             <Footer />

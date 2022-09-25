@@ -55,7 +55,7 @@ const FindingRoom = () => {
             <div className='bg-neutral'>
                 <div className='container mx-auto py-20 lg:flex justify-between space-x-10'>
                     <div className='lg:w-1/3 w-full'>
-                        <div className='border w-full py-10'>
+                        <div className='border w-full'>
                             <div className='flex p-3 justify-evenly space-x-2 w-full'>
                                 <button onClick={() => setOpenDate(!openDate)} className='w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center' >{`${format(dates[0]?.startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /></button>
                                 <button onClick={() => setOpenDate(!openDate)} className=' w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center'>{`${format(dates[0]?.endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /> </button>
@@ -151,11 +151,11 @@ const FindingRoom = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button onClick={handleSearch} style={{ letterSpacing: '2px' }} className='w-full flex items-center justify-center py-3 text-xl text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 mt-10'><FiSearch className='text-lg mr-2' /> Search</button>
+                                <button onClick={handleSearch} style={{ letterSpacing: '2px' }} className='lg:w-full w-11/12 mx-auto flex items-center justify-center py-3 text-xl text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 mt-10'><FiSearch className='text-lg mr-2' /> Search</button>
                             </div>
                         </div>
                     </div>
-                    <div className=' w-3/4 lg:grid grid-cols-3 gap-3 space-y-6'>
+                    <div className=' w-3/4 lg:grid grid-cols-3 gap-3 lg:space-y-0 space-y-6'>
                         {
                             data?.map(room => <div
                                 key={room._id}
