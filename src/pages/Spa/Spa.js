@@ -3,7 +3,7 @@ import Footer from '../Shared/Footer';
 import ClientSay from './ClientSay';
 import SpaBanner from './SpaBanner';
 import SpaEtiquette from './SpaEtiquette';
-import SpaTheme from './SpaTheme';
+import ServicesTheme from '../Home/ServicesTheme'
 import WellNess from './WellNess';
 
 const Spa = () => {
@@ -11,7 +11,7 @@ const Spa = () => {
         <div>
             <SpaBanner />
             <WellNess />
-            <SpaTheme />
+            <ServicesTheme />
             <ClientSay />
             <SpaEtiquette />
             <Footer />

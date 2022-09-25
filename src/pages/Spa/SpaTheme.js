@@ -6,7 +6,7 @@ import { GiClockwork } from "react-icons/gi";
 
 const SpaTheme = () => {
     return (
-        <div>
+        <>
             <div className='container mx-auto bg-[#F8F5F0] my-24'>
                 <div className='grid grid-cols-2 items-center'>
                     <div className='overflow-hidden'>
@@ -51,7 +51,7 @@ const SpaTheme = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
