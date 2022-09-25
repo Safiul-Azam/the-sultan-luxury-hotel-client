@@ -26,7 +26,8 @@ const Pricing = ({ data, loading, selectedRoom}) => {
     }
     return (
         <>
-            <div className='flex justify-between items-center'>
+        <hr className='w-full lg:hidden' />
+            <div className='flex justify-between space-x-3 items-center lg:p-8 p-4 mt-8'>
                 <div>
                     <h2 className='lg:text-3xl text-2xl text-primary mb-5'>Pricing Information</h2>
                     <h2 className='text-xl text-gray-600 font-bold'>{data.title}</h2>

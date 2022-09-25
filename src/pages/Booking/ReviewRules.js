@@ -31,10 +31,10 @@ const ReviewRules = () => {
         return dayDiff
     }
     const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate)
-    //loading system
-    if (loading) {
-        return <Spinner></Spinner>
-    }
+    // //loading system
+    // if (loading) {
+    //     return <Spinner></Spinner>
+    // }
     const handleClick = (id) => {
         navigate(`/payment/${id}`, { state: { allDates, selected: selectedRoom } })
     }
@@ -48,18 +48,18 @@ const ReviewRules = () => {
                     backgroundSize: 'cover'
                 }
             }>
-                <div className='text-left text-white container py-32 mx-auto'>
-                    <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>LUXURY HOTEL</p>
-                    <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Review Room Rules</h2>
+                <div className='text-left text-white container py-28 mx-auto px-3'>
+                    <p className='text-lg uppercase mb-6 tracking-[5px]'>LUXURY HOTEL</p>
+                    <h2 className='lg:text-6xl text-4xl'>Review Room Rules</h2>
                 </div>
 
             </div>
             <div className='container mx-auto pt-12 pb-20'>
-                <div className='grid grid-cols-2 space-x-20'>
-                    <div className=''>
-                        <h2 style={{ lineHeight: '30px' }} className='text-4xl my-4'>Review Hotel Rules</h2>
-                        <h2 className='text-xl font-bold'>Thank You for Reserved {days} Night to stay</h2>
-                        <div className='flex space-x-20 my-6'>
+                <div className='lg:grid grid-cols-2 lg:space-x-20'>
+                    <div className='p-4'>
+                        <h2 style={{ lineHeight: '30px' }} className='lg:text-4xl text-3xl my-4'>Review Hotel Rules</h2>
+                        <h2 className='lg:text-xl text-lg font-bold'>Thank You for Reserved {days} Night to stay</h2>
+                        <div className='lg:flex lg:space-x-20 my-6 space-y-6 lg:space-y-0'>
                             <div className='flex items-center space-x-5'>
                                 <div className='bg-primary text-center text-white px-2 py-1'>
                                     <p className='text-sm leading-none uppercase'>{`${format(dates[0]?.startDate, 'MMM')}`}</p>
@@ -94,17 +94,18 @@ const ReviewRules = () => {
                                 <p className='flex items-center'><ImManWoman className='text-gray-500 text-2xl mr-2' />Can't stay in hotel any guests without counted</p>
                             </div>
                         </div>
-                        <button onClick={() => handleClick(data._id)} style={{ letterSpacing: '2px' }} className='py-4 mt-10 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase'>Agree & continue</button>
+                        <button onClick={() => handleClick(data._id)} className='py-4 mt-10 px-8 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase tracking-widest lg:flex hidden'>Agree & continue</button>
                     </div>
 
-                    <div className='w-11/12'>
-                        <div className='shadow-lg p-8'>
+                    <div className='lg:w-11/12 w-full mx-auto'>
+                        <div className='shadow-lg lg:p-8 p-3'>
                             <Pricing
                                 data={data}
                                 selectedRoom={selectedRoom}
                                 loading={loading}
                                 reFetch={reFetch}
                             />
+                            <button onClick={() => handleClick(data._id)} className='py-4 w-full mt-4 text-sm text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 uppercase tracking-widest lg:hidden'>Agree & continue</button>
                         </div>
                     </div>
                 </div>

@@ -151,11 +151,11 @@ const FindingRoom = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button onClick={handleSearch} style={{ letterSpacing: '2px' }} className='lg:w-full w-11/12 mx-auto flex items-center justify-center py-3 text-xl text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 mt-10'><FiSearch className='text-lg mr-2' /> Search</button>
+                                <button onClick={handleSearch} style={{ letterSpacing: '2px' }} className='lg:w-full w-11/12 mx-auto flex items-center justify-center py-3 text-lg text-white bg-primary hover:bg-[#222222] hover:duration-300 hover:ease-in ease-in duration-300 lg:mt-10'><FiSearch className='text-lg mr-2' /> Search</button>
                             </div>
                         </div>
                     </div>
-                    <div className=' w-3/4 lg:grid grid-cols-3 gap-3 lg:space-y-0 space-y-6'>
+                    <div className=' w-3/4 lg:grid grid-cols-3 gap-3 lg:space-y-0 space-y-6 lg:mt-0 mt-10'>
                         {
                             data?.map(room => <div
                                 key={room._id}

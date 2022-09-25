@@ -138,7 +138,7 @@ const FindSingleRoom = () => {
                     </div>
                 </div>
                 <div className='lg:w-11/12 w-full'>
-                    <div className='shadow-lg lg:p-8 p-4 mt-12'>
+                    <div className='shadow-lg'>
                         <Pricing
                             data={data}
                             selectedRoom={selectedRoom}
