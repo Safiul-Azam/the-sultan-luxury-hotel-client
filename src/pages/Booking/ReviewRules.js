@@ -50,7 +50,7 @@ const ReviewRules = () => {
             }>
                 <div className='text-left text-white container py-28 mx-auto px-3'>
                     <p className='text-lg uppercase mb-6 tracking-[5px]'>LUXURY HOTEL</p>
-                    <h2 className='lg:text-6xl text-4xl'>Review Room Rules</h2>
+                    <h2 className='lg:text-6xl text-4xl leading-3'>Review Room Rules</h2>
                 </div>
 
             </div>

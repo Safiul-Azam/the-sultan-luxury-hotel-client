@@ -48,13 +48,13 @@ const Payment = () => {
                     backgroundSize: 'cover'
                 }
             }>
-                <div className='text-left text-white container py-32 px-4 mx-auto'>
-                    <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>LUXURY HOTEL</p>
-                    <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Payment Selection</h2>
+                <div className='text-left text-white container py-28 mx-auto px-3'>
+                    <p className='text-lg uppercase mb-6 tracking-[5px]'>LUXURY HOTEL</p>
+                    <h2 className='lg:text-6xl text-3xl leading-3'>Payment Selection</h2>
                 </div>
             </div>
-            <div className='container mx-auto lg:my-20'>
-                <div className='shadow-lg p-8'>
+            <div className='lg:w-11/12 w-full mx-auto'>
+                <div className='shadow-lg lg:p-8 p-3'>
                     <Pricing
                         data={data}
                         selectedRoom={selectedRoom}

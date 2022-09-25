@@ -137,8 +137,8 @@ const FindSingleRoom = () => {
                         <p className='text-lg text-[#777] my-4 tracking-wide'>{extraBeds}</p>
                     </div>
                 </div>
-                <div className='lg:w-11/12 w-full'>
-                    <div className='shadow-lg'>
+                <div className='lg:w-11/12 w-full mx-auto'>
+                    <div className='shadow-lg lg:p-8 p-3'>
                         <Pricing
                             data={data}
                             selectedRoom={selectedRoom}
