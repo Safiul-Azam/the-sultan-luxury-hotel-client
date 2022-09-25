@@ -10,11 +10,11 @@ const GetInTouch = () => {
 
     const onSubmit = (data) => console.log(data);
     return (
-        <div className=' container mx-auto py-28 '>
-            <div className='flex space-x-32'>
+        <div className='container mx-auto py-24 px-4'>
+            <div className='lg:flex lg:space-x-32'>
                 <div className=''>
-                    <h2 className='text-2xl mb-7 text-black'>The Cappa Luxury Hotel</h2>
-                    <p className='text-xl mb-4 text-gray-500'>Hotel ut nisl quam nestibulum ac quam nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis parturient monte nascete ridiculus mus nellentesque habitant morbine.</p>
+                    <h2 className='lg:text-3xl text-2xl mb-7 text-black'>The Cappa Luxury Hotel</h2>
+                    <p className='text-lg mb-4 text-gray-500'>Hotel ut nisl quam nestibulum ac quam nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis parturient monte nascete ridiculus mus nellentesque habitant morbine.</p>
                     <div className=' space-y-6'>
                         <div className='flex justify-start items-center'>
                             <FiPhoneCall className='text-4xl mr-8 text-primary' />
@@ -22,21 +22,22 @@ const GetInTouch = () => {
                         </div>
                         <div className='flex justify-start items-center'>
                             <BsEnvelope className='text-4xl mr-8 text-primary' />
-                            <Link to='/' className='text-lg text-gray-700'>Email Info<p className='block text-3xl text-primary tracking-wide'>sultan@luxuryhotel.com</p></Link>
+                            <Link to='/' className='text-lg text-gray-700'>Email Info<p className='block text-xl text-primary tracking-wide'>sultan@luxuryhotel.com</p></Link>
                         </div>
                         <div className='flex justify-start items-center'>
                             <MdLocationSearching className='text-4xl mr-8 text-primary' />
-                            <Link to='/' className='text-xl text-gray-500'>Address
-                                <p>1616 Broadway NY, New York 10001</p>
-                                <p>United States of America</p>
+                            <Link to='/' className='text-xl text-gray-700'>Address
+                                <p className='text-lg'>1616 Broadway NY, New York 10001</p>
+                                <p className='text-lg'>United States of America</p>
                             </Link>
                         </div>
                     </div>
                 </div>
                 <div className='w-full'>
-                    <h2 className='text-2xl mb-7 text-black'>Get in touch</h2>
+                    <h2 className='text-2xl text-center text-black mt-10'>Get in touch</h2>
+                    <hr className='w-3/4 lg:w-1/2 border-primary mx-auto mt-4 mb-10'/>
                     <form onSubmit={handleSubmit(onSubmit)} className='space-y-4'>
-                        <div className='flex space-x-4'>
+                        <div className='lg:flex lg:space-x-4'>
                             <div className="form-control w-full">
                                 <input
                                     {...register('displayName', {
@@ -75,7 +76,7 @@ const GetInTouch = () => {
                                 </label>
                             </div>
                         </div>
-                        <div className='flex space-x-4'>
+                        <div className='lg:flex lg:space-x-4'>
                             <div className="form-control w-full">
                                 <input
                                     {...register('number', {
@@ -119,7 +120,7 @@ const GetInTouch = () => {
                                 })}
                                 type="text" placeholder="message"
                                 className="textarea border-b-gray-300 outline-0 focus:outline-none focus:border-b-primary text-lg border-x-0 border-t-0 w-full rounded-none"
-                                rows='4'
+                                rows='3'
 
                             ></textarea>
                             <label className="label">
@@ -127,7 +128,7 @@ const GetInTouch = () => {
                             </label>
                         </div>
 
-                        <input className='py-3 px-8 text-lg mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500' type="submit" value='SEND MESSAGE' />
+                        <input className='py-3 w-1/2 mx-auto mt-4 bg-primary hover:bg-[#222222] rounded-none text-white tracking-widest hover:duration-500 hover:ease-in-out ease-in-out duration-500' type="submit" value='SEND MESSAGE' />
                     </form>
                 </div>
             </div>

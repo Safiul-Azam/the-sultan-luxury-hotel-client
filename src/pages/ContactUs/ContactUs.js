@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../Shared/Navbar';
 import GetInTouch from './GetInTouch';
+import Footer from '../Shared/Footer'
 import slider1 from '../../images/banner/5.jpg'
 
 const ContactUs = () => {
@@ -14,12 +15,13 @@ const ContactUs = () => {
                     backgroundSize: 'cover'
                 }
             }>
-                <div className='text-left text-white container py-24 mx-auto'>
-                    <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>GET IN TOUCH</p>
-                    <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Contact Us</h2>
+                <div className='text-left text-white container py-28 mx-auto px-3'>
+                    <p className='text-lg uppercase mb-6 tracking-[5px]'>GET IN TOUCH</p>
+                    <h2 className='lg:text-6xl text-5xl leading-3'>Contact Us</h2>
                 </div>
             </div>
             <GetInTouch></GetInTouch>
+            <Footer/>
         </div>
     );
 };
