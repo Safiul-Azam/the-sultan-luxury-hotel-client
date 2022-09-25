@@ -23,18 +23,18 @@ const Signup = () => {
         e.preventDefault()
         dispatch({ type: 'LOGIN_START' })
         const data = new FormData()
-        data.append('file',file)
+        data.append('file', file)
         data.append('upload_preset', 'upload')
         try {
             const uploadRes = await axios.post('https://api.cloudinary.com/v1_1/Safiul-projects/image/upload', data)
-            const {url}= uploadRes.data;
+            const { url } = uploadRes.data;
             const newUser = {
                 ...userInfo,
                 img: url,
             }
-            const res = await axios.post('https://sultan-hotel-1.onrender.com/api/auth/register',newUser)
-            if(res.status === 200){
-                navigate(from, {replace:true})
+            const res = await axios.post('https://sultan-hotel-1.onrender.com/api/auth/register', newUser)
+            if (res.status === 200) {
+                navigate(from, { replace: true })
                 dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
                 toast.success('your registration is completed :)')
             };
@@ -42,18 +42,23 @@ const Signup = () => {
             dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
         }
     }
-    if(loading){
-        return <Spinner/>
+    if (loading) {
+        return <Spinner />
     }
+    //shadow style
+    // borderRadius: 50px;
+    // 20px 20px 32px #bebebe,-20px -20px 32px #ffffff;
+    // inset 14px 14px 28px #c7c7c7,inset -14px -14px 28px #f9f9f9;
+    // style={{ "boxShadow": "20px 20px 60px #bebebe,-20px -20px 60px #ffffff;" }}
     return (
         <div>
             <Authentication></Authentication>
             <div className='lg:w-3/4 md:w-1/2 w-full mx-auto lg:p-10 p-2 lg:mt-24 mt-12 mb-16'>
                 <h2 className="lg:text-5xl text-3xl text-gray-500 text-center">Signup</h2>
-                <hr className='lg:mb-20 mb-10 lg:w-1/3 w-3/4  border-2 bg-gray-400 mt-3 mx-auto' />
+                <hr className='lg:mb-20 mb-10 lg:w-1/3 w-3/4 border-primary mt-3 mx-auto' />
                 <div className='lg:grid grid-cols-3 lg:gap-x-10'>
-                    <div className=''>
-                        <img className='w-40 h-40 mx-auto rounded-full'
+                    <div>
+                        <img style={{ boxShadow: "inset 14px 14px 28px #c7c7c7,inset -14px -14px 28px #f9f9f9",background:"#e0e0e0" }} className='w-40 h-40 mx-auto rounded-full border shadow-inner'
                             src={
                                 file
                                     ? URL.createObjectURL(file)
@@ -65,7 +70,7 @@ const Signup = () => {
                     </div>
                     <form className='lg:grid grid-cols-2 lg:gap-8 col-span-2 space-y-4' onSubmit={handleSubmit}>
                         <div className="form-control w-full ">
-                            <label className='flex items-center justify-center my-2 space-x-3 text-xl text-green-500' htmlFor="file">
+                            <label className='flex items-center justify-center my-2 space-x-3 text-xl text-teal-400' htmlFor="file">
                                 Upload Image: <AiOutlineCloudUpload />
                             </label>
                             <input
@@ -127,7 +132,7 @@ const Signup = () => {
                     <h4 className='text-xs mt-10 lg:hidden text-center'>Already have an account?<Link className='text-primary' to='/login'>please login</Link></h4>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };

@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 const GetInTouch = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-
     const onSubmit = (data) => console.log(data);
     return (
         <div className='container mx-auto py-24 px-4'>

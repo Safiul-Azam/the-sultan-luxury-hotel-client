@@ -38,7 +38,7 @@ const Login = () => {
             <Authentication></Authentication>
                 <div className='lg:w-1/2 md:w-1/2 w-full mx-auto lg:p-10 p-3  my-12'>
                     <h2 className="lg:text-4xl text-3xl text-gray-500 lg:text-left text-center">Login</h2>
-                    <hr className='lg:w-1/4 w-3/4 mb-6 mt-3 border bg-gray-300 mx-auto lg:mx-0' />
+                    <hr className='lg:w-1/4 w-3/4 mb-6 mt-3 border-primary mx-auto lg:mx-0' />
                     <form className='space-y-4' onSubmit={handleSubmit}>
                         <div className="form-control w-full">
                             <input
