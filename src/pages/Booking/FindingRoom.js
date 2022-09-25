@@ -53,9 +53,9 @@ const FindingRoom = () => {
     return (
         <>
             <div className='bg-neutral'>
-                <div className='container mx-auto py-24 flex justify-between space-x-10'>
-                    <div className='w-1/3'>
-                        <div className='border w-full pt-10 '>
+                <div className='container mx-auto py-20 lg:flex justify-between space-x-10'>
+                    <div className='lg:w-1/3 w-full'>
+                        <div className='border w-full py-10'>
                             <div className='flex p-3 justify-evenly space-x-2 w-full'>
                                 <button onClick={() => setOpenDate(!openDate)} className='w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center' >{`${format(dates[0]?.startDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /></button>
                                 <button onClick={() => setOpenDate(!openDate)} className=' w-1/2 px-4 py-4 text-lg bg-white flex justify-between items-center'>{`${format(dates[0]?.endDate, 'MM-dd-yyyy')}`}<AiOutlineCalendar className='text-primary text-xl' /> </button>
@@ -155,7 +155,7 @@ const FindingRoom = () => {
                             </div>
                         </div>
                     </div>
-                    <div className=' w-3/4 grid grid-cols-3 gap-4'>
+                    <div className=' w-3/4 lg:grid grid-cols-3 gap-3 space-y-6'>
                         {
                             data?.map(room => <div
                                 key={room._id}

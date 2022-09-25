@@ -1,8 +1,7 @@
 import React from 'react';
-import Navbar from './Navbar';
 import ScrollNavbar from './ScrollNavbar';
 
-const Nofound = () => {
+const NoFound = () => {
     return (
         <div className=''>
             <ScrollNavbar/>
@@ -11,4 +10,4 @@ const Nofound = () => {
     );
 };
 
-export default Nofound;
+export default NoFound;

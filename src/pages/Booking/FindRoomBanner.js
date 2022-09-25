@@ -13,9 +13,9 @@ const FindRoomBanner = () => {
                     backgroundSize: 'cover'
                 }
             }>
-                <div className='text-left text-white container py-32 mx-auto'>
-                    <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-6'>LUXURY HOTEL</p>
-                    <h2 style={{ lineHeight: '30px' }} className='text-6xl'>Finding Room</h2>
+                <div className='text-left text-white container py-32 px-4 mx-auto'>
+                    <p className='text-lg uppercase mb-6 tracking-[5px]'>LUXURY HOTEL</p>
+                    <h2 className='lg:text-6xl text-4xl leading-3'>Finding Room</h2>
                 </div>
             </div>
             <FindingRoom/>
