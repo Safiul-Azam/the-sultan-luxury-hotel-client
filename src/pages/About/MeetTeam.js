@@ -14,24 +14,44 @@ const MeetTeam = () => {
     }, [])
     return (
         <div className='bg-[#F8F5F0] py-28'>
-            <div className='container mx-auto'>
-                <p style={{ letterSpacing: '5px' }} className='text-lg uppercase mb-4'>PROFESSIONALS</p>
-                <h2 className='text-5xl mb-7 text-black'>Meet The Team</h2>
+            <div className='container mx-auto px-4 lg:px-0'>
+                <p className='text-lg uppercase mb-4 tracking-[5px]'>PROFESSIONALS</p>
+                <h2 className='lg:text-5xl text-3xl mb-7 text-black'>Meet The Team</h2>
                 <Swiper
-                    slidesPerView={3}
+                   
+                    // slidesPerView={3}
                     spaceBetween={30}
                     slidesPerGroup={1}
                     autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                      }}
-                    
+                        delay: 3000,
+                        disableOnInteraction: false
+                    }}
                     loop={true}
                     loopFillGroupWithBlank={true}
                     pagination={{
                         clickable: true,
                     }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 40,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                            spaceBetween: 50,
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                            spaceBetween: 50,
+                        },
+                    }}
+                    navigation={true}
                     modules={[Navigation, Autoplay]}
+                    className="mySwiper"
                 >
                     {
                         meetTeams.map(meetTeam => <SwiperSlide
