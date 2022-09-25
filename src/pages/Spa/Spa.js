@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Shared/Footer';
 import ClientSay from './ClientSay';
 import SpaBanner from './SpaBanner';
 import SpaEtiquette from './SpaEtiquette';
@@ -8,11 +9,12 @@ import WellNess from './WellNess';
 const Spa = () => {
     return (
         <div>
-            <SpaBanner></SpaBanner>
-            <WellNess></WellNess>
-            <SpaTheme></SpaTheme>
-            <ClientSay></ClientSay>
-            <SpaEtiquette></SpaEtiquette>
+            <SpaBanner />
+            <WellNess />
+            <SpaTheme />
+            <ClientSay />
+            <SpaEtiquette />
+            <Footer />
         </div>
     );
 };
