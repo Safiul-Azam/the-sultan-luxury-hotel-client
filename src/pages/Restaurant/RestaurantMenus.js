@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
     }, [])
     const selected = menus.filter(menu => menu?.menuName === clickBtn)
     return (
-        <div className='bg-[#222222] py-28'>
+        <div className='bg-[#222222] py-20'>
             <div className='container mx-auto'>
                 <p style={{ letterSpacing: '5px' }} className='text-primary uppercase mb-4 text-center'>LUXURY HOTEL</p>
                 <h2 className='text-4xl mb-7 text-center text-white'>Restaurant Menu</h2>
