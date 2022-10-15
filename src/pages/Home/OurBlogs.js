@@ -15,7 +15,7 @@ const OurBlogs = () => {
         <div className='bg-[#222] lg:py-28 py-12 px-5 lg:px-5'>
             <div className=' container mx-auto'>
                 <p style={{ letterSpacing: '5px' }} className='text-sm text-primary uppercase mb-3'>HOTEL BLOG</p>
-                <h2 className='lg:text-5xl text-4xl mb-5 text-white'>Our Blogs</h2>
+                <h2 className='lg:text-5xl text-4xl mb-5 text-white '>Our Blogs</h2>
                 <Swiper
 
                     // slidesPerView={3}
