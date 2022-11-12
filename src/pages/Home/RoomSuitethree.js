@@ -15,7 +15,7 @@ const RoomSuiteThree = () => {
     }
 
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-3 w-full gap-8'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 w-full gap-8 collapse'>
             {
                 data?.slice(0, 3)?.map(room => <div
                     key={room._id}

@@ -13,7 +13,7 @@ const RoomSuiteTwo = () => {
         return <Spinner/>
     }
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 w-full'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 w-full collapse'>
              {
                 data?.slice(5, 7)?.map(room => <div
                     key={room._id}
